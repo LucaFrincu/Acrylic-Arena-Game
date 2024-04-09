@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2157177982662968680}
   - component: {fileID: 1124509986370248089}
   m_Layer: 0
-  m_Name: Cube.005
+  m_Name: CastlePiece04
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 7465812710675171569}
   - component: {fileID: 4480921745442246951}
   m_Layer: 0
-  m_Name: Cube.046
+  m_Name: BridgePiece21
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -178,7 +178,7 @@ GameObject:
   - component: {fileID: 70348938565583040}
   - component: {fileID: 5949102093546004655}
   m_Layer: 0
-  m_Name: Cube.011
+  m_Name: BridgePiece01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -261,7 +261,7 @@ GameObject:
   - component: {fileID: 3512893374230522965}
   - component: {fileID: 407472919267257141}
   m_Layer: 0
-  m_Name: Cube.049
+  m_Name: BridgePiece24
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -344,7 +344,7 @@ GameObject:
   - component: {fileID: 3090548002221479166}
   - component: {fileID: 9039554963055871303}
   m_Layer: 0
-  m_Name: Cube.017
+  m_Name: BridgePiece05
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -427,7 +427,7 @@ GameObject:
   - component: {fileID: 6138034620431980053}
   - component: {fileID: 2218295409273844401}
   m_Layer: 0
-  m_Name: Cube.023
+  m_Name: BridgePiece10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -510,7 +510,7 @@ GameObject:
   - component: {fileID: 7749462345291288789}
   - component: {fileID: 8995667286495272711}
   m_Layer: 0
-  m_Name: Cube.009
+  m_Name: CastlePiece06
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -593,7 +593,7 @@ GameObject:
   - component: {fileID: 5769284252067623600}
   - component: {fileID: 5454988623913956983}
   m_Layer: 0
-  m_Name: BezierCurve.001
+  m_Name: BridgeRope02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -677,7 +677,7 @@ GameObject:
   - component: {fileID: 4502953016610390919}
   - component: {fileID: 7599382894828495623}
   m_Layer: 0
-  m_Name: Cube.042
+  m_Name: BridgePiece17
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -773,7 +773,7 @@ GameObject:
   - component: {fileID: 1298765169046678312}
   - component: {fileID: 3812946544781857765}
   m_Layer: 0
-  m_Name: Cube.006
+  m_Name: Gate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -856,7 +856,7 @@ GameObject:
   - component: {fileID: 9138909699315818179}
   - component: {fileID: 1803441111922576273}
   m_Layer: 0
-  m_Name: Cube.007
+  m_Name: CastlePiece05
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -939,7 +939,7 @@ GameObject:
   - component: {fileID: 4613987893707974515}
   - component: {fileID: 5223168987434591994}
   m_Layer: 0
-  m_Name: Cube.027
+  m_Name: BridgePiece14
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1023,7 +1023,7 @@ GameObject:
   - component: {fileID: 6950449960972382337}
   - component: {fileID: 7599382894772632056}
   m_Layer: 0
-  m_Name: Cube.026
+  m_Name: BridgePiece13
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1119,7 +1119,7 @@ GameObject:
   - component: {fileID: 5064342354635732848}
   - component: {fileID: 4237971770667928030}
   m_Layer: 0
-  m_Name: Cube.012
+  m_Name: CourtyardPillar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1202,7 +1202,7 @@ GameObject:
   - component: {fileID: 4661267681566833658}
   - component: {fileID: 2297756272313644007}
   m_Layer: 0
-  m_Name: Cube.002
+  m_Name: CastlePiece01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1285,7 +1285,7 @@ GameObject:
   - component: {fileID: 4460142243726408926}
   - component: {fileID: 2046302675130584565}
   m_Layer: 0
-  m_Name: Cube.043
+  m_Name: BridgePiece18
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1368,7 +1368,7 @@ GameObject:
   - component: {fileID: 8265095207565328326}
   - component: {fileID: 6694359447142137686}
   m_Layer: 0
-  m_Name: Cube.016
+  m_Name: BridgePiece04
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1451,7 +1451,7 @@ GameObject:
   - component: {fileID: 8441691322049142753}
   - component: {fileID: 3239917487579467507}
   m_Layer: 0
-  m_Name: Cube.021
+  m_Name: BridgePiece08
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1534,7 +1534,7 @@ GameObject:
   - component: {fileID: 8065025778763562736}
   - component: {fileID: 8002852285780485885}
   m_Layer: 0
-  m_Name: Cube.022
+  m_Name: BridgePiece09
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1617,7 +1617,7 @@ GameObject:
   - component: {fileID: 2576775061948057849}
   - component: {fileID: 2226106783016317344}
   m_Layer: 0
-  m_Name: Cube.028
+  m_Name: BridgePiece15
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1700,7 +1700,7 @@ GameObject:
   - component: {fileID: 7492793325746406694}
   - component: {fileID: 6122520495360195824}
   m_Layer: 0
-  m_Name: Cube.015
+  m_Name: BridgePiece03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1783,7 +1783,7 @@ GameObject:
   - component: {fileID: 4083394846567083816}
   - component: {fileID: 8838690278988004750}
   m_Layer: 0
-  m_Name: Cube.025
+  m_Name: BridgePiece12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1866,7 +1866,7 @@ GameObject:
   - component: {fileID: 3898646026355102011}
   - component: {fileID: 2580317772240223984}
   m_Layer: 0
-  m_Name: Cube.047
+  m_Name: BridgePiece22
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1949,7 +1949,7 @@ GameObject:
   - component: {fileID: 3785370253183520242}
   - component: {fileID: 8350896927643451175}
   m_Layer: 0
-  m_Name: Cube.019
+  m_Name: BridgePiece06
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2032,7 +2032,7 @@ GameObject:
   - component: {fileID: 8636286424452030051}
   - component: {fileID: 8167012306550148398}
   m_Layer: 0
-  m_Name: Cube.018
+  m_Name: VillageLayout
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2115,7 +2115,7 @@ GameObject:
   - component: {fileID: 1227158756474984125}
   - component: {fileID: 4498624884544672733}
   m_Layer: 0
-  m_Name: Cube.020
+  m_Name: BridgePiece07
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2198,7 +2198,7 @@ GameObject:
   - component: {fileID: 4742926773573532643}
   - component: {fileID: 656460686121880180}
   m_Layer: 0
-  m_Name: Cube.029
+  m_Name: BridgePiece16
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2282,7 +2282,7 @@ GameObject:
   - component: {fileID: 758282318217306869}
   - component: {fileID: 7599382894246066197}
   m_Layer: 0
-  m_Name: Cylinder
+  m_Name: CourtyardWalls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2379,7 +2379,7 @@ GameObject:
   - component: {fileID: 1464786454407814600}
   - component: {fileID: 8039051657244001028}
   m_Layer: 0
-  m_Name: Cube.048
+  m_Name: BridgePiece23
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2474,8 +2474,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7329335350913001851}
-  m_LocalRotation: {x: 0.0031764351, y: 0.99984765, z: 0.000013391145, w: 0.01716342}
-  m_LocalPosition: {x: 1.0570145, y: -0, z: 29.6}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: 0, y: -0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2518,7 +2518,7 @@ Transform:
   - {fileID: 3840686408795409947}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0.005, y: 178.033, z: 0.364}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!65 &7599382894843369798
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2544,7 +2544,7 @@ GameObject:
   - component: {fileID: 775206539842158116}
   - component: {fileID: 1430765716757196644}
   m_Layer: 0
-  m_Name: Cube.045
+  m_Name: BridgePiece20
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2628,7 +2628,7 @@ GameObject:
   - component: {fileID: 7461853935191984136}
   - component: {fileID: 7599382894635879786}
   m_Layer: 0
-  m_Name: Cube.008
+  m_Name: Courtyard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2725,7 +2725,7 @@ GameObject:
   - component: {fileID: 3011509018282265092}
   - component: {fileID: 2386991647854373658}
   m_Layer: 0
-  m_Name: BezierCurve
+  m_Name: BridgeRope01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2808,7 +2808,7 @@ GameObject:
   - component: {fileID: 2071963087231562497}
   - component: {fileID: 2135667886961491284}
   m_Layer: 0
-  m_Name: Cube.003
+  m_Name: CastlePiece02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2891,7 +2891,7 @@ GameObject:
   - component: {fileID: 1301318757158390928}
   - component: {fileID: 4762938730212275308}
   m_Layer: 0
-  m_Name: Cube.004
+  m_Name: CastlePiece03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2974,7 +2974,7 @@ GameObject:
   - component: {fileID: 5045870689142636519}
   - component: {fileID: 7275683115958199372}
   m_Layer: 0
-  m_Name: Cube.044
+  m_Name: BridgePiece19
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3057,7 +3057,7 @@ GameObject:
   - component: {fileID: 2573414673370844508}
   - component: {fileID: 7926221549461223320}
   m_Layer: 0
-  m_Name: Cube.014
+  m_Name: BridgePiece02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3140,7 +3140,7 @@ GameObject:
   - component: {fileID: 5095739072313042036}
   - component: {fileID: 7227248320718366063}
   m_Layer: 0
-  m_Name: Cube.024
+  m_Name: BridgePiece11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

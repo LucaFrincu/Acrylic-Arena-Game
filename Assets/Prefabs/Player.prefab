@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8833669858641475301}
   - component: {fileID: 8833669858641475300}
   - component: {fileID: 8833669858641475099}
+  - component: {fileID: -9065742369282523745}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -78,6 +79,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   rb: {fileID: 8833669858641475300}
+  combat: {fileID: -9065742369282523745}
+--- !u!114 &-9065742369282523745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8833669858641475098}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4bed41c5e9d3ba46b11e0fa58e7d8ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shapeFormCombo: 7
+  colliderLifetime: 0.5
+  fixedDistance: 1
+  directionToMouse: {x: 0, y: 0, z: 0}
+  doubleClickTimeLimit: 0.2
+  mousePos: {x: 0, y: 0, z: 0}
+  nrAttacks: 0
+  nrCombo: 0
+  checkmode: 0
+  drawing: {fileID: 0}
+  attackDmg: 0
 --- !u!1 &8833669859667141453
 GameObject:
   m_ObjectHideFlags: 0

@@ -128,7 +128,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 099993acf07cd2545bc7e3c649530f9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
+  moveSpeed: 2
   stoppingDistance: 1
   detectDistance: 6
   playerTag: Player

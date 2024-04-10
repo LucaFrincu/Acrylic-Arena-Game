@@ -70,8 +70,9 @@ public class CombatController : MonoBehaviour
                 case 0:
                     switch (shapeFormCombo)
                     {
-                        case ShapeCombo.Zero:                          
-                            DoBasicAttack();
+                        case ShapeCombo.Zero:
+                            if(nrAttacks < 2)
+                                DoBasicAttack();
                                 break;
                         case ShapeCombo.CurveLeft:
                             colliderSize = new Vector3(1f, 2f, 1f);
@@ -114,7 +115,8 @@ public class CombatController : MonoBehaviour
                     switch (shapeFormCombo)
                     {
                         case ShapeCombo.Zero:
-                            DoBasicAttack();
+                            if (nrAttacks < 2)
+                                DoBasicAttack();
                             break;
                         case ShapeCombo.CurveRight:
                             colliderSize = new Vector3(1.5f, 2f, 1.5f);
@@ -160,7 +162,8 @@ public class CombatController : MonoBehaviour
                     switch (shapeFormCombo)
                     {
                         case ShapeCombo.Zero:
-                            DoBasicAttack();
+                            if (nrAttacks < 2)
+                                DoBasicAttack();
                             break;
                         case ShapeCombo.CircleRight:
                             colliderSize = new Vector3(2f, 2f, 2f);
@@ -207,7 +210,7 @@ public class CombatController : MonoBehaviour
             }            
         }        
 
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetMouseButtonDown(0))
         {
             if (!isOneClick) // first click
             {

@@ -42,7 +42,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -103,7 +103,238 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Yellow_Idle_Front_0
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 0
+        width: 495
+        height: 1105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 5, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa44210996113bc4b843e3a7dc32c4ba
+      internalID: 235328185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Yellow_Idle_Front_1
+      rect:
+        serializedVersion: 2
+        x: 659
+        y: 0
+        width: 517
+        height: 1105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 12, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3656f68f9f541fa4aa397b3a6731e0e6
+      internalID: 212176426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Yellow_Idle_Front_2
+      rect:
+        serializedVersion: 2
+        x: 1227
+        y: 774
+        width: 15
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da07114e3bad4e144b45556a1fa4ed55
+      internalID: 1573937343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Yellow_Idle_Front_3
+      rect:
+        serializedVersion: 2
+        x: 1246
+        y: 775
+        width: 15
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35c1ee8f2d8ec6441921e44e961a1d98
+      internalID: 48989465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Yellow_Idle_Front_4
+      rect:
+        serializedVersion: 2
+        x: 1278
+        y: 0
+        width: 520
+        height: 1105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 8, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f118eabefda2f9441924777a5cc3ab6b
+      internalID: 934617644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Yellow_Idle_Front_5
+      rect:
+        serializedVersion: 2
+        x: 1791
+        y: 773
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03db8ae4e6623d4459e63d6c736fa230
+      internalID: 1884560448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Yellow_Idle_Front_7
+      rect:
+        serializedVersion: 2
+        x: 1171
+        y: 247
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c0c1326617f61d4ebfc00e862685421
+      internalID: 1790135297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Yellow_Idle_Front_8
+      rect:
+        serializedVersion: 2
+        x: 1181
+        y: 247
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0bbac9943a54f124e9b7c9918ff1c9fa
+      internalID: 1760684909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Yellow_Idle_Front_9
+      rect:
+        serializedVersion: 2
+        x: 1196
+        y: 245
+        width: 12
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2f09395389186042a64935924d653fc
+      internalID: 464049665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Yellow_Idle_Front_11
+      rect:
+        serializedVersion: 2
+        x: 1255
+        y: 244
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3585161d38c917c4db56a4c7d3ddee28
+      internalID: -1859358984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Yellow_Idle_Front_12
+      rect:
+        serializedVersion: 2
+        x: 1262
+        y: 247
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6490c284fb8d8384faec320cf4587824
+      internalID: -112467867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -114,7 +345,24 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Yellow_Idle_Front_0: 235328185
+      Yellow_Idle_Front_1: 212176426
+      Yellow_Idle_Front_10: -1240342988
+      Yellow_Idle_Front_11: -1859358984
+      Yellow_Idle_Front_12: -112467867
+      Yellow_Idle_Front_13: -2052088580
+      Yellow_Idle_Front_14: 340615041
+      Yellow_Idle_Front_15: -974311252
+      Yellow_Idle_Front_16: 611511044
+      Yellow_Idle_Front_2: 1573937343
+      Yellow_Idle_Front_3: 48989465
+      Yellow_Idle_Front_4: 934617644
+      Yellow_Idle_Front_5: 1884560448
+      Yellow_Idle_Front_6: -1965651324
+      Yellow_Idle_Front_7: 1790135297
+      Yellow_Idle_Front_8: 1760684909
+      Yellow_Idle_Front_9: 464049665
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

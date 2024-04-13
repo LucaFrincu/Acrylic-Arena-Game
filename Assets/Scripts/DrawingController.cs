@@ -33,7 +33,7 @@ public class DrawingController : MonoBehaviour
 
     void Update()
     {
-        if (combat.CheckMode() == true) {
+        if (combat.CheckMode() == true && combat.nrAttacks == 2) {
             if (Input.GetMouseButtonDown(0))
             {
                 endingPoint = startingPoint = GetMouseWorldPosition();
@@ -71,7 +71,7 @@ public class DrawingController : MonoBehaviour
                 }
                 //ManagePoints(startingPoint, endingPoint);
             }
-            /*else if (Input.GetKeyDown(KeyCode.P))
+           /*else if (Input.GetKeyDown(KeyCode.P))
             {
                 PrintLine();
                 drawingPoints.Clear();
@@ -79,19 +79,19 @@ public class DrawingController : MonoBehaviour
             }
             else if (Input.GetKeyDown(KeyCode.R))
             {
-                *//*LoadShapesFromJSON();
+                LoadShapesFromJSON();
                 RecognizeShape();
                 shapesDictionary.Clear();
                 CheckDirection();
                 drawingPoints.Clear();
                 lineRenderer.positionCount = 0;
-                shape = shapeDirection = null;*//*
+                shape = shapeDirection = null;
 
             }
             // Check for 's' key press to save points
             else if (Input.GetKeyDown(KeyCode.S))
             {
-                //SavePointsToJson();
+                SavePointsToJson();
             }
             else if (Input.GetKeyDown(KeyCode.O))
             {
@@ -103,8 +103,18 @@ public class DrawingController : MonoBehaviour
     void CheckDirection()
     {
         switch (shape) {
-            case "curveline":
-                if (startingPoint.x > endingPoint.x && startingPoint.y < endingPoint.y)
+            case "verticalline":
+                if (startingPoint.y < endingPoint.y)
+                {
+                    shapeDirection = "up";
+                }
+                else
+                {
+                    shapeDirection = "down";
+                }
+                break;
+            case "horizontalline":
+                if (startingPoint.x > endingPoint.x)
                 {
                     shapeDirection = "left";
                 }
@@ -125,7 +135,7 @@ public class DrawingController : MonoBehaviour
                 break;
             case "circle":
                 Debug.Log(startingPoint.x + " " + drawingPoints[1].x);
-                if (startingPoint.x < drawingPoints[1].x)
+                if (startingPoint.y < drawingPoints[1].y)
                 {
                     shapeDirection = "left";
                 }

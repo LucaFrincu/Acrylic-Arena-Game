@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - square
+  - squareenemy
   layers:
   - Default
   - TransparentFX

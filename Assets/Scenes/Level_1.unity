@@ -180,7 +180,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 1f357794d00fb7a4e85f3fbb52eab487, type: 3}
       propertyPath: m_TagString
-      value: Player
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1f357794d00fb7a4e85f3fbb52eab487, type: 3}
@@ -765,6 +765,10 @@ PrefabInstance:
       propertyPath: drawing
       value: 
       objectReference: {fileID: 725890021}
+    - target: {fileID: -3977382012538612927, guid: ec73cdc336ffcab42b701bfd6ba5f0e1, type: 3}
+      propertyPath: attackDmg
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8833669858641475098, guid: ec73cdc336ffcab42b701bfd6ba5f0e1, type: 3}
       propertyPath: m_Name
       value: Player
@@ -820,6 +824,10 @@ PrefabInstance:
     - target: {fileID: 8833669858641475302, guid: ec73cdc336ffcab42b701bfd6ba5f0e1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8833669859667141453, guid: ec73cdc336ffcab42b701bfd6ba5f0e1, type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec73cdc336ffcab42b701bfd6ba5f0e1, type: 3}
@@ -910,7 +918,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2007407309}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.52, y: 1.9710015, z: -31.99}
+  m_LocalPosition: {x: 0.16, y: 0, z: -36.54}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ed0d29fb4bfd61f4eade6d25b6ce86c9
+guid: 3a341a2608ac6ea43b03c49f3098445f
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -103,84 +103,18 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: Red_Idle_Side_0
-      rect:
-        serializedVersion: 2
-        x: 176
-        y: 0
-        width: 438
-        height: 1105
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 308f32ac389e95a40bca8a6c907c7acc
-      internalID: -1814427619
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Red_Idle_Side_1
-      rect:
-        serializedVersion: 2
-        x: 625
-        y: 0
-        width: 628
-        height: 1105
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 78, y: 0, z: 139, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 74b109431989f134a89008b7274c0b61
-      internalID: -2089489254
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Red_Idle_Side_2
-      rect:
-        serializedVersion: 2
-        x: 1217
-        y: 0
-        width: 628
-        height: 1105
-      alignment: 9
-      pivot: {x: 0.53266615, y: 0.48987898}
-      border: {x: 0, y: 0, z: 230, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fc42832ee6f93614fbce8a460f0be311
-      internalID: -1125546546
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: b19c151c03808bf4a9c821ce1ffa221a
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      Red_Idle_Side_0: -1814427619
-      Red_Idle_Side_1: -2089489254
-      Red_Idle_Side_2: -1125546546
+    nameFileIdTable: {}
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

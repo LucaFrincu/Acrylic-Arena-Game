@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ce786385d7c4c704a8546d1de6f13b07
+guid: a51b0591178be524b8f1b55df31552e8
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -105,64 +105,64 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Red_Idle_Front_0
+      name: Red_Idle_Back_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 91
         y: 0
-        width: 627.6667
+        width: 490
         height: 1105
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 86, y: 0, z: 51, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 07a1c45d4fad7a2448d02d2369c6a39d
-      internalID: 1004168102
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Red_Idle_Front_1
-      rect:
-        serializedVersion: 2
-        x: 669
-        y: 0
-        width: 510
-        height: 1105
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8093401a7311ae64bae38b5cb61c5257
-      internalID: -200136461
+      spriteID: f03f5e62be146134baadc226c974ebe1
+      internalID: -1893332773
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Red_Idle_Front_2
+      name: Red_Idle_Back_1
       rect:
         serializedVersion: 2
-        x: 1282
+        x: 675
         y: 0
-        width: 515
+        width: 502
         height: 1105
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 14842d34090037742beb2c4d09d3ef39
-      internalID: 1107000351
+      spriteID: 3e552d6908933c5409802819a6b38536
+      internalID: -1165751131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Idle_Back_2
+      rect:
+        serializedVersion: 2
+        x: 1254
+        y: 0
+        width: 506
+        height: 1105
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5557d4333cb2d74980383c391896863
+      internalID: -664349016
       vertices: []
       indices: 
       edges: []
@@ -170,7 +170,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5c853dcf101747449ad6e3732ac94a49
+    spriteID: 648cfca434818ae4e81f0d02fbfd8ac7
     internalID: 0
     vertices: []
     indices: 
@@ -178,9 +178,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Red_Idle_Front_0: 1004168102
-      Red_Idle_Front_1: -200136461
-      Red_Idle_Front_2: 1107000351
+      Red_Idle_Back_0: -1893332773
+      Red_Idle_Back_1: -1165751131
+      Red_Idle_Back_2: -664349016
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

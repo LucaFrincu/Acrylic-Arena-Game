@@ -16,6 +16,8 @@ public class Enemy_AI : MonoBehaviour
     public float attackDelay = 3f;
     public float cooldownPeriod = 4f;
     private float lastAttackTime;
+    public Color color = Color.white;
+
 
     public Vector3 direction;
     public float moveSpeed = 5f; 
@@ -81,7 +83,7 @@ public class Enemy_AI : MonoBehaviour
                     {
 
                         Debug.Log("ATTACK");
-                        CreateTemporaryCollider(new Vector3(1f, 1f, 1f), 1f);
+                        CreateTemporaryCollider(new Vector3(1f, 0f, 1f), 1f);
                         lastAttackTime = Time.time;
                         state = AIState.Cooldown;
                     }
@@ -108,9 +110,42 @@ public class Enemy_AI : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        
+        string strcolor = "";
+        if(color == Color.white)
+        {
+            strcolor = "white";
+        }
+        else if(color == Color.blue)
+        {
+            strcolor = "blue";
+        }
+        else if (color == Color.red)
+        {
+            strcolor = "red";
+        }
+        else if (color == Color.yellow)
+        {
+            strcolor = "yellow";
+        }
+
         if (other.gameObject.name == "TemporaryCollider" && other.gameObject.tag == "square")
         {
+            switch (strcolor)
+            {
+                case "white":
+                    hasCollided = true;
+                    health -= hit.attackDmg;
+                    SpawnColoredSquare(other.transform.position);
+                    break;
+                case "blue":
+
+                    hasCollided = true;
+                    health -= hit.attackDmg;
+                    SpawnColoredSquare(other.transform.position);
+                    break;
+                default:
+                    break;
+            }
 
             hasCollided = true;
             health -= hit.attackDmg;

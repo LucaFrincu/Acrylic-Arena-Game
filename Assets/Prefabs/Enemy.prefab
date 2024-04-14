@@ -98,8 +98,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2, y: 2, z: 2}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.63311386, y: 0.7298972, z: 0.26067206}
+  m_Center: {x: 0.0013983907, y: 0.012877623, z: -0.037554525}
 --- !u!54 &3354414802991630228
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -128,6 +128,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 099993acf07cd2545bc7e3c649530f9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  colliderLifetime: 0.5
+  attackDelay: 3
+  cooldownPeriod: 4
+  direction: {x: 0, y: 0, z: 0}
   moveSpeed: 5
   stoppingDistance: 1
   detectDistance: 6

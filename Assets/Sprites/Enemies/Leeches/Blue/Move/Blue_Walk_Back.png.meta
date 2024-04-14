@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e99c98ad967ef8745bafb2c861c1558e
+guid: 3dc0135c185ea6745a0a1825fa3f27ef
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
-  spriteBorder: {x: 82, y: 0, z: 1304, w: 0}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
@@ -103,84 +103,18 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: Yellow_Idle_Front_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 575
-        height: 1105
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 88, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fbd315412f97558408d125d349907612
-      internalID: -2063316355
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Yellow_Idle_Front_1
-      rect:
-        serializedVersion: 2
-        x: 671
-        y: 0
-        width: 584
-        height: 1105
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 81, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fb36faecc1093b348a19ffea2ef461b4
-      internalID: -784688723
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Yellow_Idle_Front_2
-      rect:
-        serializedVersion: 2
-        x: 1254
-        y: 0
-        width: 540
-        height: 1105
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 31, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 98df2622c6b66d24fa6a86595b9dcb21
-      internalID: 1968265175
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
-    internalID: 1537655665
+    spriteID: 
+    internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      Yellow_Idle_Front_0: -2063316355
-      Yellow_Idle_Front_1: -784688723
-      Yellow_Idle_Front_2: 1968265175
+    nameFileIdTable: {}
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

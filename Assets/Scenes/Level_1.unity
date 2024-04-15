@@ -1041,7 +1041,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 1f357794d00fb7a4e85f3fbb52eab487, type: 3}
       propertyPath: m_TagString
-      value: Player
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 1341056751160186723, guid: 1f357794d00fb7a4e85f3fbb52eab487, type: 3}
       propertyPath: m_LocalScale.x
@@ -1621,7 +1621,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: -3977382012538612927, guid: ec73cdc336ffcab42b701bfd6ba5f0e1, type: 3}
   m_PrefabInstance: {fileID: 1493913532}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1519901207}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a4bed41c5e9d3ba46b11e0fa58e7d8ef, type: 3}
@@ -2713,6 +2713,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 354597187065239141, guid: 5224fa905598666469ad94c1499660e7, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1519901207}
     - target: {fileID: 504672943768377034, guid: 5224fa905598666469ad94c1499660e7, type: 3}
       propertyPath: m_Name
       value: Enemy_Rubber_Blue
@@ -2723,15 +2727,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 504672943768377036, guid: 5224fa905598666469ad94c1499660e7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -9.877935
+      value: -7.55
       objectReference: {fileID: 0}
     - target: {fileID: 504672943768377036, guid: 5224fa905598666469ad94c1499660e7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -4.05
       objectReference: {fileID: 0}
     - target: {fileID: 504672943768377036, guid: 5224fa905598666469ad94c1499660e7, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -58.32675
+      value: -29.12
       objectReference: {fileID: 0}
     - target: {fileID: 504672943768377036, guid: 5224fa905598666469ad94c1499660e7, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3426,6 +3430,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1519901207 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8833669858641475098, guid: ec73cdc336ffcab42b701bfd6ba5f0e1, type: 3}
+  m_PrefabInstance: {fileID: 1493913532}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1542152798
 GameObject:
   m_ObjectHideFlags: 0
@@ -3734,15 +3743,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2163558470042609589, guid: 194e0c2119cf4ee43b0194011a47dceb, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -9.782709
+      value: 4.05
       objectReference: {fileID: 0}
     - target: {fileID: 2163558470042609589, guid: 194e0c2119cf4ee43b0194011a47dceb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -3.73
       objectReference: {fileID: 0}
     - target: {fileID: 2163558470042609589, guid: 194e0c2119cf4ee43b0194011a47dceb, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -60.880615
+      value: -42.2
       objectReference: {fileID: 0}
     - target: {fileID: 2163558470042609589, guid: 194e0c2119cf4ee43b0194011a47dceb, type: 3}
       propertyPath: m_LocalRotation.w
@@ -4604,6 +4613,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3278550525636905951, guid: 86ebd063c5000f04291e55caaf6d1f71, type: 3}
+      propertyPath: m_Size.x
+      value: 5.100651
+      objectReference: {fileID: 0}
+    - target: {fileID: 3278550525636905951, guid: 86ebd063c5000f04291e55caaf6d1f71, type: 3}
+      propertyPath: m_Size.y
+      value: 8.11964
+      objectReference: {fileID: 0}
+    - target: {fileID: 3278550525636905951, guid: 86ebd063c5000f04291e55caaf6d1f71, type: 3}
+      propertyPath: m_Size.z
+      value: 0.513097
+      objectReference: {fileID: 0}
+    - target: {fileID: 3278550525636905951, guid: 86ebd063c5000f04291e55caaf6d1f71, type: 3}
+      propertyPath: m_Center.x
+      value: -0.017255783
+      objectReference: {fileID: 0}
+    - target: {fileID: 3278550525636905951, guid: 86ebd063c5000f04291e55caaf6d1f71, type: 3}
+      propertyPath: m_Center.y
+      value: -0.12271929
+      objectReference: {fileID: 0}
+    - target: {fileID: 3278550525636905951, guid: 86ebd063c5000f04291e55caaf6d1f71, type: 3}
+      propertyPath: m_Center.z
+      value: -0.080239564
+      objectReference: {fileID: 0}
     - target: {fileID: 7992296332031801187, guid: 86ebd063c5000f04291e55caaf6d1f71, type: 3}
       propertyPath: m_Name
       value: Enemy_Rubber_Yellow
@@ -4614,15 +4647,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7992296332031801189, guid: 86ebd063c5000f04291e55caaf6d1f71, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -9.696783
+      value: -3.89
       objectReference: {fileID: 0}
     - target: {fileID: 7992296332031801189, guid: 86ebd063c5000f04291e55caaf6d1f71, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -3.99
       objectReference: {fileID: 0}
     - target: {fileID: 7992296332031801189, guid: 86ebd063c5000f04291e55caaf6d1f71, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -63.71082
+      value: -60.3
       objectReference: {fileID: 0}
     - target: {fileID: 7992296332031801189, guid: 86ebd063c5000f04291e55caaf6d1f71, type: 3}
       propertyPath: m_LocalRotation.w

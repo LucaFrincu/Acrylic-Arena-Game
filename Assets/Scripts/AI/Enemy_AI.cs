@@ -4,19 +4,20 @@ using UnityEngine;
 
 public class Enemy_AI : MonoBehaviour
 {
-    public float moveSpeed = 5f; 
-    public float stoppingDistance = 1f; 
-    public float detectDistance = 6f; 
+    public float moveSpeed = 5f;
+    public float stoppingDistance = 1f;
+    public float detectDistance = 6f;
     public string playerTag = "Player";
     public bool hasCollided = false;
-    public int health = 0;
-    public float stunTime = 30f;
+    public int health = 100;
+    public float staggerTime = 1.3f; // Time in seconds
 
     private Transform playerTransform; // Reference to the player's transform
     public CombatController hit;
     public GameObject player;
     private Vector3 targetPosition; // Position the enemy is moving towards
     private bool playerSeen = false;
+    private bool isStaggered = false; 
 
     public float squareSpawnOffset = 2f; // Offset for spawning the square
 
@@ -25,14 +26,15 @@ public class Enemy_AI : MonoBehaviour
         playerTransform = GameObject.FindGameObjectWithTag(playerTag).transform;
         player = GameObject.FindGameObjectWithTag(playerTag);
         hit = player.GetComponent<CombatController>();
-        if (hit == null) {
+        if (hit == null)
+        {
             Debug.Log("hit null detected!");
         }
     }
 
     void Update()
     {
-        if (playerTransform != null)
+        if (playerTransform != null && !isStaggered) // Check if not staggered
         {
             // Calculate direction to the player
             Vector3 direction = (targetPosition - transform.position).normalized;
@@ -43,7 +45,7 @@ public class Enemy_AI : MonoBehaviour
             {
                 targetPosition = playerTransform.position;
                 playerSeen = true;
-                
+
                 //Debug.Log("Saw you!");
             }
 
@@ -59,19 +61,37 @@ public class Enemy_AI : MonoBehaviour
             Destroy(gameObject); // Destroy the enemy or handle accordingly
             FindObjectOfType<EnemySpawner>().OnEnemyDestroyed(); // Update the spawner's enemy count
         }
+
+        // Check if the enemy is staggered
+        if (isStaggered)
+        {
+            staggerTime -= Time.deltaTime;
+
+            // Check if the stun si over
+            if (staggerTime <= 0)
+            {
+                // Reset state
+                isStaggered = false;
+                staggerTime = 1.5f; // Reset stagger time for next use
+            }
+            else
+            {
+                // Stop enemy movement while staggered
+                return;
+            }
+        }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        
-        if (other.gameObject.name == "TemporaryCollider" /*&& hasCollided == false*/)
+        if (other.gameObject.name == "TemporaryCollider" && !isStaggered) 
         {
-
             hasCollided = true;
             health -= hit.attackDmg;
             SpawnColoredSquare(other.transform.position);
             /*playerSeen = false;
-            stunTime -= Time.deltaTime;*/
+              stunTime -= false;*/
+            isStaggered = true;
         }
     }
 
@@ -97,4 +117,3 @@ public class Enemy_AI : MonoBehaviour
         Destroy(square, 5f);
     }
 }
-

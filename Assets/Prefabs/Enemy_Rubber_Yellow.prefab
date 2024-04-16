@@ -99,8 +99,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2, y: 2, z: 2}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 5.0960407, y: 8.093747, z: 2}
+  m_Center: {x: 0.0629282, y: -0.19462645, z: 7.869046e-16}
 --- !u!54 &2663309192729979213
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -129,6 +129,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 099993acf07cd2545bc7e3c649530f9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  coloredSquareObject: {fileID: 4668118090960448513, guid: 1646779b5315b9946aa6062276ad0302, type: 3}
+  colliderLifetime: 0.5
+  attackDelay: 3
+  cooldownPeriod: 4
+  color: {r: 1, g: 1, b: 1, a: 1}
+  direction: {x: 0, y: 0, z: 0}
   moveSpeed: 5
   stoppingDistance: 1
   detectDistance: 6

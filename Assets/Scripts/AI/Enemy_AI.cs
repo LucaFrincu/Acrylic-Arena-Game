@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,13 +12,19 @@ public class Enemy_AI : MonoBehaviour
         Cooldown 
     }
 
+    public GameObject coloredSquareObject;
+
+    private GameObject parentSpawner;
+
     public float colliderLifetime = 0.5f; // Time for the collider to disappear
     private AIState state = AIState.Idle;
     public float attackDelay = 3f;
+    private bool isAttacking = false;
+    private DateTime currentTime;
     public float cooldownPeriod = 4f;
     private float lastAttackTime;
     public Color color = Color.white;
-
+    private DateTime attackStartTime;
 
     public Vector3 direction;
     public float moveSpeed = 5f; 
@@ -65,24 +72,31 @@ public class Enemy_AI : MonoBehaviour
                         targetPosition = playerTransform.position;
                         playerSeen = true;
 
-                        //Debug.Log("Saw you!");
+                        //Debug.Log("seeking!");
+                    }
+                    else
+                    {
+                        playerSeen = false;
                     }
 
                     if (playerSeen && distanceToTarget > stoppingDistance)
                     {
                         // Move enemy towards the target position
-                        transform.position += direction * moveSpeed * Time.deltaTime;
+                        transform.position += moveSpeed * Time.deltaTime * direction;
                     }
                     else if(playerSeen && distanceToTarget <= stoppingDistance)
                     {
+                        //Debug.Log("Entered attacking state");
                         state = AIState.Attacking;
+                        attackStartTime = DateTime.Now;
                     }
                     break;
                 case AIState.Attacking:
-                    if(Time.time - attackDelay >= attackDelay)
+                    // Calculate the elapsed time since the attack delay started
+                    TimeSpan elapsedTime = DateTime.Now - attackStartTime;
+                    if (elapsedTime.TotalSeconds >= attackDelay)
                     {
-
-                        Debug.Log("ATTACK");
+                        //Debug.Log("ATTACK");
                         CreateTemporaryCollider(new Vector3(1f, 0f, 1f), 1f);
                         lastAttackTime = Time.time;
                         state = AIState.Cooldown;
@@ -92,6 +106,7 @@ public class Enemy_AI : MonoBehaviour
                     // Check if cooldown period has passed
                     if (Time.time - lastAttackTime >= cooldownPeriod)
                     {
+                        //Debug.Log("Entered idle state");
                         state = AIState.Idle;
                     }
                     break;
@@ -104,77 +119,101 @@ public class Enemy_AI : MonoBehaviour
         if (health <= 0)
         {
             Destroy(gameObject); // Destroy the enemy or handle accordingly
-            FindObjectOfType<EnemySpawner>().OnEnemyDestroyed(); // Update the spawner's enemy count
+            parentSpawner.GetComponent<EnemySpawner>().OnEnemyDestroyed(); // Update the spawner's enemy count
         }
+    }
+
+    public void SetSpawner(GameObject spawner)
+    {
+        parentSpawner = spawner;
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        string strcolor = "";
-        if(color == Color.white)
-        {
-            strcolor = "white";
-        }
-        else if(color == Color.blue)
-        {
-            strcolor = "blue";
-        }
-        else if (color == Color.red)
-        {
-            strcolor = "red";
-        }
-        else if (color == Color.yellow)
-        {
-            strcolor = "yellow";
-        }
 
         if (other.gameObject.name == "TemporaryCollider" && other.gameObject.tag == "square")
         {
+            string strcolor = "";
+            Color otherColor = other.GetComponent<MeshRenderer>().material.color;
+            if (otherColor == Color.white)
+            {
+                strcolor = "white";
+            }
+            else if (otherColor == Color.blue)
+            {
+                strcolor = "blue";
+            }
+            else if (otherColor == Color.red)
+            {
+                strcolor = "red";
+            }
+            else if (otherColor == Color.yellow)
+            {
+                strcolor = "yellow";
+            }
+
             switch (strcolor)
             {
                 case "white":
                     hasCollided = true;
                     health -= hit.attackDmg;
-                    SpawnColoredSquare(other.transform.position);
+                    SpawnColoredSquare(other.transform.position, otherColor);
                     break;
                 case "blue":
-
                     hasCollided = true;
                     health -= hit.attackDmg;
-                    SpawnColoredSquare(other.transform.position);
+                    SpawnColoredSquare(other.transform.position, otherColor);
+                    break;
+                case "red":
+                    hasCollided = true;
+                    health -= hit.attackDmg;
+                    SpawnColoredSquare(other.transform.position, otherColor);
+                    break;
+                case "yellow":
+                    hasCollided = true;
+                    health -= hit.attackDmg;
+                    SpawnColoredSquare(other.transform.position, otherColor);
                     break;
                 default:
                     break;
             }
 
-            hasCollided = true;
+            /*hasCollided = true;
             health -= hit.attackDmg;
-            SpawnColoredSquare(other.transform.position);
+            SpawnColoredSquare(other.transform.position, color);*/
+
             /*playerSeen = false;
             stunTime -= Time.deltaTime;*/
         }
     }
 
-    void SpawnColoredSquare(Vector3 collisionPosition)
+    void SpawnColoredSquare(Vector3 collisionPosition, Color color)
     {
         // Calculate spawn position for the square
         Vector3 direction = (collisionPosition - transform.position).normalized;
         Vector3 spawnPosition = transform.position - direction * squareSpawnOffset;
+        GameObject coloredSquare = GameObject.Instantiate(coloredSquareObject);
 
-        // Create the square
+        coloredSquare.transform.position = spawnPosition;
+        coloredSquare.tag = "squareenemy";
+        Renderer renderer = coloredSquare.GetComponent<Renderer>();
+        renderer.material.color = color; // Set color to magenta
+        Destroy(coloredSquare, 5f);
+
+        /*// Create the square
         GameObject square = GameObject.CreatePrimitive(PrimitiveType.Cube);
         square.tag = "squareenemy";
         square.transform.position = spawnPosition;
         square.transform.localScale = new Vector3(1f, 0.1f, 1f); // Make it a flat square
         Renderer renderer = square.GetComponent<Renderer>();
-        renderer.material.color = new Color(1f, 0f, 1f); // Set color to magenta
+        renderer.material.color = color; // Set color to magenta
 
         Destroy(square.GetComponent<Collider>());
         BoxCollider collider = square.AddComponent<BoxCollider>();
         collider.isTrigger = true;
 
         // Optional: Destroy the square after some time
-        Destroy(square, 1f);
+        Destroy(square, 5f);*/
     }
 
 

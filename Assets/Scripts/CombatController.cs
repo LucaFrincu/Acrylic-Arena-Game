@@ -222,7 +222,7 @@ public class CombatController : MonoBehaviour
                             break;
                         case ShapeCombo.CircleLeft:
                             colliderSize = new Vector3(2f, 0f, 2f);
-                            fixedDistance = 1.2f;
+                            fixedDistance = 0.5f;
                             color = Color.yellow;
                             CreateTemporaryCollider(colliderSize, fixedDistance, color);
                             nrCombo = 0;
@@ -258,7 +258,7 @@ public class CombatController : MonoBehaviour
             }
             else if (Time.time - timeSinceLastClick <= doubleClickTimeLimit) // double click
             {
-                Debug.Log("Double Click Detected");
+                //Debug.Log("Double Click Detected");
                 isTwoClicks = true;
                 isOneClick = false; // reset for next click
             }
@@ -268,7 +268,7 @@ public class CombatController : MonoBehaviour
         {
             if ((Time.time - timeSinceLastClick) > doubleClickTimeLimit) // time exceeded for double click
             {
-                Debug.Log("Single Click Detected");
+                //Debug.Log("Single Click Detected");
                 //Debug.Log(shapeFormCombo);
                 isOneClick = false; // reset for next click
             }
@@ -280,7 +280,7 @@ public class CombatController : MonoBehaviour
         if (isOneClick == true && (Time.time - timeSinceLastClick) > doubleClickTimeLimit)
         {
             //do left to right attack
-            Debug.Log("1 ATTACK!");
+            //Debug.Log("1 ATTACK!");
             nrAttacks++;
             //Debug.Log("BA1 activated");
             //timeSinceLastCombo = Time.time;
@@ -331,7 +331,7 @@ public class CombatController : MonoBehaviour
                 }
                 break;
             case "diagonalline":
-                Debug.Log("SETTING DIAGONALLINE");
+                //Debug.Log("SETTING DIAGONALLINE");
                 if (drawing.shapeDirection == "right")
                     shapeFormCombo = ShapeCombo.DiagonalRight;
                 else

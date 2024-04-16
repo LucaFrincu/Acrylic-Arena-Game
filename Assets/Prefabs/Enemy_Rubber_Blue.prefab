@@ -7,9 +7,29 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2812356890985571590, guid: 2dd2cac6f42b6df4296f5a558e787b78, type: 3}
+      propertyPath: m_Size.x
+      value: 5.1111107
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812356890985571590, guid: 2dd2cac6f42b6df4296f5a558e787b78, type: 3}
+      propertyPath: m_Size.y
+      value: 8.275388
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812356890985571590, guid: 2dd2cac6f42b6df4296f5a558e787b78, type: 3}
+      propertyPath: m_Center.x
+      value: 0.09617424
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812356890985571590, guid: 2dd2cac6f42b6df4296f5a558e787b78, type: 3}
+      propertyPath: m_Center.y
+      value: -0.09947491
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812356890985571590, guid: 2dd2cac6f42b6df4296f5a558e787b78, type: 3}
+      propertyPath: m_Center.z
+      value: -0.037554517
+      objectReference: {fileID: 0}
     - target: {fileID: 7247110728236833210, guid: 2dd2cac6f42b6df4296f5a558e787b78, type: 3}
       propertyPath: m_Name
-      value: Enemy_Blue
+      value: Enemy_Rubber_Blue
       objectReference: {fileID: 0}
     - target: {fileID: 7247110728236833211, guid: 2dd2cac6f42b6df4296f5a558e787b78, type: 3}
       propertyPath: m_Sprite

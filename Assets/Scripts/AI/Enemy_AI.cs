@@ -32,14 +32,15 @@ public class Enemy_AI : MonoBehaviour
     public float detectDistance = 6f; 
     public string playerTag = "Player";
     public bool hasCollided = false;
-    public int health = 0;
-    public float stunTime = 30f;
+    public int health = 100;
+    public float staggerTime = 1.3f; // Time in seconds
 
     private Transform playerTransform; // Reference to the player's transform
     public CombatController hit;
     public GameObject player;
     private Vector3 targetPosition; // Position the enemy is moving towards
     private bool playerSeen = false;
+    private bool isStaggered = false; 
 
     public float squareSpawnOffset = 2f; // Offset for spawning the square
 
@@ -56,7 +57,7 @@ public class Enemy_AI : MonoBehaviour
 
     void Update()
     {
-        if (playerTransform != null)
+        if (playerTransform != null && !isStaggered) // Check if not staggered
         {
 
             switch (state)
@@ -121,6 +122,25 @@ public class Enemy_AI : MonoBehaviour
             Destroy(gameObject); // Destroy the enemy or handle accordingly
             parentSpawner.GetComponent<EnemySpawner>().OnEnemyDestroyed(); // Update the spawner's enemy count
         }
+
+        // Check if the enemy is staggered
+        if (isStaggered)
+        {
+            staggerTime -= Time.deltaTime;
+
+            // Check if the stun si over
+            if (staggerTime <= 0)
+            {
+                // Reset state
+                isStaggered = false;
+                staggerTime = 1.5f; // Reset stagger time for next use
+            }
+            else
+            {
+                // Stop enemy movement while staggered
+                return;
+            }
+        }
     }
 
     public void SetSpawner(GameObject spawner)
@@ -183,7 +203,8 @@ public class Enemy_AI : MonoBehaviour
             SpawnColoredSquare(other.transform.position, color);*/
 
             /*playerSeen = false;
-            stunTime -= Time.deltaTime;*/
+              stunTime -= false;*/
+            isStaggered = true;
         }
     }
 
@@ -322,4 +343,3 @@ public class Enemy_AI : MonoBehaviour
         return mesh;
     }
 }
-

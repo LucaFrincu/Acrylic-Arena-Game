@@ -29,15 +29,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8833669858641475098}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 3.42, y: 0.6, z: -4.98}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
+  m_LocalScale: {x: 0.1031777, y: 0.1031777, z: 0.1031777}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8833669859667141455}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!65 &8833669858641475301
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -49,7 +49,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 7.757306, y: 12.41508, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &8833669858641475300
 Rigidbody:
@@ -97,6 +97,7 @@ MonoBehaviour:
   shapeFormCombo: 7
   colliderLifetime: 0.5
   fixedDistance: 1
+  color: {r: 1, g: 1, b: 1, a: 1}
   directionToMouse: {x: 0, y: 0, z: 0}
   doubleClickTimeLimit: 0.2
   mousePos: {x: 0, y: 0, z: 0}

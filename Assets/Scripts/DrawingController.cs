@@ -33,7 +33,7 @@ public class DrawingController : MonoBehaviour
 
     void Update()
     {
-        if (combat.CheckMode() == true) {
+        if (combat.CheckMode() == true && combat.nrAttacks == 2) {
             if (Input.GetMouseButtonDown(0))
             {
                 endingPoint = startingPoint = GetMouseWorldPosition();
@@ -71,7 +71,7 @@ public class DrawingController : MonoBehaviour
                 }
                 //ManagePoints(startingPoint, endingPoint);
             }
-            /*else if (Input.GetKeyDown(KeyCode.P))
+           /*else if (Input.GetKeyDown(KeyCode.P))
             {
                 PrintLine();
                 drawingPoints.Clear();
@@ -79,19 +79,19 @@ public class DrawingController : MonoBehaviour
             }
             else if (Input.GetKeyDown(KeyCode.R))
             {
-                *//*LoadShapesFromJSON();
+                LoadShapesFromJSON();
                 RecognizeShape();
                 shapesDictionary.Clear();
                 CheckDirection();
                 drawingPoints.Clear();
                 lineRenderer.positionCount = 0;
-                shape = shapeDirection = null;*//*
+                shape = shapeDirection = null;
 
             }
             // Check for 's' key press to save points
             else if (Input.GetKeyDown(KeyCode.S))
             {
-                //SavePointsToJson();
+                SavePointsToJson();
             }
             else if (Input.GetKeyDown(KeyCode.O))
             {
@@ -103,8 +103,18 @@ public class DrawingController : MonoBehaviour
     void CheckDirection()
     {
         switch (shape) {
-            case "curveline":
-                if (startingPoint.x > endingPoint.x && startingPoint.y < endingPoint.y)
+            case "verticalline":
+                if (startingPoint.y < endingPoint.y)
+                {
+                    shapeDirection = "up";
+                }
+                else
+                {
+                    shapeDirection = "down";
+                }
+                break;
+            case "horizontalline":
+                if (startingPoint.x > endingPoint.x)
                 {
                     shapeDirection = "left";
                 }
@@ -124,8 +134,8 @@ public class DrawingController : MonoBehaviour
                 }
                 break;
             case "circle":
-                Debug.Log(startingPoint.x + " " + drawingPoints[1].x);
-                if (startingPoint.x < drawingPoints[1].x)
+                //Debug.Log(startingPoint.x + " " + drawingPoints[1].x);
+                if (startingPoint.y < drawingPoints[1].y)
                 {
                     shapeDirection = "left";
                 }
@@ -135,13 +145,13 @@ public class DrawingController : MonoBehaviour
                 }
                 break;
             default:
-                Debug.Log("Direction not found");
+                //Debug.Log("Direction not found");
                 break;
 
 
         }
 
-        Debug.Log("Direction is: " + shapeDirection);
+        //Debug.Log("Direction is: " + shapeDirection);
     }
 
     void RecognizeShape()
@@ -169,16 +179,16 @@ public class DrawingController : MonoBehaviour
                 }
             }
         }
-        Debug.Log("Best match: "+bestMatchScore);
+        //Debug.Log("Best match: "+bestMatchScore);
         roundness = CalculateRoundness(drawingPoints);
-        Debug.Log("roundness value: " + roundness);
+        //Debug.Log("roundness value: " + roundness);
         // If a match with low similarity score is found, recognize the shape
         if (bestMatchScore < threshold)
         {
             Debug.Log("Recognized shape: " + bestMatchName);
             shape = bestMatchName;
         }else if (roundness > roundnessThreshold) {
-            Debug.Log("Roundness Recognized. It is a circle");
+            //Debug.Log("Roundness Recognized. It is a circle");
             shape = "circle";
         }
         else
@@ -343,7 +353,7 @@ public class DrawingController : MonoBehaviour
         float scaleFactor = CalculateScaleFactor(translatedPoints);
         List<Vector3> scaledPoints = ScalePoints(translatedPoints, 1.0f / scaleFactor);
 
-        Debug.Log("Points Operated");
+        //Debug.Log("Points Operated");
         return scaledPoints;
     }
 

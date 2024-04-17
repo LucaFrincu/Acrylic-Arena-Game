@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 public class MenuScript : MonoBehaviour
 {
     [SerializeField] private GameObject instructions;
+    [SerializeField] private GameObject buttons;
 
     public void StartGame()
     {
@@ -14,5 +15,17 @@ public class MenuScript : MonoBehaviour
     public void InstructionsButton()
     {
         instructions.SetActive(true);
+        buttons.SetActive(false);
+    }
+
+    public void BackButton()
+    {
+        instructions.SetActive(false);
+        buttons.SetActive(true);
+    }
+
+    public void QuitButton()
+    {
+        Application.Quit();
     }
 }

@@ -6,11 +6,21 @@ public class MenuScript : MonoBehaviour
 {
     [SerializeField] private GameObject instructions;
     [SerializeField] private GameObject buttons;
+    public GameObject pauseMenuContainer;
+
+    public bool isPauseMenu;
 
     public void StartGame()
     {
-        SceneManager.LoadScene("Level_1");
+ 
     }
+
+
+    public void Update()
+    {
+        PauseMenu();
+    }
+
 
     public void InstructionsButton()
     {
@@ -27,5 +37,20 @@ public class MenuScript : MonoBehaviour
     public void QuitButton()
     {
         Application.Quit();
+    }
+
+    public void PauseMenu()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            pauseMenuContainer.SetActive(true);
+            Time.timeScale = 0f;
+        }
+    }
+
+    public void OnResume()
+    {
+        pauseMenuContainer.SetActive(false);
+        Time.timeScale = 1f;
     }
 }

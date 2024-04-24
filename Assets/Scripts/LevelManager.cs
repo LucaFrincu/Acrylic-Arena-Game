@@ -6,12 +6,13 @@ using UnityEngine.SceneManagement;
 public class LevelManager : MonoBehaviour
 {
     public int currentScene;
-
+    public bool isLevelCompleted;
 
     // Start is called before the first frame update
     void Start()
     {
         currentScene = SceneManager.GetActiveScene().buildIndex;
+        Debug.Log("Scene Index set to " + currentScene);
     }
 
     // Update is called once per frame
@@ -25,7 +26,11 @@ public class LevelManager : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            SceneManager.LoadScene(currentScene + 1);
+            if (isLevelCompleted == true)
+            {
+                SceneManager.LoadScene(currentScene + 1);
+            }
+             
         }
     }
 }

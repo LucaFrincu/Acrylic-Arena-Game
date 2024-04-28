@@ -101,6 +101,18 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -108,9 +120,9 @@ TextureImporter:
       name: Front_Idle_0
       rect:
         serializedVersion: 2
-        x: 108
+        x: 112
         y: 135
-        width: 763
+        width: 759
         height: 1409
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -171,9 +183,9 @@ TextureImporter:
       name: Front_Idle_3
       rect:
         serializedVersion: 2
-        x: 1807
+        x: 1811
         y: 136
-        width: 939
+        width: 935
         height: 1408
       alignment: 0
       pivot: {x: 0.5, y: 0.5}

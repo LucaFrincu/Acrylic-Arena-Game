@@ -101,6 +101,18 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -108,13 +120,13 @@ TextureImporter:
       name: Blue_Idle_Back_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 94
         y: 0
-        width: 627.6667
+        width: 490
         height: 1105
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 94, y: 0, z: 44, w: 0}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -129,13 +141,13 @@ TextureImporter:
       name: Blue_Idle_Back_1
       rect:
         serializedVersion: 2
-        x: 628
+        x: 674
         y: 0
-        width: 548
+        width: 502
         height: 1105
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 46, y: 0, z: 0, w: 0}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -150,13 +162,13 @@ TextureImporter:
       name: Blue_Idle_Back_2
       rect:
         serializedVersion: 2
-        x: 1250
+        x: 1252
         y: 0
-        width: 632
+        width: 509
         height: 1105
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 123, w: 0}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0

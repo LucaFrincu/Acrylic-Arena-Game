@@ -33,7 +33,7 @@ public class DrawingController : MonoBehaviour
 
     void Update()
     {
-        if (combat.CheckMode() == true && combat.nrAttacks == 2) {
+        if (combat.CheckMode() == true /*&& combat.nrAttacks == 2*/) {
             if (Input.GetMouseButtonDown(0))
             {
                 endingPoint = startingPoint = GetMouseWorldPosition();

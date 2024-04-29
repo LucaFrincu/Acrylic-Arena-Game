@@ -6,6 +6,7 @@ public class FlowerDraw : MonoBehaviour
 {
     private bool hasCollided = false;
     private GameObject parentSpawner;
+    public int zone = 0;
     private void OnTriggerEnter(Collider other)
     {
         // Check if this square has collided with a square spawned by an enemy
@@ -17,8 +18,8 @@ public class FlowerDraw : MonoBehaviour
             // Notify the spawner that a square is being destroyed
 
             // Destroy this square
-            Destroy(gameObject);
-
+            gameObject.SetActive(false);
+            //gameObject.SetActive(true);
 
             parentSpawner.GetComponent<FlowerSpawner>().OnSquareDestroyed();
         }

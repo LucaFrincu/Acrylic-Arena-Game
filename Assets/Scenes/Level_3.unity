@@ -937,6 +937,8 @@ MonoBehaviour:
   enemies:
   - {fileID: 0}
   zone: 2
+  children: 0
+  numberChildren: 0
 --- !u!114 &376347842
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1402,6 +1404,8 @@ MonoBehaviour:
   enemies:
   - {fileID: 0}
   zone: 1
+  children: 0
+  numberChildren: 0
 --- !u!114 &554052724
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1709,6 +1713,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   zone: 3
+  children: 0
+  numberChildren: 0
 --- !u!114 &657949371
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1870,6 +1876,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   zone: 0
+  children: 0
+  numberChildren: 0
 --- !u!114 &818735003
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2201,6 +2209,8 @@ MonoBehaviour:
   enemies:
   - {fileID: 0}
   zone: 2
+  children: 0
+  numberChildren: 0
 --- !u!114 &1223422283
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3013,6 +3023,8 @@ MonoBehaviour:
   enemies:
   - {fileID: 0}
   zone: 1
+  children: 0
+  numberChildren: 0
 --- !u!114 &1417129203
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3732,6 +3744,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   zone: 0
+  children: 0
+  numberChildren: 0
 --- !u!114 &1759953313
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4159,6 +4173,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   zone: 3
+  children: 0
+  numberChildren: 0
 --- !u!114 &1861227717
 MonoBehaviour:
   m_ObjectHideFlags: 0

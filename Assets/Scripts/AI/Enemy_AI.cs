@@ -46,7 +46,7 @@ public class Enemy_AI : MonoBehaviour
     private bool playerSeen = false;
     private bool isStaggered = false; 
 
-    public float squareSpawnOffset = 2f; // Offset for spawning the square
+    public float squareSpawnOffset = 4f; // Offset for spawning the square
 
     void Start()
     {

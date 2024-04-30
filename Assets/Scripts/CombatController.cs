@@ -98,7 +98,7 @@ public class CombatController : MonoBehaviour
                         case ShapeCombo.VerticalUp:
                             if (manaBlue >= 30)
                             {
-                                colliderSize = new Vector3(3f, 3f, 3f);
+                                colliderSize = new Vector3(5f, 5f, 5f);
                                 fixedDistance = 5f;
                                 color = Color.blue;
                                 test.clip = comboAudio;
@@ -140,7 +140,7 @@ public class CombatController : MonoBehaviour
                         case ShapeCombo.HorizontalRight:
                             if (manaYellow >= 30)
                             {
-                                colliderSize = new Vector3(4f, 4f, 4f);
+                                colliderSize = new Vector3(7f, 7f, 7f);
                                 fixedDistance = 0f;
                                 color = Color.yellow;
                                 test.clip = comboAudio;
@@ -179,7 +179,7 @@ public class CombatController : MonoBehaviour
                         case ShapeCombo.VerticalDown:
                             if (manaBlue >= 30)
                             {
-                                colliderSize = new Vector3(5f, 5f, 5f);
+                                colliderSize = new Vector3(4f, 4f, 4f);
                                 fixedDistance = 5f;
                                 color = Color.blue;
                                 test.clip = comboAudio;
@@ -224,7 +224,7 @@ public class CombatController : MonoBehaviour
                         case ShapeCombo.HorizontalLeft:
                             if(manaYellow >= 30)
                             {
-                                colliderSize = new Vector3(5f, 5f, 5f);
+                                colliderSize = new Vector3(9f, 9f, 9f);
                                 fixedDistance = 0f;
                                 color = Color.yellow;
                                 test.clip = comboAudio;
@@ -265,7 +265,7 @@ public class CombatController : MonoBehaviour
                         case ShapeCombo.CircleRight:
                             if (manaBlue >= 30)
                             {
-                                colliderSize = new Vector3(6f, 6f, 6f);
+                                colliderSize = new Vector3(8f, 8f, 8f);
                                 fixedDistance = 5f;
                                 color = Color.blue;
                                 test.clip = comboAudio;
@@ -314,7 +314,7 @@ public class CombatController : MonoBehaviour
                         case ShapeCombo.CircleLeft:
                             if(manaYellow >= 30)
                             {
-                                colliderSize = new Vector3(6f, 6f, 6f);
+                                colliderSize = new Vector3(11f, 11f, 11f);
                                 fixedDistance = 0f;
                                 color = Color.yellow;
                                 test.clip = comboAudio;
@@ -510,7 +510,7 @@ public class CombatController : MonoBehaviour
 
         // Since sprites are rotated 90 degrees on the x-axis, we need to adjust the direction accordingly
         // Calculate direction from the object to the mouse position on the same plane as the object
-        Vector3 objectPlanePosition = transform.position;
+        Vector3 objectPlanePosition = transform.position - new Vector3(0f, 0f, 1.5f);
         Vector3 directionToMouse = (lastMousePosition - objectPlanePosition).normalized;
         directionToMouse.y = 0; // Keep the direction in the xz-plane
 

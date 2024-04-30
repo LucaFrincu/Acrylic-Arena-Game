@@ -25,17 +25,17 @@ public class PlayerMovement : MonoBehaviour
         movement.z = Input.GetAxisRaw("Vertical");
         if (Input.GetKey(KeyCode.LeftShift))
         {
-            moveSpeed = 10f;
+            moveSpeed = 13f;
         }
         else if (Input.GetKey(KeyCode.Space))
         {
-            moveSpeed = 5f;
+            moveSpeed = 8f;
             combat.checkmode = true;
             //playerMovement.moveSpeed = 2f;
         }
         else
         {
-            moveSpeed = 7f;
+            moveSpeed = 10f;
             combat.checkmode = false;
         }
         

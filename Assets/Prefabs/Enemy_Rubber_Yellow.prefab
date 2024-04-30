@@ -148,7 +148,7 @@ MonoBehaviour:
   staggerTime: 1.3
   hit: {fileID: 0}
   player: {fileID: 0}
-  squareSpawnOffset: 2
+  squareSpawnOffset: 6
 --- !u!95 &754563924599451355
 Animator:
   serializedVersion: 5

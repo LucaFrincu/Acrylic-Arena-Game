@@ -27,7 +27,25 @@ public class DrawingController : MonoBehaviour
     private Dictionary<string, List<List<Vector3>>> shapesDictionary; // Dictionary to store loaded shapes
     void Start()
     {
-        jsonFilePath = Path.Combine(Application.dataPath, "JsonFile", "drawings.json");
+        //jsonFilePath = Path.Combine(Application.dataPath, "JsonFile", "drawings.json");
+        // Load the file from the Resources folder
+        TextAsset file = Resources.Load<TextAsset>("JsonFile/drawings");
+
+        if (file != null)
+        {
+            // Access the file content
+            string fileContent = file.text;
+
+            jsonFilePath = fileContent;
+            
+            //string jsonString = File.ReadAllText(jsonFilePath);
+            Debug.Log("File content: " + jsonFilePath);
+        }
+        else
+        {
+            Debug.LogError("File not found.");
+        }
+        
         //combat = GetComponent<CombatController>();
     }
 
@@ -310,31 +328,32 @@ public class DrawingController : MonoBehaviour
         try
         {
             // Read JSON file
-            string jsonString = File.ReadAllText(jsonFilePath);
+            //string jsonString = File.ReadAllText(jsonFilePath);
+            string jsonString = jsonFilePath;
 
-            // Deserialize JSON data
-            JObject json = JsonConvert.DeserializeObject<JObject>(jsonString);
+                // Deserialize JSON data
+                JObject json = JsonConvert.DeserializeObject<JObject>(jsonString);
 
-            // Extract shapes data from JSON
-            shapesDictionary = new Dictionary<string, List<List<Vector3>>>();
-            foreach (JProperty shapeProperty in json["patterns"])
-            {
-                string shapeName = shapeProperty.Name;
-                List<List<Vector3>> shapePointsList = new List<List<Vector3>>();
-                foreach (JArray pointsArray in shapeProperty.Value)
+                // Extract shapes data from JSON
+                shapesDictionary = new Dictionary<string, List<List<Vector3>>>();
+                foreach (JProperty shapeProperty in json["patterns"])
                 {
-                    List<Vector3> pointsList = new List<Vector3>();
-                    foreach (JObject pointObject in pointsArray)
+                    string shapeName = shapeProperty.Name;
+                    List<List<Vector3>> shapePointsList = new List<List<Vector3>>();
+                    foreach (JArray pointsArray in shapeProperty.Value)
                     {
-                        float x = (float)pointObject["x"];
-                        float y = (float)pointObject["y"];
-                        float z = (float)pointObject["z"];
-                        pointsList.Add(new Vector3(x, y, z));
+                        List<Vector3> pointsList = new List<Vector3>();
+                        foreach (JObject pointObject in pointsArray)
+                        {
+                            float x = (float)pointObject["x"];
+                            float y = (float)pointObject["y"];
+                            float z = (float)pointObject["z"];
+                            pointsList.Add(new Vector3(x, y, z));
+                        }
+                        shapePointsList.Add(pointsList);
                     }
-                    shapePointsList.Add(pointsList);
+                    shapesDictionary.Add(shapeName, shapePointsList);
                 }
-                shapesDictionary.Add(shapeName, shapePointsList);
-            }
         }
         catch (IOException e)
         {

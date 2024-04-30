@@ -127,6 +127,10 @@ PrefabInstance:
       propertyPath: stoppingDistance
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 7456225757686814997, guid: 2dd2cac6f42b6df4296f5a558e787b78, type: 3}
+      propertyPath: squareSpawnOffset
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2dd2cac6f42b6df4296f5a558e787b78, type: 3}
 --- !u!1 &504672943768377034 stripped

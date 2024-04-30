@@ -38,11 +38,8 @@ public class FlowerSpawner : MonoBehaviour
     void SpawnSquare()
     {
         Vector3 spawnPosition = transform.position /*+ Random.insideUnitSphere * spawnRadius*/;
-        if (spawnZone == 4)
-        {
-            spawnPosition.y = 0.51f;
-        }
-        else { spawnPosition.y = -0.19f; }
+
+        spawnPosition.y = -2f;
         //spawnPosition.y = 0f; // Adjust the Y position as needed
 
         //Define the rotation: 90 degrees around the X-axis

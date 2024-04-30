@@ -188,6 +188,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   zone: 3
+  children: 0
+  numberChildren: 0
 --- !u!114 &17511523
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -697,13 +699,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 195117468}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.0232391, y: -1.024643, z: 0}
-  m_LocalScale: {x: 0.5865, y: 0.5865, z: 0.5865}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 804852784}
   - {fileID: 76780692}
-  m_Father: {fileID: 1967509496}
+  - {fileID: 1121049287}
+  m_Father: {fileID: 1854296932}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &239831729
@@ -1270,6 +1273,8 @@ MonoBehaviour:
   enemies:
   - {fileID: 0}
   zone: 1
+  children: 0
+  numberChildren: 0
 --- !u!114 &453971038
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1627,6 +1632,8 @@ MonoBehaviour:
   enemies:
   - {fileID: 0}
   zone: 2
+  children: 0
+  numberChildren: 0
 --- !u!114 &745696648
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1786,6 +1793,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   zone: 3
+  children: 0
+  numberChildren: 0
 --- !u!114 &770376927
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2389,14 +2398,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1121049286}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.0232391, y: -35.190002, z: 0}
-  m_LocalScale: {x: 0.5865, y: 0.5865, z: 0.5865}
+  m_LocalPosition: {x: -0.00002601669, y: -58.252956, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 137981178}
   - {fileID: 854459658}
-  m_Father: {fileID: 1967509496}
-  m_RootOrder: 5
+  m_Father: {fileID: 195117469}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1133556381
 GameObject:
@@ -2894,6 +2903,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   zone: 0
+  children: 0
+  numberChildren: 0
 --- !u!114 &1297628802
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3189,6 +3200,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   zone: 0
+  children: 0
+  numberChildren: 0
 --- !u!114 &1468000101
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3863,6 +3876,8 @@ MonoBehaviour:
   enemies:
   - {fileID: 0}
   zone: 2
+  children: 0
+  numberChildren: 0
 --- !u!114 &1841097955
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4053,6 +4068,7 @@ RectTransform:
   - {fileID: 453971036}
   - {fileID: 1841097953}
   - {fileID: 17511521}
+  - {fileID: 195117469}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4332,8 +4348,6 @@ RectTransform:
   - {fileID: 2079568449}
   - {fileID: 745696646}
   - {fileID: 770376925}
-  - {fileID: 195117469}
-  - {fileID: 1121049287}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4465,6 +4479,8 @@ MonoBehaviour:
   enemies:
   - {fileID: 0}
   zone: 1
+  children: 0
+  numberChildren: 0
 --- !u!114 &2079568451
 MonoBehaviour:
   m_ObjectHideFlags: 0

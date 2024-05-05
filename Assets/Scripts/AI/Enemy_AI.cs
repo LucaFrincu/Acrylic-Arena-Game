@@ -16,12 +16,16 @@ public class Enemy_AI : MonoBehaviour
 
     private GameObject parentSpawner;
 
+    public string enemyColor;
+
+    public AudioSource test;
+    public AudioClip dmgSound;
     public float colliderLifetime = 0.5f; // Time for the collider to disappear
     private AIState state = AIState.Idle;
-    public float attackDelay = 3f;
+    public float attackDelay = 2f;
     private bool isAttacking = false;
     private DateTime currentTime;
-    public float cooldownPeriod = 4f;
+    public float cooldownPeriod = 2f;
     private float lastAttackTime;
     public Color color = Color.white;
     private DateTime attackStartTime;
@@ -42,10 +46,11 @@ public class Enemy_AI : MonoBehaviour
     private bool playerSeen = false;
     private bool isStaggered = false; 
 
-    public float squareSpawnOffset = 2f; // Offset for spawning the square
+    public float squareSpawnOffset = 4f; // Offset for spawning the square
 
     void Start()
     {
+        test = GetComponent<AudioSource>();
         playerTransform = GameObject.FindGameObjectWithTag(playerTag).transform;
         player = GameObject.FindGameObjectWithTag(playerTag);
         hit = GameObject.Find("Player").GetComponent<CombatController>();
@@ -98,7 +103,7 @@ public class Enemy_AI : MonoBehaviour
                     if (elapsedTime.TotalSeconds >= attackDelay)
                     {
                         //Debug.Log("ATTACK");
-                        CreateTemporaryCollider(new Vector3(1f, 0f, 1f), 1f);
+                        CreateTemporaryCollider(new Vector3(3f, 2f, 3f), 3f);
                         lastAttackTime = Time.time;
                         state = AIState.Cooldown;
                     }
@@ -153,6 +158,7 @@ public class Enemy_AI : MonoBehaviour
 
         if (other.gameObject.name == "TemporaryCollider" && other.gameObject.tag == "square")
         {
+            test.PlayOneShot(dmgSound);
             string strcolor = "";
             Color otherColor = other.GetComponent<MeshRenderer>().material.color;
             if (otherColor == Color.white)
@@ -177,22 +183,84 @@ public class Enemy_AI : MonoBehaviour
                 case "white":
                     hasCollided = true;
                     health -= hit.attackDmg;
-                    SpawnColoredSquare(other.transform.position, otherColor);
+                    switch (enemyColor)
+                    {
+                        case "blue":
+                            if (hit.manaBlue < hit.manaMax)
+                                hit.manaBlue += 30;
+                            break;
+                        case "red":
+                            if (hit.manaRed < hit.manaMax)
+                                hit.manaRed += 30;
+                            break;
+                        case "yellow":
+                            if (hit.manaYellow < hit.manaMax)
+                                hit.manaYellow += 30;
+                            break;
+                        default:
+                            break;
+                    }
+                    //SpawnColoredSquare(other.transform.position, otherColor);
                     break;
                 case "blue":
                     hasCollided = true;
                     health -= hit.attackDmg;
-                    SpawnColoredSquare(other.transform.position, otherColor);
+                    
+                    switch (enemyColor)
+                    {
+                        case "blue":
+                            SpawnColoredSquare(other.transform.position, otherColor);
+                            break;
+                        case "yellow":
+                            SpawnColoredSquare(other.transform.position, Color.green);
+                            break;
+                        case "red":
+                            SpawnColoredSquare(other.transform.position, new Color(0.5f, 0f, 0.5f)); //purple
+                            break;
+                        default:
+                            break;
+                    }
+                    //SpawnColoredSquare(other.transform.position, otherColor);
                     break;
                 case "red":
                     hasCollided = true;
                     health -= hit.attackDmg;
-                    SpawnColoredSquare(other.transform.position, otherColor);
+                    
+                    switch (enemyColor)
+                    {
+                        case "blue":
+                            SpawnColoredSquare(other.transform.position, new Color(0.5f, 0f, 0.5f)); // purple
+                            break;
+                        case "yellow":
+                            SpawnColoredSquare(other.transform.position, new Color(1f, 0.5f, 0f)); // orange
+                            break;
+                        case "red":
+                            SpawnColoredSquare(other.transform.position, otherColor);
+                            break;
+                        default:
+                            break;
+                    }
+                    //SpawnColoredSquare(other.transform.position, otherColor);
                     break;
                 case "yellow":
                     hasCollided = true;
                     health -= hit.attackDmg;
-                    SpawnColoredSquare(other.transform.position, otherColor);
+                    
+                    switch (enemyColor)
+                    {
+                        case "blue":
+                            SpawnColoredSquare(other.transform.position, Color.green); // purple
+                            break;
+                        case "yellow":
+                            SpawnColoredSquare(other.transform.position, otherColor); // orange
+                            break;
+                        case "red":
+                            SpawnColoredSquare(other.transform.position, new Color(1f, 0.5f, 0f));
+                            break;
+                        default:
+                            break;
+                    }
+                    //SpawnColoredSquare(other.transform.position, otherColor);
                     break;
                 default:
                     break;
@@ -213,6 +281,7 @@ public class Enemy_AI : MonoBehaviour
         // Calculate spawn position for the square
         Vector3 direction = (collisionPosition - transform.position).normalized;
         Vector3 spawnPosition = transform.position - direction * squareSpawnOffset;
+        spawnPosition = new Vector3(spawnPosition.x, -0.9f, spawnPosition.z);
         GameObject coloredSquare = GameObject.Instantiate(coloredSquareObject);
 
         coloredSquare.transform.position = spawnPosition;
@@ -249,6 +318,7 @@ public class Enemy_AI : MonoBehaviour
         // Create the temporary collider GameObject
         GameObject tempColliderObject = new GameObject("TemporaryCollider");
         tempColliderObject.transform.position = colliderPosition;
+        tempColliderObject.tag = "enemyattack";
 
         // Set the rotation of the collider to face the direction of the player
         // Calculate rotation based on the direction vector
@@ -258,8 +328,8 @@ public class Enemy_AI : MonoBehaviour
         tempColliderObject.transform.eulerAngles = new Vector3(0, tempColliderObject.transform.eulerAngles.y, tempColliderObject.transform.eulerAngles.z);
 
         BoxCollider boxCollider = tempColliderObject.AddComponent<BoxCollider>();
-        boxCollider.size = colliderSize;
-        boxCollider.isTrigger = true; // Set as a trigger so it doesn't physically block objects
+        boxCollider.size = new Vector3(colliderSize.x, 100f, colliderSize.z);
+        boxCollider.isTrigger = false; // Set as a trigger so it doesn't physically block objects
 
         // Optionally add a renderer to visualize the collider
         tempColliderObject.AddComponent<MeshRenderer>();

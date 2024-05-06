@@ -20,17 +20,7 @@ public class HealthController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-    }
-    public void DamagePlayer(int damage)
-    {
-        health -= damage;
-        if(health <= 0)
-        {
-            manager.GetComponent<ManagerSpawner>().SpawnPlayer(zone);
-        }
-
-        if(health <= 66 && health >= 33)
+        if (health <= 66 && health >= 33)
         {
             healthBar.fillAmount = 0.66f;
         }
@@ -42,6 +32,17 @@ public class HealthController : MonoBehaviour
         {
             healthBar.fillAmount = 1f;
         }
+    }
+    public void DamagePlayer(int damage)
+    {
+        health -= damage;
+        if(health <= 0)
+        {
+            manager.GetComponent<ManagerSpawner>().SpawnPlayer(zone);
+            health = 100;
+        }
+
+        
     }
 
     public void SetZone(int zoneCollided)

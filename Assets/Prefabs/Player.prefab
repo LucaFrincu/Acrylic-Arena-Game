@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 8833669858641475099}
   - component: {fileID: -3977382012538612927}
   - component: {fileID: 2100960861}
-  - component: {fileID: 2100960862}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -116,6 +115,9 @@ MonoBehaviour:
   manaRed: 0
   manaYellow: 0
   manaMax: 90
+  manaBlueFill: {fileID: 0}
+  manaRedFill: {fileID: 0}
+  manaYellowFill: {fileID: 0}
 --- !u!212 &2100960861
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -168,27 +170,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &2100960862
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8833669858641475098}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: c561ac11f4c2b2a4b9ffb30a63d54e76, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &8833669859667141453
 GameObject:
   m_ObjectHideFlags: 0

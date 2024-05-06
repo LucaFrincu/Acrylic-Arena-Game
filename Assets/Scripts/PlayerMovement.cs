@@ -11,11 +11,13 @@ public class PlayerMovement : MonoBehaviour
     Vector3 movement;
     public int zone = 0;
     public bool hasCollided = false;
+   
 
 
     private void Start()
     {
         combat = GetComponent<CombatController>();
+        
     }
     void Update()
     {
@@ -38,7 +40,7 @@ public class PlayerMovement : MonoBehaviour
             moveSpeed = 10f;
             combat.checkmode = false;
         }
-        
+       
     }
 
     void FixedUpdate()

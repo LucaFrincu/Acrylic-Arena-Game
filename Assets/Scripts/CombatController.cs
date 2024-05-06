@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CombatController : MonoBehaviour
 {
@@ -49,6 +50,10 @@ public class CombatController : MonoBehaviour
     public int manaYellow = 0;
     public int manaMax = 90;
 
+    public Image manaBlueFill;
+    public Image manaRedFill;
+    public Image manaYellowFill;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -56,6 +61,80 @@ public class CombatController : MonoBehaviour
         //drawing = GetComponent<DrawingController>();
         //Debug.Log(shapeFormCombo);
         shapeFormCombo = ShapeCombo.Zero;
+        manaBlueFill.fillAmount = 0.0f;
+        manaRedFill.fillAmount = 0.0f;
+        manaYellowFill.fillAmount = 0.0f;
+    }
+
+    private void FillBlueStamina()
+    {
+        if (manaBlue <= 90 && manaBlue > 60)
+        {
+            manaBlueFill.fillAmount = 1.0f;
+
+        }
+        else if (manaBlue <= 60 && manaBlue >= 35)
+        {
+            manaBlueFill.fillAmount = 0.66f;
+
+        }
+        else if (manaBlue < 35)
+        {
+            manaBlueFill.fillAmount = 0.33f;
+
+        }
+        if (manaBlue == 0)
+        {
+            manaBlueFill.fillAmount = 0.0f;
+        }
+    }
+
+    private void FillRedStamina()
+    {
+        if (manaRed <= 90 && manaRed > 60)
+        {
+            manaRedFill.fillAmount = 1.0f;
+
+
+        }
+        else if (manaRed <= 60 && manaRed >= 35)
+        {
+            manaRedFill.fillAmount = 0.66f;
+
+        }
+        else if (manaRed < 35)
+        {
+            manaRedFill.fillAmount = 0.33f;
+
+        }
+        if (manaRed == 0)
+        {
+            manaRedFill.fillAmount = 0.0f;
+        }
+    }
+
+    private void FillYellowStamina()
+    {
+        if (manaYellow <= 90 && manaYellow > 60)
+        {
+            manaYellowFill.fillAmount = 1.0f;
+
+
+        }
+        else if (manaYellow <= 60 && manaYellow >= 35)
+        {
+            manaYellowFill.fillAmount = 0.66f;
+
+        }
+        else if (manaYellow < 35)
+        {
+            manaYellowFill.fillAmount = 0.33f;
+
+        }
+        if (manaYellow == 0)
+        {
+            manaYellowFill.fillAmount = 0.0f;
+        }
     }
 
     // Update is called once per frame
@@ -63,7 +142,12 @@ public class CombatController : MonoBehaviour
     {
  
          SetShape();
- 
+
+        FillBlueStamina();
+        FillRedStamina();
+        FillYellowStamina();
+   
+
         if (checkmode == false)
         {
             //move coordinates of the mouse
@@ -81,7 +165,9 @@ public class CombatController : MonoBehaviour
         {
             //block coordinates of the mouse
             //Debug.Log("NrCombo " + CheckNrCombos());
+
             
+
             switch (CheckNrCombos())
             {
                 case 0:
@@ -110,10 +196,32 @@ public class CombatController : MonoBehaviour
                                 drawing.shapeDirection = "";
                                 attackDmg = 4;
                                 manaBlue -= 30;
+
+
+                                /*if(manaBlue <= 90 && manaBlue > 60)
+                                {
+                                    manaBlueFill.fillAmount = 1.0f;
+                                    Debug.Log("MANA 1");
+
+                                }
+                                if (manaBlue < 60 && manaBlue >= 35)
+                                {
+                                    manaBlueFill.fillAmount = 0.66f;
+                                    Debug.Log("MANA 2");
+                                }
+                                if (manaBlue < 35)
+                                {
+                                    manaBlueFill.fillAmount = 0.33f;
+                                    Debug.Log("MANA 3");
+                                }*/
+                                
                             }
                             else
                             {
                                 shapeFormCombo = ShapeCombo.Null;
+                                
+                                //manaBlueFill.fillAmount = 0.0f;
+                                
                             }
                             break;
                         case ShapeCombo.DiagonalRight:

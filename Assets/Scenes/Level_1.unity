@@ -6166,6 +6166,18 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -3977382012538612927, guid: ec73cdc336ffcab42b701bfd6ba5f0e1, type: 3}
+      propertyPath: manaRedFill
+      value: 
+      objectReference: {fileID: 1912169508}
+    - target: {fileID: -3977382012538612927, guid: ec73cdc336ffcab42b701bfd6ba5f0e1, type: 3}
+      propertyPath: manaBlueFill
+      value: 
+      objectReference: {fileID: 138863159}
+    - target: {fileID: -3977382012538612927, guid: ec73cdc336ffcab42b701bfd6ba5f0e1, type: 3}
+      propertyPath: manaYellowFill
+      value: 
+      objectReference: {fileID: 1888117628}
+    - target: {fileID: -3977382012538612927, guid: ec73cdc336ffcab42b701bfd6ba5f0e1, type: 3}
       propertyPath: test.Array.size
       value: 2
       objectReference: {fileID: 0}

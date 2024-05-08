@@ -89,32 +89,40 @@ public class DrawingController : MonoBehaviour
                 }
                 //ManagePoints(startingPoint, endingPoint);
             }
-           /*else if (Input.GetKeyDown(KeyCode.P))
-            {
-                PrintLine();
-                drawingPoints.Clear();
-                lineRenderer.positionCount = 0;
-            }
-            else if (Input.GetKeyDown(KeyCode.R))
-            {
-                LoadShapesFromJSON();
-                RecognizeShape();
-                shapesDictionary.Clear();
-                CheckDirection();
-                drawingPoints.Clear();
-                lineRenderer.positionCount = 0;
-                shape = shapeDirection = null;
+            /*else if (Input.GetKeyDown(KeyCode.P))
+             {
+                 PrintLine();
+                 drawingPoints.Clear();
+                 lineRenderer.positionCount = 0;
+             }
+             else if (Input.GetKeyDown(KeyCode.R))
+             {
+                 LoadShapesFromJSON();
+                 RecognizeShape();
+                 shapesDictionary.Clear();
+                 CheckDirection();
+                 drawingPoints.Clear();
+                 lineRenderer.positionCount = 0;
+                 shape = shapeDirection = null;
 
-            }
-            // Check for 's' key press to save points
-            else if (Input.GetKeyDown(KeyCode.S))
-            {
-                SavePointsToJson();
-            }
-            else if (Input.GetKeyDown(KeyCode.O))
-            {
+             }
+             // Check for 's' key press to save points
+             else if (Input.GetKeyDown(KeyCode.S))
+             {
+                 SavePointsToJson();
+             }
+             else if (Input.GetKeyDown(KeyCode.O))
+             {
 
-            }*/
+             }*/
+        }
+        else if(combat.CheckMode() == false)
+        {
+            drawingPoints.Clear();
+            lineRenderer.positionCount = 0;
+            //shape = ""; 
+            //shapeDirection = "";
+            UpdateLineRenderer();
         }
     }
 

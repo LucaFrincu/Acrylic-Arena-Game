@@ -25,6 +25,7 @@ public class HealthController : MonoBehaviour
         if(health <= 0)
         {
             manager.GetComponent<ManagerSpawner>().SpawnPlayer(zone);
+            health = maxHealth;
         }
     }
 

@@ -3,7 +3,182 @@ guid: 159f671a3a6a2f14799c2c8fe39c31a8
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.001
+    second: {fileID: 2100000, guid: aabe9ca3b9121a5459795fdd134b0dd0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cap paint
+    second: {fileID: 2100000, guid: 30d3e557843367b449b62ae236749010, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: etichetaSticla
+    second: {fileID: 2100000, guid: 76a5d641861dd704cb8b526d029d98de, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: gumaAlb
+    second: {fileID: 2100000, guid: cd973ddd13c3e09479aa3eb8d20d3027, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: gumaColor
+    second: {fileID: 2100000, guid: 2267308dac0edf94a9258d8d8987c90a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: gumaColor2
+    second: {fileID: 2100000, guid: e3e2c91e1eb67a349b01c0865e16a352, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: gumaNegru
+    second: {fileID: 2100000, guid: 5d28ed2b5fd935845a2991a0de364379, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: metal
+    second: {fileID: 2100000, guid: 3cd389f411a77aa418a637858ec7a234, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: metalCaseCap
+    second: {fileID: 2100000, guid: 5011fac2213ac6f429a27a3e11384c3b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: paint
+    second: {fileID: 2100000, guid: 1256b9611b97a4e49a1de32ec2780393, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: paint2
+    second: {fileID: 2100000, guid: f05acff0f6ff5aa438e8d6b5f1f35f0f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: paint3
+    second: {fileID: 2100000, guid: 3a93984f037662140b93f4bb3736d3aa, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: painterlyEffect
+    second: {fileID: 2100000, guid: 8a0d266d289d0404d8218158869755ff, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: painterlyEffect.001
+    second: {fileID: 2100000, guid: 3f97301f10931e640a14875c418a25bc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pencil
+    second: {fileID: 2100000, guid: 04a89c674484344478c487854f22b085, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pencilCaseWood
+    second: {fileID: 2100000, guid: b528b7f1868448f4982123185791f8c0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pencilColor1
+    second: {fileID: 2100000, guid: 63504bc3633d3b444845671a2bd8ed8c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pencilColor2
+    second: {fileID: 2100000, guid: e8ffd911d8a3ef6419b1462eca8d1078, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pencilColor3
+    second: {fileID: 2100000, guid: 2140c7f306363554aaf9551304b2ee98, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pencilColor4
+    second: {fileID: 2100000, guid: 946b465d6e1f65545bb9dcaeb5cb63a0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pencilColor5
+    second: {fileID: 2100000, guid: b6d224ee2ad9d70408558a4cdde51869, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pencilColor6
+    second: {fileID: 2100000, guid: 4518a61adb944e7469f84b736131e506, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: photopaint
+    second: {fileID: 2100000, guid: c5e8a6688712609439e59011faa205c5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: photopaint2
+    second: {fileID: 2100000, guid: 4f60e8d4c10c76e45bbd7ee37ec88be9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: photopaint3
+    second: {fileID: 2100000, guid: 3b51378ebf5222b40b4749b78524ebcd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: photopaint4
+    second: {fileID: 2100000, guid: eb35b4deafabf894dae69c96e22f3ac1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: sticlaNeagra
+    second: {fileID: 2100000, guid: 6e07f0122dcf85b42908dac47cf7302e, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Fence_color
+    second: {fileID: 2800000, guid: 33c9f00bbd1629c4ea1ea61c7c20c9bb, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: metalPencilCase.jpg
+    second: {fileID: 2800000, guid: 83a1d44cecf4db54d9081057f06b1c63, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: paintBlue
+    second: {fileID: 2800000, guid: d9719e77b560c43419341ebc49c15f32, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: paintGreen
+    second: {fileID: 2800000, guid: 257614eefeace264ebea59ad07251b20, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: paintRed
+    second: {fileID: 2800000, guid: 36ecaf29d54831b49a215a544d64672a, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: paintYellow
+    second: {fileID: 2800000, guid: b3e3f267d8351864dbe78762fdffda5f, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: painterGround_Color
+    second: {fileID: 2800000, guid: 5165b1546c910a647a2984b8cdeefb55, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: woodenpainted2
+    second: {fileID: 2800000, guid: 3d9a358b04d73024784bffc4568352c4, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0

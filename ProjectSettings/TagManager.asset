@@ -8,6 +8,8 @@ TagManager:
   - squareenemy
   - obstacle
   - enemyattack
+  - pattern
+  - enemy
   layers:
   - Default
   - TransparentFX
@@ -15,7 +17,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Obstacle
   - 
   - 
   - 

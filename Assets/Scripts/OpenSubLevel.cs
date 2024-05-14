@@ -24,7 +24,7 @@ public class OpenSubLevel : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            Debug.Log("Collision on zone " + zone);
+            //Debug.Log("Collision on zone " + zone);
             gameObject.SetActive(false);
             spawner.GetComponent<PlayerSpawn>().DeploySpawner(zone);
 

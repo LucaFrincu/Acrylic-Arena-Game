@@ -46,7 +46,7 @@ public class EnemySpawner : MonoBehaviour
         //spawnPosition.y = 0f; // Assuming y is up and enemies spawn on the ground
 
         //Define the rotation: 90 degrees around the X-axis
-        Quaternion spawnRotation = Quaternion.Euler(90f, 0f, 0f);
+        Quaternion spawnRotation = Quaternion.Euler(45f, 0f, 0f);
 
         enemy = Instantiate(enemyPrefab, spawnPosition, spawnRotation);
         enemy.GetComponent<Enemy_AI>().SetSpawner(gameObject);

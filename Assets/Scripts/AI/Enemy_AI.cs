@@ -14,6 +14,7 @@ public class Enemy_AI : MonoBehaviour
 
     public GameObject coloredSquareObject;
 
+    public GameObject pattern = null;
     private GameObject parentSpawner;
 
     public string enemyColor;
@@ -210,12 +211,15 @@ public class Enemy_AI : MonoBehaviour
                     {
                         case "blue":
                             SpawnColoredSquare(other.transform.position, otherColor);
+                            other.gameObject.GetComponent<PlayerAttack>().SetEnemyColor(otherColor);
                             break;
                         case "yellow":
                             SpawnColoredSquare(other.transform.position, Color.green);
+                            other.gameObject.GetComponent<PlayerAttack>().SetEnemyColor(Color.green);
                             break;
                         case "red":
                             SpawnColoredSquare(other.transform.position, new Color(0.5f, 0f, 0.5f)); //purple
+                            other.gameObject.GetComponent<PlayerAttack>().SetEnemyColor(new Color(0.5f, 0f, 0.5f));
                             break;
                         default:
                             break;
@@ -230,12 +234,15 @@ public class Enemy_AI : MonoBehaviour
                     {
                         case "blue":
                             SpawnColoredSquare(other.transform.position, new Color(0.5f, 0f, 0.5f)); // purple
+                            other.gameObject.GetComponent<PlayerAttack>().SetEnemyColor(new Color(0.5f, 0f, 0.5f));
                             break;
                         case "yellow":
                             SpawnColoredSquare(other.transform.position, new Color(1f, 0.5f, 0f)); // orange
+                            other.gameObject.GetComponent<PlayerAttack>().SetEnemyColor(new Color(1f, 0.5f, 0f));
                             break;
                         case "red":
                             SpawnColoredSquare(other.transform.position, otherColor);
+                            other.gameObject.GetComponent<PlayerAttack>().SetEnemyColor(otherColor);
                             break;
                         default:
                             break;
@@ -250,12 +257,15 @@ public class Enemy_AI : MonoBehaviour
                     {
                         case "blue":
                             SpawnColoredSquare(other.transform.position, Color.green); // purple
+                            other.gameObject.GetComponent<PlayerAttack>().SetEnemyColor(Color.green);
                             break;
                         case "yellow":
                             SpawnColoredSquare(other.transform.position, otherColor); // orange
+                            other.gameObject.GetComponent<PlayerAttack>().SetEnemyColor(otherColor);
                             break;
                         case "red":
                             SpawnColoredSquare(other.transform.position, new Color(1f, 0.5f, 0f));
+                            other.gameObject.GetComponent<PlayerAttack>().SetEnemyColor(new Color(1f, 0.5f, 0f));
                             break;
                         default:
                             break;

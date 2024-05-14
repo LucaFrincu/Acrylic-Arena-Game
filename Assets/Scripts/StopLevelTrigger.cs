@@ -19,10 +19,10 @@ public class StopLevelTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider collision)
     {
-        Debug.Log("Collision TRIGGER " + collision + " " + collision.gameObject);
+        //Debug.Log("Collision TRIGGER " + collision + " " + collision.gameObject);
         if (collision.gameObject.tag == "square" && collision.gameObject.name == "TemporaryCollider")
         {
-            Debug.Log("ATTACKED");
+            //Debug.Log("ATTACKED");
             parent.GetComponent<SubLevelStop>().DamageWall();
         }
     }

@@ -9,68 +9,118 @@ public class PlayerMovement : MonoBehaviour
     public Rigidbody rb;
     public CombatController combat;
     Vector3 movement;
+    Vector3 lastSafePosition;
     public int zone = 0;
     public bool hasCollided = false;
-   
+    public bool obstacleAhead = false;
+    public float raycastDistance = 30f;
+    public LayerMask collisionLayer;
+
+    public float rayLength = 0.1f;
+    public Color rayColor = Color.red;
 
 
     private void Start()
     {
         combat = GetComponent<CombatController>();
-        
+        lastSafePosition = transform.position;
+        rb = GetComponent<Rigidbody>();
+
     }
     void Update()
     {
-        hasCollided = false;
+        //hasCollided = false;
         //input
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.z = Input.GetAxisRaw("Vertical");
         if (Input.GetKey(KeyCode.LeftShift))
         {
-            moveSpeed = 13f;
+            moveSpeed = 20f;
         }
-        else if (Input.GetKey(KeyCode.Space))
+        else if (Input.GetMouseButton(1))
         {
             moveSpeed = 8f;
             combat.checkmode = true;
+            combat.finishCombo = true;
             //playerMovement.moveSpeed = 2f;
+        }
+        else if(Input.GetMouseButtonUp(1))
+        {
+            moveSpeed = 15f;
+            //combat.checkmode = false;
+            combat.finishCombo = false;
         }
         else
         {
-            moveSpeed = 10f;
-            combat.checkmode = false;
+            moveSpeed = 15f;
         }
        
     }
 
     void FixedUpdate()
     {
-        //movement
-        rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
+        Vector3 moveDirection = rb.velocity.normalized;
+        // Create a ray starting from the object's position and extending in the direction of movement
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position, movement, out hit, rayLength, collisionLayer))
+        {
+            if (hit.collider.CompareTag("obstacle"))
+            {
+                obstacleAhead = true;
+                // Stop movement if obstacle is detected
+                movement = Vector3.zero;
+            }
+        }
+        else
+        {
+            obstacleAhead = false;
+            // Move the object if no obstacle detected
+            rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
+        }
+
+        // Visualize the ray
+        Debug.DrawRay(transform.position, movement * rayLength, rayColor);
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log(collision);
+        
+        
+        //Debug.Log(collision);
         if (collision.gameObject.CompareTag("obstacle"))
         {
-            // If colliding with an obstacle, prevent movement along that direction
-            Vector3 direction = collision.contacts[0].point - transform.position;
-            direction.Normalize();
-            movement -= Vector3.Project(movement, direction);
+            
+            //obstacleAhead = true;
+
         }
         if (collision.gameObject.CompareTag("enemyattack") && hasCollided == false)
         {
+            hasCollided = true;
             Debug.Log("ENEMY HIT PLAYER");
             healthController.GetComponent<HealthController>().DamagePlayer(10);
-            hasCollided = true;
+            
         }
+    }
+    private void OnCollisionStay(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("obstacle"))
+        {
+            //Debug.Log("");
+            
+
+        }
+        hasCollided = false;
     }
 
     private void OnCollisionExit(Collision collision)
     {
+        if (collision.gameObject.CompareTag("obstacle"))
+        {
+            //transform.position = lastSafePosition;
+            obstacleAhead = false;
+        }
         hasCollided = false;
-        Debug.Log("COLLIDED SET TO FALSE FOR PLAYER");
+        //Debug.Log("COLLIDED SET TO FALSE FOR PLAYER");
     }
 
 

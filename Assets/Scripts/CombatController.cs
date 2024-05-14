@@ -23,6 +23,13 @@ public class CombatController : MonoBehaviour
 
     public ShapeCombo shapeFormCombo = ShapeCombo.Zero;
 
+    public GameObject attackPlayer;
+
+    public float delayTime = 1.0f; // Set the delay time between clicks
+
+    private bool canClick = true; // Flag to track if clicking is allowed
+
+    public bool finishCombo = false;
     public float colliderLifetime = 0.5f; // Time for the collider to disappear
     public float fixedDistance = 1f; // Fixed distance from the object to the collider
     Vector3 colliderSize = new Vector3(0f, 0f, 0f);
@@ -184,19 +191,21 @@ public class CombatController : MonoBehaviour
                         case ShapeCombo.VerticalUp:
                             if (manaBlue >= 30)
                             {
+                                drawing.shape = "";
+                                drawing.shapeDirection = "";
                                 colliderSize = new Vector3(5f, 5f, 5f);
                                 fixedDistance = 5f;
                                 color = Color.blue;
                                 test.clip = comboAudio;
                                 test.PlayOneShot(comboAudio);
                                 CreateTemporaryCollider(colliderSize, fixedDistance, color);
-                                nrCombo++;
-                                shapeFormCombo = ShapeCombo.Wait;
+                                //nrCombo++;
+                                shapeFormCombo = ShapeCombo.Null;
                                 drawing.shape = "";
                                 drawing.shapeDirection = "";
                                 attackDmg = 4;
                                 manaBlue -= 30;
-
+                                
 
                                 /*if(manaBlue <= 90 && manaBlue > 60)
                                 {
@@ -218,67 +227,83 @@ public class CombatController : MonoBehaviour
                             }
                             else
                             {
+                                drawing.shape = "";
+                                drawing.shapeDirection = "";
                                 shapeFormCombo = ShapeCombo.Null;
                                 
                                 //manaBlueFill.fillAmount = 0.0f;
                                 
                             }
+                            checkmode = false;
                             break;
                         case ShapeCombo.DiagonalRight:
                             if (manaRed >= 30)
                             {
+                                drawing.shape = "";
+                                drawing.shapeDirection = "";
                                 colliderSize = new Vector3(3f, 3f, 2.5f);
                                 fixedDistance = 5f;
                                 color = Color.red;
                                 test.clip = comboAudio;
                                 test.PlayOneShot(comboAudio);
                                 CreateTemporaryCollider(colliderSize, fixedDistance, color);
-                                nrCombo++;
-                                shapeFormCombo = ShapeCombo.Wait;
+                                //nrCombo++;
+                                shapeFormCombo = ShapeCombo.Null;
                                 drawing.shape = "";
                                 drawing.shapeDirection = "";
                                 attackDmg = 4;
                                 manaRed -= 30;
+                                
                             }
                             else
                             {
+                                drawing.shape = "";
+                                drawing.shapeDirection = "";
                                 shapeFormCombo = ShapeCombo.Null;
                             }
+                            checkmode = false;
                             break;
                         case ShapeCombo.HorizontalRight:
                             if (manaYellow >= 30)
                             {
+                                drawing.shape = "";
+                                drawing.shapeDirection = "";
                                 colliderSize = new Vector3(7f, 7f, 7f);
                                 fixedDistance = 0f;
                                 color = Color.yellow;
                                 test.clip = comboAudio;
                                 test.PlayOneShot(comboAudio);
                                 CreateTemporaryCollider(colliderSize, fixedDistance, color);
-                                nrCombo++;
-                                shapeFormCombo = ShapeCombo.Wait;
+                                //nrCombo++;
+                                shapeFormCombo = ShapeCombo.Null;
                                 drawing.shape = "";
                                 drawing.shapeDirection = "";
                                 attackDmg = 4;
                                 manaYellow -= 30;
+                                
                             }
                             else
                             {
+                                drawing.shape = "";
+                                drawing.shapeDirection = "";
                                 shapeFormCombo = ShapeCombo.Null;
                             }
+                            checkmode = false;
                             break;
                         case ShapeCombo.Wait:
                             break;
                         default:
                             drawing.shape = "";
                             drawing.shapeDirection = "";
-                            shapeFormCombo = ShapeCombo.Zero;
+                            shapeFormCombo = ShapeCombo.Null;
                             nrAttacks = 0;
                             nrCombo = 0;
                             color = Color.white;
+                            checkmode = false;
                             break;
                     }
                     break;
-                case 1:
+                /*case 1:
                     switch (shapeFormCombo)
                     {
                         case ShapeCombo.Zero:
@@ -454,14 +479,14 @@ public class CombatController : MonoBehaviour
                             color = Color.white;
                             break;
                     }
-                    break;
+                    break;*/
 
             }            
-        }        
+        }
 
-        if (Input.GetMouseButtonDown(0) && checkmode == false)
+        if (Input.GetMouseButtonDown(0) && checkmode == false && canClick)
         {
-            /* if (!isOneClick) // first click
+            /*if (!isOneClick) // first click
              {
                  isOneClick = true;
                  timeSinceLastClick = Time.time;
@@ -472,6 +497,7 @@ public class CombatController : MonoBehaviour
                  isTwoClicks = true;
                  isOneClick = false; // reset for next click
              }*/
+            StartCoroutine(ClickCooldown());
             DoBasicAttack();
         }
 
@@ -486,9 +512,23 @@ public class CombatController : MonoBehaviour
         }*/
     }
 
+   
+
+    IEnumerator ClickCooldown()
+    {
+        // Set clicking flag to false to prevent further clicks
+        canClick = false;
+
+        // Wait for the specified delay time
+        yield return new WaitForSeconds(delayTime);
+
+        // Set clicking flag to true to allow clicks again
+        canClick = true;
+    }
+
     public void DoBasicAttack()
     {
-        //if (isOneClick == true && checkmode == false /*&& (Time.time - timeSinceLastClick) > doubleClickTimeLimit*/)
+        //if (/*isOneClick == true && checkmode == false*/ /*&& (Time.time - timeSinceLastClick) > doubleClickTimeLimit*/)
         //{
             //do left to right attack
             //Debug.Log("1 ATTACK!");
@@ -564,6 +604,9 @@ public class CombatController : MonoBehaviour
             case "waveline":
                 shapeFormCombo = ShapeCombo.Wave;
                 break;
+            case "one":
+                shapeFormCombo = ShapeCombo.Null;
+            break;
             default:
                 shapeFormCombo = ShapeCombo.Wait;
                 break;
@@ -572,6 +615,7 @@ public class CombatController : MonoBehaviour
 
     void CreateTemporaryCollider(Vector3 colliderSize, float fixedDistance, Color color)
     {
+        //GameObject tempColliderObject = GameObject.Instantiate(attackPlayer);
         // Calculate the collider's position
         Vector3 colliderPosition = CalculateColliderPosition(fixedDistance);
 
@@ -583,7 +627,14 @@ public class CombatController : MonoBehaviour
         directionToMouse.Normalize();
 
         // Create the temporary collider GameObject
+
         GameObject tempColliderObject = new GameObject("TemporaryCollider");
+        tempColliderObject.AddComponent<PlayerAttack>();
+        // Add a Rigidbody component to the GameObject
+        Rigidbody rb = tempColliderObject.AddComponent<Rigidbody>();
+
+        // Disable gravity for the Rigidbody
+        rb.useGravity = false;
         tempColliderObject.transform.position = colliderPosition;
         tempColliderObject.tag = "square";
         // Set the rotation of the collider to face the direction of the mouse

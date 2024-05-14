@@ -26,10 +26,10 @@ public class SubLevelStop : MonoBehaviour
 
     private void OnTriggerEnter(Collider collision)
     {
-        Debug.Log("Collision " + collision + " " + collision.gameObject);
+        //Debug.Log("Collision " + collision + " " + collision.gameObject);
         if (collision.gameObject.tag =="square" && collision.gameObject.name == "TemporaryCollider")
         {
-            Debug.Log("ATTACKED");
+            //Debug.Log("ATTACKED");
             healthWall -= hit.attackDmg;
         }
     }

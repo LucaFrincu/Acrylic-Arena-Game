@@ -107,6 +107,16 @@ public class PlayerSpawn : MonoBehaviour
                 if (flowers[0].CheckFamily() == true)
                 {
                     flowers[numberChildren++].ResetPattern(zone, true);
+                    //TRY 1
+                    if (numberChildren < flowers.Length)
+                    {
+                        Debug.Log(numberChildren + " " + flowers.Length);
+                        for (int i = numberChildren; i <= flowers.Length -1; i++)
+                        {
+                            flowers[i].ResetPattern(zone, false);
+                        }
+                    }
+                    /////////
                 }
                 else
                 {

@@ -550,19 +550,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 242938177526509072, guid: 1651f95a377eb6a43aa7792541e7fe72, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 9.57
+      value: 8.77
       objectReference: {fileID: 0}
     - target: {fileID: 242938177526509072, guid: 1651f95a377eb6a43aa7792541e7fe72, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2.29
+      value: -8.89
       objectReference: {fileID: 0}
     - target: {fileID: 242938177526509072, guid: 1651f95a377eb6a43aa7792541e7fe72, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7372774
+      value: 0.92387956
       objectReference: {fileID: 0}
     - target: {fileID: 242938177526509072, guid: 1651f95a377eb6a43aa7792541e7fe72, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.67559016
+      value: 0.38268343
       objectReference: {fileID: 0}
     - target: {fileID: 242938177526509072, guid: 1651f95a377eb6a43aa7792541e7fe72, type: 3}
       propertyPath: m_LocalRotation.y
@@ -574,7 +574,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 242938177526509072, guid: 1651f95a377eb6a43aa7792541e7fe72, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 85
+      value: 45
       objectReference: {fileID: 0}
     - target: {fileID: 242938177526509072, guid: 1651f95a377eb6a43aa7792541e7fe72, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -765,7 +765,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 991077932}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 12.37}
   m_LocalScale: {x: 1.8927, y: 1.8927, z: 1.8927}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1150,6 +1150,7 @@ MonoBehaviour:
   shape: 
   shapeDirection: 
   combat: {fileID: 1607373433}
+  rotationCentroid: 0
 --- !u!4 &2037965581 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 242938177526509072, guid: 1651f95a377eb6a43aa7792541e7fe72, type: 3}

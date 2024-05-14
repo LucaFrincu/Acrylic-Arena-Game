@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 7634804298041320969}
   - component: {fileID: 5908371688806465152}
   - component: {fileID: 606212495157323741}
+  - component: {fileID: 2596076041748213309}
+  - component: {fileID: 2974526399897978704}
   m_Layer: 0
   m_Name: Cube (1)
   m_TagString: Untagged
@@ -96,8 +98,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 6.466198, z: 1}
+  m_Center: {x: 0, y: 2.7330995, z: 0}
 --- !u!114 &606212495157323741
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -110,7 +112,45 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65c73857160acac4e8795c5f4cf72be4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasCollided: 0
   zone: 0
+  health: 1
+  maxHealth: 1
+  dmgDealt: 1
+--- !u!54 &2596076041748213309
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3673732674514108422}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &2974526399897978704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3673732674514108422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 10
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &6067296403205881388
 GameObject:
   m_ObjectHideFlags: 0
@@ -124,6 +164,8 @@ GameObject:
   - component: {fileID: 3402051341100852226}
   - component: {fileID: 2074845769252039713}
   - component: {fileID: 8638878330956788386}
+  - component: {fileID: 3014378224477534376}
+  - component: {fileID: 5146927248075701897}
   m_Layer: 0
   m_Name: Cube (2)
   m_TagString: Untagged
@@ -207,8 +249,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 5.0637336, z: 1}
+  m_Center: {x: 0, y: 2.031866, z: 0}
 --- !u!114 &8638878330956788386
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -221,7 +263,45 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65c73857160acac4e8795c5f4cf72be4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasCollided: 0
   zone: 0
+  health: 1
+  maxHealth: 1
+  dmgDealt: 1
+--- !u!54 &3014378224477534376
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6067296403205881388}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &5146927248075701897
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6067296403205881388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 10
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &7944996154552401765
 GameObject:
   m_ObjectHideFlags: 0
@@ -269,6 +349,8 @@ GameObject:
   - component: {fileID: 9008597750213412029}
   - component: {fileID: 362159630352555888}
   - component: {fileID: 1074493700417447717}
+  - component: {fileID: 2654650970130225247}
+  - component: {fileID: 3266889780857432895}
   m_Layer: 0
   m_Name: Cube (3)
   m_TagString: Untagged
@@ -352,8 +434,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 5.45834, z: 1}
+  m_Center: {x: 0, y: 2.2291696, z: 0}
 --- !u!114 &1074493700417447717
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -366,4 +448,42 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65c73857160acac4e8795c5f4cf72be4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasCollided: 0
   zone: 0
+  health: 1
+  maxHealth: 1
+  dmgDealt: 1
+--- !u!54 &2654650970130225247
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8896207298485051702}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &3266889780857432895
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8896207298485051702}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 10
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []

@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class HealthController : MonoBehaviour
 {
-    private int health = 100;
+    public int health = 100;
     private int maxHealth = 100;
     public int zone = 0;
     public GameObject manager;
@@ -47,7 +47,7 @@ public class HealthController : MonoBehaviour
 
     public void SetZone(int zoneCollided)
     {
-        Debug.Log("SETTING ZONE FOR PLAYER");
+        //Debug.Log("SETTING ZONE FOR PLAYER");
         zone = zoneCollided;
     }
 }

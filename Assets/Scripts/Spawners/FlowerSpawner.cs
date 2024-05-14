@@ -91,20 +91,31 @@ public class FlowerSpawner : MonoBehaviour
             SpawnSquare();*/
             if (checkpoint)
             {
+                Collider childCollider;
                 for (int i = 0; i < squares.transform.childCount; i++)
                 {
                     Debug.Log("set " + squares.transform.GetChild(i) + " to active");
                     squares.transform.GetChild(i).gameObject.SetActive(true);
                     squares.gameObject.SetActive(true);
+                    // TRY 1
+                    childCollider = squares.transform.GetChild(i).gameObject.GetComponent<Collider>();
+                    childCollider.enabled = true;
+                    /////
                 }
             }
             else
             {
+                Collider childCollider;
                 for (int i = 0; i < squares.transform.childCount; i++)
                 {
                     Debug.Log(squares.transform.GetChild(i).gameObject);
-                    squares.transform.GetChild(i).gameObject.SetActive(false);
-                    squares.gameObject.SetActive(false);
+                    //TRY 1
+                    /*squares.transform.GetChild(i).gameObject.SetActive(false);
+                    squares.gameObject.SetActive(false);*/
+                    childCollider = squares.transform.GetChild(i).gameObject.GetComponent<Collider>();
+                    childCollider.enabled = false;
+                    squares.gameObject.SetActive(true);
+                    //////////////
                 }
             }
             //currentSquares = 0;

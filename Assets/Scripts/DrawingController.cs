@@ -21,7 +21,12 @@ public class DrawingController : MonoBehaviour
     public float roundnessThreshold = 0.9f;
     public string shape = "", shapeDirection = "";
     public CombatController combat;
+    public bool finishCombo = false;
 
+    private Vector3 previousPosition = new Vector3(0f, 0f, 0f);
+
+
+    public float rotationCentroid = 35f;
 
 
     private Dictionary<string, List<List<Vector3>>> shapesDictionary; // Dictionary to store loaded shapes
@@ -39,7 +44,7 @@ public class DrawingController : MonoBehaviour
             jsonFilePath = fileContent;
             
             //string jsonString = File.ReadAllText(jsonFilePath);
-            Debug.Log("File content: " + jsonFilePath);
+            //Debug.Log("File content: " + jsonFilePath);
         }
         else
         {
@@ -51,25 +56,47 @@ public class DrawingController : MonoBehaviour
 
     void Update()
     {
-        if (combat.CheckMode() == true /*&& combat.nrAttacks == 2*/) {
-            if (Input.GetMouseButtonDown(0))
+        
+        //if (combat.CheckMode() == true /*&& combat.nrAttacks == 2*/) {
+            if (Input.GetMouseButtonDown(1))
             {
                 endingPoint = startingPoint = GetMouseWorldPosition();
                 AddPointToLine(startingPoint);
             }
-            else if (Input.GetMouseButton(0))
+            else if (Input.GetMouseButton(1))
             {
-                Vector3 mousePosition = GetMouseWorldPosition();
-                AddPointToLine(mousePosition);
+               // if(Input.GetAxis("Mouse X") != 0 && Input.GetAxis("Mouse Y") != 0)
+               // {
+                    Vector3 mousePosition = GetMouseWorldPosition();
+                    AddPointToLine(mousePosition);
+                //}// Check if the character or plane has moved
+                if (gameObject.transform.hasChanged)
+                {
+                    // Calculate the movement delta
+                    Vector3 movementDelta = gameObject.transform.position - previousPosition;
+
+                    // Update drawing points by the same amount
+                    for (int i = 0; i < drawingPoints.Count; i++)
+                    {
+                        drawingPoints[i] += movementDelta;
+                    }
+
+                    // Update the line renderer
+                    UpdateLineRenderer();
+
+                    // Reset character's changed flag
+                    gameObject.transform.hasChanged = false;
+                }
+
             }
-            else if (Input.GetMouseButtonUp(0))
+            else if (Input.GetMouseButtonUp(1))
             {
                 //endingPoint = GetMouseWorldPosition();
                 AddPointToLine(endingPoint);
                 if (drawingPoints.Count > 1)
                 {
                     RemovePoints();
-                    drawingPoints = StabilizePoints(drawingPoints);
+                    drawingPoints = StabilizePoints(drawingPoints);    
                     startingPoint = drawingPoints[0];
                     endingPoint = drawingPoints[^1];
                     LoadShapesFromJSON();
@@ -86,36 +113,47 @@ public class DrawingController : MonoBehaviour
                 {
                     drawingPoints.Clear();
                     lineRenderer.positionCount = 0;
+                    shape = "one";
+                    shapeDirection = "one";
                 }
                 //ManagePoints(startingPoint, endingPoint);
             }
-           /*else if (Input.GetKeyDown(KeyCode.P))
-            {
-                PrintLine();
-                drawingPoints.Clear();
-                lineRenderer.positionCount = 0;
-            }
-            else if (Input.GetKeyDown(KeyCode.R))
-            {
-                LoadShapesFromJSON();
-                RecognizeShape();
-                shapesDictionary.Clear();
-                CheckDirection();
-                drawingPoints.Clear();
-                lineRenderer.positionCount = 0;
-                shape = shapeDirection = null;
+            /*else if (Input.GetKeyDown(KeyCode.P))
+             {
+                 PrintLine();
+                 drawingPoints.Clear();
+                 lineRenderer.positionCount = 0;
+             }
+             else if (Input.GetKeyDown(KeyCode.R))
+             {
+                 LoadShapesFromJSON();
+                 RecognizeShape();
+                 shapesDictionary.Clear();
+                 CheckDirection();
+                 drawingPoints.Clear();
+                 lineRenderer.positionCount = 0;
+                 shape = shapeDirection = null;
 
-            }
-            // Check for 's' key press to save points
-            else if (Input.GetKeyDown(KeyCode.S))
-            {
-                SavePointsToJson();
-            }
-            else if (Input.GetKeyDown(KeyCode.O))
-            {
+             }
+             // Check for 's' key press to save points
+             else if (Input.GetKeyDown(KeyCode.S))
+             {
+                 SavePointsToJson();
+             }
+             else if (Input.GetKeyDown(KeyCode.O))
+             {
 
-            }*/
-        }
+             }*/
+        //}
+        /*else if(combat.CheckMode() == false)
+        {
+            drawingPoints.Clear();
+            lineRenderer.positionCount = 0;
+            //shape = ""; 
+            //shapeDirection = "";
+            UpdateLineRenderer();
+        }*/
+        previousPosition = gameObject.transform.position;
     }
 
     void CheckDirection()
@@ -366,7 +404,18 @@ public class DrawingController : MonoBehaviour
     {
         // Translate points to center them around the origin
         Vector3 centroid = CalculateCentroid(points);
-        List<Vector3> translatedPoints = TranslatePoints(points, -centroid);
+
+        // Rotate points around centroid by 80 degrees
+        List<Vector3> rotatedPoints = new List<Vector3>();
+        foreach (Vector3 point in points)
+        {
+            rotatedPoints.Add(RotatePointAroundPoint(point, centroid, rotationCentroid));
+        }
+
+        //List<Vector3> translatedPoints = TranslatePoints(points, -centroid);
+        List<Vector3> translatedPoints = TranslatePoints(rotatedPoints, -centroid);
+
+
 
         // Scale points to fit within a fixed-size bounding box
         float scaleFactor = CalculateScaleFactor(translatedPoints);
@@ -374,7 +423,22 @@ public class DrawingController : MonoBehaviour
 
         //Debug.Log("Points Operated");
         return scaledPoints;
+
+        /* float scaleFactor = CalculateScaleFactor(rotatedPoints);
+         List<Vector3> scaledPoints = ScalePoints(rotatedPoints, 1.0f / scaleFactor);
+
+         //Debug.Log("Points Operated");
+         return scaledPoints;*/
     }
+
+    Vector3 RotatePointAroundPoint(Vector3 point, Vector3 pivot, float angle)
+    {
+        Vector3 direction = point - pivot;
+        Quaternion rotation = Quaternion.Euler(angle, 0f, 0f);
+        Vector3 rotatedDirection = rotation * direction;
+        return pivot + rotatedDirection;
+    }
+
 
 
     Vector3 CalculateCentroid(List<Vector3> points)

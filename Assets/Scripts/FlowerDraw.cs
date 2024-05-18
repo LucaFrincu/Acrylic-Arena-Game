@@ -6,6 +6,8 @@ public class FlowerDraw : MonoBehaviour
 {
     public bool hasCollided = false;
     private GameObject parentSpawner;
+    public string flowerColorName;
+    public Color flowerColor;
     private short checkCounter = 0;
     public int zone = 0;
     public int health = 1;
@@ -15,6 +17,9 @@ public class FlowerDraw : MonoBehaviour
     {
         if(health <= 0)
         {
+            //SET COLLIDER TO FALSE INSTEAD OF MAKING THE OBJECT DISAPPEAR
+            Collider collider = gameObject.GetComponent<Collider>();
+            collider.enabled = false;
             if (checkCounter == 0)
             {
                 checkCounter++;
@@ -24,7 +29,7 @@ public class FlowerDraw : MonoBehaviour
                 health = maxHealth;
                 checkCounter = 0;
                 // Destroy this square
-                gameObject.SetActive(false);
+                //gameObject.SetActive(false);                
                 //gameObject.SetActive(true);
                 parentSpawner.GetComponent<FlowerSpawner>().OnSquareDestroyed();
             }
@@ -54,12 +59,27 @@ public class FlowerDraw : MonoBehaviour
         hasCollided = false;
     }*/
 
-    public void DestroyFlower()
+    public void DestroyFlower(string colorName, Color mixedColor)
     {
-        
-        if (health >= 0)
+        Debug.Log("mixed Color: " + colorName + " The required color" + flowerColor);
+        if (health > 0 && (colorName == flowerColorName || flowerColorName == "white"))
         {
+            Debug.Log("HIT WITH THE SPECIFIED COLOR!");
             health -= dmgDealt;
+            health = Mathf.Clamp(health, 0, maxHealth);
+            float healthPercentage = (float)health / maxHealth;
+            if (flowerColorName != "white")
+            {
+                Color newColor = Color.Lerp(flowerColor, Color.white, healthPercentage);
+                newColor.a = 1;
+                gameObject.GetComponent<SpriteRenderer>().color = newColor;
+            }
+            else
+            {
+                Color newColor = Color.Lerp(mixedColor, Color.white, healthPercentage);
+                newColor.a = 1;
+                gameObject.GetComponent<SpriteRenderer>().color = newColor;
+            }
         }
     }
 

@@ -110,11 +110,11 @@ public class FlowerSpawner : MonoBehaviour
                 {
                     Debug.Log(squares.transform.GetChild(i).gameObject);
                     //TRY 1
-                    /*squares.transform.GetChild(i).gameObject.SetActive(false);
-                    squares.gameObject.SetActive(false);*/
+                    squares.transform.GetChild(i).gameObject.SetActive(false);
+                    squares.gameObject.SetActive(false);
                     childCollider = squares.transform.GetChild(i).gameObject.GetComponent<Collider>();
                     childCollider.enabled = false;
-                    squares.gameObject.SetActive(true);
+                    //squares.gameObject.SetActive(true);
                     //////////////
                 }
             }

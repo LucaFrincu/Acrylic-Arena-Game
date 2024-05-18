@@ -82,18 +82,18 @@ public class PlayerMovement : MonoBehaviour
         Debug.DrawRay(transform.position, movement * rayLength, rayColor);
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider collision)
     {
         
         
         //Debug.Log(collision);
-        if (collision.gameObject.CompareTag("obstacle"))
+        if (collision.gameObject.tag == "obstacle")
         {
             
             //obstacleAhead = true;
 
         }
-        if (collision.gameObject.CompareTag("enemyattack") && hasCollided == false)
+        if (collision.gameObject.tag == "enemyattack" && hasCollided == false)
         {
             hasCollided = true;
             Debug.Log("ENEMY HIT PLAYER");
@@ -124,10 +124,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
 
-    private void OnTriggerEnter(Collider other)
-    {
-        
-    }
+
     public int GetPlayerZone() {
         return zone;
     }

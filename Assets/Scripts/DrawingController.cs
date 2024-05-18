@@ -23,6 +23,7 @@ public class DrawingController : MonoBehaviour
     public CombatController combat;
     public bool finishCombo = false;
 
+
     private Vector3 previousPosition = new Vector3(0f, 0f, 0f);
 
 
@@ -201,7 +202,7 @@ public class DrawingController : MonoBehaviour
                 }
                 break;
             default:
-                //Debug.Log("Direction not found");
+                shape = "not_found";
                 break;
 
 

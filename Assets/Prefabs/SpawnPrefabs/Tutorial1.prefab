@@ -30,9 +30,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 253238339828400856}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 0.1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: 0.005856, y: -0.34, z: 0.021921}
+  m_LocalScale: {x: 1.363, y: 0.13630001, z: 1.363}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 7187087445637117753}
   m_RootOrder: 0
@@ -98,8 +98,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 4.4900017, z: 1}
-  m_Center: {x: 0, y: 1.7449994, z: 0}
+  m_Size: {x: 2.096101, y: 59.020004, z: 1.8407497}
+  m_Center: {x: -0.016134381, y: 29.00999, z: -0.06039524}
 --- !u!114 &8259123950516797719
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -113,9 +113,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hasCollided: 0
+  flowerColorName: white
+  flowerColor: {r: 0, g: 0, b: 0, a: 0}
   zone: 0
-  health: 1
-  maxHealth: 1
+  health: 5
+  maxHealth: 5
   dmgDealt: 1
 --- !u!54 &6054844671754994525
 Rigidbody:

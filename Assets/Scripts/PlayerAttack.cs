@@ -8,6 +8,8 @@ public class PlayerAttack : MonoBehaviour
     private GameObject patternObject = null;
     private bool checkColor = false;
     private bool checkPattern = false;
+    private bool hasCollided = false;
+    private string combinedColorName;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,9 +22,10 @@ public class PlayerAttack : MonoBehaviour
         
     }
 
-    public void SetEnemyColor(Color enemyColor)
+    public void SetEnemyColor(Color enemyColor, string colorName)
     {
         myColor = enemyColor;
+        combinedColorName = colorName;
     }
 
     public void SetPattern(GameObject pattern)
@@ -52,10 +55,13 @@ public class PlayerAttack : MonoBehaviour
         //Debug.Log("CHECK INTERACTION BTW PATTERN AND ENEMY");
         if(myColor != Color.white && patternObject != null)
         {
+            hasCollided = true;
             Debug.Log("PATTERN DISINTEGRATED");
             //if (other.gameObject.tag == "pattern")
             //{
-                patternObject.gameObject.GetComponent<FlowerDraw>().DestroyFlower();
+                patternObject.gameObject.GetComponent<FlowerDraw>().DestroyFlower(combinedColorName, myColor);
+                myColor = new Color(0f, 0f, 0f);
+                patternObject = null;
             //}
         }
         /*else
@@ -67,4 +73,5 @@ public class PlayerAttack : MonoBehaviour
             myColor = Color.white;
         }*/
     }
+    
 }

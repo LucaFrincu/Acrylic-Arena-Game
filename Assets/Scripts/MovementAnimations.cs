@@ -6,6 +6,7 @@ public class MovementAnimations : MonoBehaviour
 {
     // Start is called before the first frame update
     Animator anim;
+    private int direction = 4;
 
     void Start()
     {
@@ -17,21 +18,53 @@ public class MovementAnimations : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.D))
         {
-            anim.Play("RightPlayer");
+            anim.Play("WalkRight");
+            direction = 1;
         }
         else if (Input.GetKey(KeyCode.A))
         {
-            anim.Play("LeftPlayer");
+            anim.Play("WalkLeft");
+            direction = 3;
 
         }
         else if (Input.GetKey(KeyCode.W))
         {
-            anim.Play("BackPlayer");
+            anim.Play("WalkBackward");
+            direction = 2;
 
+        }
+        else if (Input.GetKey(KeyCode.S))
+        {
+            anim.Play("WalkForward");
+            direction = 4;
         }
         else
         {
-            anim.Play("IdlePlayer");
+
+            switch (direction)
+            {
+                case 1:
+                    {
+                        anim.Play("RightPlayer");
+                        break;
+                    }
+                case 2:
+                    { 
+                        anim.Play("BackPlayer");
+                        
+                        break;
+                    }
+                case 3:
+                    {
+                        anim.Play("LeftPlayer");
+                        break;
+                    }
+                case 4:
+                    {
+                       anim.Play("IdlePlayer");
+                        break;
+                    }
+            }
         }
     }
 }

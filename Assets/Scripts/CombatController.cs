@@ -39,7 +39,7 @@ public class CombatController : MonoBehaviour
     public AudioClip basicAudio;
     public AudioClip comboAudio;
     public Vector3 directionToMouse;
-    Vector3 lastMousePosition;
+    public Vector3 lastMousePosition;
 
     public float doubleClickTimeLimit = 0.2f;
     private float timeSinceLastClick = 0f;
@@ -193,8 +193,8 @@ public class CombatController : MonoBehaviour
                             {
                                 drawing.shape = "";
                                 drawing.shapeDirection = "";
-                                colliderSize = new Vector3(5f, 5f, 5f);
-                                fixedDistance = 5f;
+                                colliderSize = new Vector3(6f, 6f, 6f);
+                                fixedDistance = 7f;
                                 color = Color.blue;
                                 test.clip = comboAudio;
                                 test.PlayOneShot(comboAudio);
@@ -241,8 +241,8 @@ public class CombatController : MonoBehaviour
                             {
                                 drawing.shape = "";
                                 drawing.shapeDirection = "";
-                                colliderSize = new Vector3(3f, 3f, 2.5f);
-                                fixedDistance = 5f;
+                                colliderSize = new Vector3(6f, 6f, 5.5f);
+                                fixedDistance = 7f;
                                 color = Color.red;
                                 test.clip = comboAudio;
                                 test.PlayOneShot(comboAudio);
@@ -268,7 +268,7 @@ public class CombatController : MonoBehaviour
                             {
                                 drawing.shape = "";
                                 drawing.shapeDirection = "";
-                                colliderSize = new Vector3(7f, 7f, 7f);
+                                colliderSize = new Vector3(10f, 10f, 10f);
                                 fixedDistance = 0f;
                                 color = Color.yellow;
                                 test.clip = comboAudio;
@@ -291,6 +291,14 @@ public class CombatController : MonoBehaviour
                             checkmode = false;
                             break;
                         case ShapeCombo.Wait:
+                            if(drawing.shape == "not_found")
+                            {
+                                drawing.shape = "";
+                                drawing.shapeDirection = "";
+                                shapeFormCombo = ShapeCombo.Null;
+                                color = Color.white;
+                                checkmode = false;
+                            }
                             break;
                         default:
                             drawing.shape = "";
@@ -536,8 +544,8 @@ public class CombatController : MonoBehaviour
             //Debug.Log("BA1 activated");
             //timeSinceLastCombo = Time.time;
             //CreateTemporaryBoxCollider(transform.position);
-            colliderSize = new Vector3(4f, 3f, 3f);
-            fixedDistance = 5f;
+            colliderSize = new Vector3(6f, 5f, 5f);
+            fixedDistance = 8f;
             test.clip = basicAudio;
             test.PlayOneShot(comboAudio);
             CreateTemporaryCollider(colliderSize, fixedDistance, color);

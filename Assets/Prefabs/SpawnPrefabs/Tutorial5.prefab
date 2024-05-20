@@ -98,8 +98,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 5.9289827, z: 1}
-  m_Center: {x: 0, y: 2.4644907, z: 0}
+  m_Size: {x: 2.096101, y: 59.020004, z: 1.8407497}
+  m_Center: {x: -0.016134381, y: 29.00999, z: -0.06039524}
 --- !u!114 &3316576925081527102
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -113,6 +113,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hasCollided: 0
+  flowerColorName: white
+  flowerColor: {r: 0, g: 0, b: 0, a: 0}
   zone: 0
   health: 1
   maxHealth: 1
@@ -249,8 +251,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 6.4842916, z: 1}
-  m_Center: {x: 0, y: 2.7421455, z: 0}
+  m_Size: {x: 2.096101, y: 59.020004, z: 1.8407497}
+  m_Center: {x: -0.016134381, y: 29.00999, z: -0.06039524}
 --- !u!114 &6272653800620996281
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -264,6 +266,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hasCollided: 0
+  flowerColorName: white
+  flowerColor: {r: 0, g: 0, b: 0, a: 0}
   zone: 0
   health: 1
   maxHealth: 1
@@ -434,8 +438,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 6.2846375, z: 1}
-  m_Center: {x: 0, y: 2.6423168, z: 0}
+  m_Size: {x: 2.096101, y: 59.020004, z: 1.8407497}
+  m_Center: {x: -0.016134381, y: 29.00999, z: -0.06039524}
 --- !u!114 &5876102655679608385
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -449,6 +453,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hasCollided: 0
+  flowerColorName: white
+  flowerColor: {r: 0, g: 0, b: 0, a: 0}
   zone: 0
   health: 1
   maxHealth: 1

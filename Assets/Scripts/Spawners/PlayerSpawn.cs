@@ -47,10 +47,10 @@ public class PlayerSpawn : MonoBehaviour
         Debug.Log("Beggining to Reset");
         for(int i=0; i <= zone; i++)
         {
-
             if (i == zone)
             {
                 Debug.Log("Resetting subLevel" + i);
+                
                 ResetPatterns(i, checkpoint);
                 ResetEnemies(i, checkpoint);
             }
@@ -61,12 +61,43 @@ public class PlayerSpawn : MonoBehaviour
     private void ResetPatterns(int zone, bool checkpoint)
     {
         numberChildren = 0;
-        for (int i = 0; i <= flowers.Length - 1; i++)
+        children = flowers.Length;
+        if (flowers.Length != 0)
         {
-            Debug.Log("Pattern " + flowers[i]);
-            flowers[i].ResetPattern(zone, checkpoint);
-        }
+            if (flowers[0].CheckFamily() == false)
+            {
+                for (int i = 0; i <= flowers.Length - 1; i++)
+                {
+                    Debug.Log("Pattern " + flowers[i]);
 
+                    flowers[i].ResetPattern(zone, checkpoint);
+                    flowers[i].currentSquares = 0;
+                }
+            }
+            else if(checkpoint == true)
+            {
+                flowers[numberChildren].currentSquares = 0;
+                flowers[numberChildren++].ResetPattern(zone, true);
+                if (numberChildren < flowers.Length)
+                    for (int i = numberChildren; i <= flowers.Length - 1; i++)
+                    {
+                        flowers[i].ResetPattern(zone, false);
+                        flowers[i].currentSquares = 0;
+                    }
+            }
+            else
+            {
+                for (int i = 0; i <= flowers.Length - 1; i++)
+                {
+                    flowers[i].currentSquares = 0;
+                    flowers[i].ResetPattern(zone, false);
+                }
+            }
+        }
+        else
+        {
+            //WE ARE SPAWNING ONLY ONE ENEMY AND THEN DISABLING IT        
+        }
     }
     private void ResetEnemies(int zone, bool checkpoint)
     {
@@ -75,6 +106,11 @@ public class PlayerSpawn : MonoBehaviour
             Debug.Log("Enemies " + enemies[i]);
             enemies[i].ResetEnemy(zone, checkpoint);
             enemies[i].SetRestriction(false);
+            if(flowers.Length == 0 && checkpoint == true)
+            {
+                enemies[i].gameObject.SetActive(false);
+                enemies[i].SpawnEnemy();
+            }
         }
     }
 
@@ -96,6 +132,7 @@ public class PlayerSpawn : MonoBehaviour
             }
             if(flowers.Length == 0)
             {
+                //Debug.Log("ENEMY IS WITHOUT FLOWERS!");
                 for (int i = 0; i <= enemies.Length - 1; i++)
                 {
                     enemies[i].SpawnEnemy();

@@ -37,7 +37,7 @@ public class ComboGuide : MonoBehaviour
             }
             if (combat.manaYellow >= 30)
             {
-                Debug.Log("YELLOW ENOUGH!");
+                //Debug.Log("YELLOW ENOUGH!");
                 yellowAttack.gameObject.SetActive(true);
             }
             if(combat.manaBlue < 30 && combat.manaRed < 30 && combat.manaYellow < 30)

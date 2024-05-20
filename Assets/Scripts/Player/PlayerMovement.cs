@@ -101,9 +101,9 @@ public class PlayerMovement : MonoBehaviour
             
         }
     }
-    private void OnCollisionStay(Collision collision)
+    private void OnTriggerStay(Collider collision)
     {
-        if (collision.gameObject.CompareTag("obstacle"))
+        if (collision.gameObject.tag == "obstacle")
         {
             //Debug.Log("");
             
@@ -112,9 +112,9 @@ public class PlayerMovement : MonoBehaviour
         hasCollided = false;
     }
 
-    private void OnCollisionExit(Collision collision)
+    private void OnTriggerExit(Collider collision)
     {
-        if (collision.gameObject.CompareTag("obstacle"))
+        if (collision.gameObject.tag == "obstacle")
         {
             //transform.position = lastSafePosition;
             obstacleAhead = false;

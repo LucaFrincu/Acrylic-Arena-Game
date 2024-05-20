@@ -7,6 +7,7 @@ public class MenuScript : MonoBehaviour
     [SerializeField] private GameObject instructions;
     [SerializeField] private GameObject buttons;
     public GameObject pauseMenuContainer;
+    public GameObject notifyPlayer;
 
     public bool isPauseMenu;
 
@@ -45,6 +46,7 @@ public class MenuScript : MonoBehaviour
         {
             pauseMenuContainer.SetActive(true);
             Time.timeScale = 0f;
+            notifyPlayer.gameObject.GetComponent<PlayerInMenu>().inMenu = true;
         }
     }
 
@@ -52,5 +54,6 @@ public class MenuScript : MonoBehaviour
     {
         pauseMenuContainer.SetActive(false);
         Time.timeScale = 1f;
+        notifyPlayer.gameObject.GetComponent<PlayerInMenu>().inMenu = false;
     }
 }

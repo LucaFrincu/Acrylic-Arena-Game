@@ -85,7 +85,7 @@ public class EnemySpawner : MonoBehaviour
 
     public void SetRestriction(bool restriction)
     {
-        Debug.Log("Setting restriction to " + restriction);
+        //Debug.Log("Setting restriction to " + restriction);
         restrictSpawn = restriction;
     }
 

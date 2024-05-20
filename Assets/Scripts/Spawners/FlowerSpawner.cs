@@ -92,13 +92,17 @@ public class FlowerSpawner : MonoBehaviour
             if (checkpoint)
             {
                 Collider childCollider;
+                GameObject child;
                 for (int i = 0; i < squares.transform.childCount; i++)
                 {
-                    Debug.Log("set " + squares.transform.GetChild(i) + " to active");
+                    Debug.Log("SET " + squares.transform.GetChild(i) + " TO ACTIVE");
                     squares.transform.GetChild(i).gameObject.SetActive(true);
                     squares.gameObject.SetActive(true);
                     // TRY 1
                     childCollider = squares.transform.GetChild(i).gameObject.GetComponent<Collider>();
+                    child = squares.transform.GetChild(i).gameObject;
+                    child.GetComponent<FlowerDraw>().health = child.GetComponent<FlowerDraw>().maxHealth;
+                    child.GetComponent<SpriteRenderer>().color = Color.white;
                     childCollider.enabled = true;
                     /////
                 }

@@ -21,6 +21,7 @@ public class DrawingController : MonoBehaviour
     public float roundnessThreshold = 0.9f;
     public string shape = "", shapeDirection = "";
     public CombatController combat;
+    public PlayerInMenu notifyinMenu;
     public bool finishCombo = false;
 
 
@@ -57,8 +58,10 @@ public class DrawingController : MonoBehaviour
 
     void Update()
     {
-        
+
         //if (combat.CheckMode() == true /*&& combat.nrAttacks == 2*/) {
+        if (notifyinMenu.inMenu == false)
+        {
             if (Input.GetMouseButtonDown(1))
             {
                 endingPoint = startingPoint = GetMouseWorldPosition();
@@ -66,10 +69,10 @@ public class DrawingController : MonoBehaviour
             }
             else if (Input.GetMouseButton(1))
             {
-               // if(Input.GetAxis("Mouse X") != 0 && Input.GetAxis("Mouse Y") != 0)
-               // {
-                    Vector3 mousePosition = GetMouseWorldPosition();
-                    AddPointToLine(mousePosition);
+                // if(Input.GetAxis("Mouse X") != 0 && Input.GetAxis("Mouse Y") != 0)
+                // {
+                Vector3 mousePosition = GetMouseWorldPosition();
+                AddPointToLine(mousePosition);
                 //}// Check if the character or plane has moved
                 if (gameObject.transform.hasChanged)
                 {
@@ -97,7 +100,7 @@ public class DrawingController : MonoBehaviour
                 if (drawingPoints.Count > 1)
                 {
                     RemovePoints();
-                    drawingPoints = StabilizePoints(drawingPoints);    
+                    drawingPoints = StabilizePoints(drawingPoints);
                     startingPoint = drawingPoints[0];
                     endingPoint = drawingPoints[^1];
                     LoadShapesFromJSON();
@@ -145,15 +148,16 @@ public class DrawingController : MonoBehaviour
              {
 
              }*/
-        //}
-        /*else if(combat.CheckMode() == false)
-        {
-            drawingPoints.Clear();
-            lineRenderer.positionCount = 0;
-            //shape = ""; 
-            //shapeDirection = "";
-            UpdateLineRenderer();
-        }*/
+            //}
+            /*else if(combat.CheckMode() == false)
+            {
+                drawingPoints.Clear();
+                lineRenderer.positionCount = 0;
+                //shape = ""; 
+                //shapeDirection = "";
+                UpdateLineRenderer();
+            }*/
+        }
         previousPosition = gameObject.transform.position;
     }
 

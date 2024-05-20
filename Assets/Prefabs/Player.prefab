@@ -84,6 +84,13 @@ MonoBehaviour:
   combat: {fileID: -3977382012538612927}
   zone: 0
   hasCollided: 0
+  obstacleAhead: 0
+  raycastDistance: 30
+  collisionLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  rayLength: 0.1
+  rayColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!114 &-3977382012538612927
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -97,6 +104,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shapeFormCombo: 7
+  attackPlayer: {fileID: 0}
+  delayTime: 1
+  finishCombo: 0
   colliderLifetime: 0.5
   fixedDistance: 1
   color: {r: 1, g: 1, b: 1, a: 1}

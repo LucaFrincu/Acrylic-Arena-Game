@@ -188,15 +188,24 @@ public class Enemy_AI : MonoBehaviour
                     {
                         case "blue":
                             if (hit.manaBlue < hit.manaMax)
+                            {
                                 hit.manaBlue += 30;
+                                hit.blueBgd.GetComponent<PaintSizeAnimation>().Increase();
+                            }
                             break;
                         case "red":
                             if (hit.manaRed < hit.manaMax)
+                            { 
                                 hit.manaRed += 30;
+                                hit.redBgd.GetComponent<PaintSizeAnimation>().Increase();
+                            }
                             break;
                         case "yellow":
                             if (hit.manaYellow < hit.manaMax)
+                            { 
                                 hit.manaYellow += 30;
+                                hit.yellowBgd.GetComponent<PaintSizeAnimation>().Increase();
+                            }
                             break;
                         default:
                             break;

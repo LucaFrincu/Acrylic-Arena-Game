@@ -10,6 +10,7 @@ TagManager:
   - enemyattack
   - pattern
   - enemy
+  - hide
   layers:
   - Default
   - TransparentFX

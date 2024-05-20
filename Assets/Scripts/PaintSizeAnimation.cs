@@ -31,14 +31,6 @@ public class PaintSizeAnimation : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            Increase();
-        }
-
-        if (Input.GetMouseButtonDown(1))
-        {
-            Decrease();
-        }
+       
     }
 }

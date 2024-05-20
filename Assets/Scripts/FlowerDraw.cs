@@ -61,21 +61,23 @@ public class FlowerDraw : MonoBehaviour
 
     public void DestroyFlower(string colorName, Color mixedColor)
     {
-        Debug.Log("mixed Color: " + colorName + " The required color" + flowerColor);
+        Debug.Log("mixed Color: " + colorName + " The required color" + flowerColor + " The name of the color: " + flowerColorName);
         if (health > 0 && (colorName == flowerColorName || flowerColorName == "white"))
         {
             Debug.Log("HIT WITH THE SPECIFIED COLOR!");
             health -= dmgDealt;
-            health = Mathf.Clamp(health, 0, maxHealth);
+            //health = Mathf.Clamp(health, 0, maxHealth);
             float healthPercentage = (float)health / maxHealth;
             if (flowerColorName != "white")
             {
+                Debug.Log("IS NOT WHITE!");
                 Color newColor = Color.Lerp(flowerColor, Color.white, healthPercentage);
                 newColor.a = 1;
                 gameObject.GetComponent<SpriteRenderer>().color = newColor;
             }
             else
             {
+                Debug.Log("IS WHITE!");
                 Color newColor = Color.Lerp(mixedColor, Color.white, healthPercentage);
                 newColor.a = 1;
                 gameObject.GetComponent<SpriteRenderer>().color = newColor;

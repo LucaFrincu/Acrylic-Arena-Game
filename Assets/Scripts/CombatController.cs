@@ -61,6 +61,10 @@ public class CombatController : MonoBehaviour
     public Image manaRedFill;
     public Image manaYellowFill;
 
+
+    public Image yellowBgd;
+    public Image blueBgd;
+    public Image redBgd;
     // Start is called before the first frame update
     void Start()
     {
@@ -78,21 +82,25 @@ public class CombatController : MonoBehaviour
         if (manaBlue <= 90 && manaBlue > 60)
         {
             manaBlueFill.fillAmount = 1.0f;
+            
 
         }
         else if (manaBlue <= 60 && manaBlue >= 35)
         {
             manaBlueFill.fillAmount = 0.66f;
+            
 
         }
         else if (manaBlue < 35)
         {
             manaBlueFill.fillAmount = 0.33f;
+            
 
         }
         if (manaBlue == 0)
         {
             manaBlueFill.fillAmount = 0.0f;
+            
         }
     }
 
@@ -101,17 +109,20 @@ public class CombatController : MonoBehaviour
         if (manaRed <= 90 && manaRed > 60)
         {
             manaRedFill.fillAmount = 1.0f;
+            
 
 
         }
         else if (manaRed <= 60 && manaRed >= 35)
         {
             manaRedFill.fillAmount = 0.66f;
+            
 
         }
         else if (manaRed < 35)
         {
             manaRedFill.fillAmount = 0.33f;
+            
 
         }
         if (manaRed == 0)
@@ -125,17 +136,20 @@ public class CombatController : MonoBehaviour
         if (manaYellow <= 90 && manaYellow > 60)
         {
             manaYellowFill.fillAmount = 1.0f;
+            
 
 
         }
         else if (manaYellow <= 60 && manaYellow >= 35)
         {
             manaYellowFill.fillAmount = 0.66f;
+            
 
         }
         else if (manaYellow < 35)
         {
             manaYellowFill.fillAmount = 0.33f;
+            
 
         }
         if (manaYellow == 0)
@@ -205,7 +219,7 @@ public class CombatController : MonoBehaviour
                                 drawing.shapeDirection = "";
                                 attackDmg = 4;
                                 manaBlue -= 30;
-                                
+                                blueBgd.GetComponent<PaintSizeAnimation>().Decrease();
 
                                 /*if(manaBlue <= 90 && manaBlue > 60)
                                 {
@@ -223,7 +237,7 @@ public class CombatController : MonoBehaviour
                                     manaBlueFill.fillAmount = 0.33f;
                                     Debug.Log("MANA 3");
                                 }*/
-                                
+
                             }
                             else
                             {
@@ -253,7 +267,7 @@ public class CombatController : MonoBehaviour
                                 drawing.shapeDirection = "";
                                 attackDmg = 4;
                                 manaRed -= 30;
-                                
+                                redBgd.GetComponent<PaintSizeAnimation>().Decrease();
                             }
                             else
                             {
@@ -280,7 +294,7 @@ public class CombatController : MonoBehaviour
                                 drawing.shapeDirection = "";
                                 attackDmg = 4;
                                 manaYellow -= 30;
-                                
+                                yellowBgd.GetComponent<PaintSizeAnimation>().Decrease();
                             }
                             else
                             {

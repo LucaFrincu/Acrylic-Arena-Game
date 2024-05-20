@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Enemy_AI : MonoBehaviour
 {
@@ -40,9 +41,11 @@ public class Enemy_AI : MonoBehaviour
     public int health = 100;
     public float staggerTime = 1.3f; // Time in seconds
 
+
     private Transform playerTransform; // Reference to the player's transform
     public CombatController hit;
     public GameObject player;
+    public Image healthBar;
     private Vector3 targetPosition; // Position the enemy is moving towards
     private bool playerSeen = false;
     private bool isStaggered = false; 
@@ -59,6 +62,7 @@ public class Enemy_AI : MonoBehaviour
         if (hit == null) {
             Debug.Log("hit null detected!");
         }
+        healthBar.fillAmount = 1.0f;
     }
 
     void Update()
@@ -184,19 +188,29 @@ public class Enemy_AI : MonoBehaviour
                 case "white":
                     hasCollided = true;
                     health -= hit.attackDmg;
+                    healthBar.fillAmount = health * 0.1f;
                     switch (enemyColor)
                     {
                         case "blue":
                             if (hit.manaBlue < hit.manaMax)
+                            {
                                 hit.manaBlue += 30;
+                                hit.blueBgd.GetComponent<PaintSizeAnimation>().Increase();
+                            }
                             break;
                         case "red":
                             if (hit.manaRed < hit.manaMax)
+                            { 
                                 hit.manaRed += 30;
+                                hit.redBgd.GetComponent<PaintSizeAnimation>().Increase();
+                            }
                             break;
                         case "yellow":
                             if (hit.manaYellow < hit.manaMax)
+                            { 
                                 hit.manaYellow += 30;
+                                hit.yellowBgd.GetComponent<PaintSizeAnimation>().Increase();
+                            }
                             break;
                         default:
                             break;
@@ -206,7 +220,7 @@ public class Enemy_AI : MonoBehaviour
                 case "blue":
                     hasCollided = true;
                     health -= hit.attackDmg;
-                    
+                    healthBar.fillAmount = health * 0.1f;
                     switch (enemyColor)
                     {
                         case "blue":
@@ -229,7 +243,7 @@ public class Enemy_AI : MonoBehaviour
                 case "red":
                     hasCollided = true;
                     health -= hit.attackDmg;
-                    
+                    healthBar.fillAmount = health * 0.1f;
                     switch (enemyColor)
                     {
                         case "blue":
@@ -252,7 +266,7 @@ public class Enemy_AI : MonoBehaviour
                 case "yellow":
                     hasCollided = true;
                     health -= hit.attackDmg;
-                    
+                    healthBar.fillAmount = health * 0.1f;
                     switch (enemyColor)
                     {
                         case "blue":

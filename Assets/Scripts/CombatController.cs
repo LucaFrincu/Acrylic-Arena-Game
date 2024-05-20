@@ -677,6 +677,8 @@ public class CombatController : MonoBehaviour
         Material material = new Material(Shader.Find("Standard"));
         material.color =color;
         tempColliderObject.GetComponent<MeshRenderer>().material = material;
+        tempColliderObject.GetComponent<MeshRenderer>().enabled = false;
+
 
         // Destroy the collider GameObject after a specified lifetime
         Destroy(tempColliderObject, colliderLifetime);

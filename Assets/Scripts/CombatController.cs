@@ -167,360 +167,362 @@ public class CombatController : MonoBehaviour
         FillBlueStamina();
         FillRedStamina();
         FillYellowStamina();
-   
 
-        if (checkmode == false)
+        if (gameObject.GetComponent<PlayerInMenu>().inMenu == false)
         {
-            //move coordinates of the mouse
-            //mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            mousePos = Input.mousePosition;
-            mousePos.z = Camera.main.WorldToScreenPoint(transform.position).z;
-            lastMousePosition = Camera.main.ScreenToWorldPoint(mousePos);
-            nrAttacks = 0;
-            nrCombo = 0;
-            shapeFormCombo = ShapeCombo.Zero;
-            color = Color.white;
-
-        }
-        else
-        {
-            //block coordinates of the mouse
-            //Debug.Log("NrCombo " + CheckNrCombos());
-
-            
-
-            switch (CheckNrCombos())
+            if (checkmode == false)
             {
-                case 0:
-                    switch (shapeFormCombo)
-                    {
-                        case ShapeCombo.Zero:
-                            /*if(nrAttacks < 3)
-                                DoBasicAttack();
-                            else
-                            {
-                                shapeFormCombo = ShapeCombo.Null;
-                            }*/
-                            break;
-                        case ShapeCombo.VerticalUp:
-                            if (manaBlue >= 30)
-                            {
-                                drawing.shape = "";
-                                drawing.shapeDirection = "";
-                                colliderSize = new Vector3(6f, 6f, 6f);
-                                fixedDistance = 7f;
-                                color = Color.blue;
-                                test.clip = comboAudio;
-                                test.PlayOneShot(comboAudio);
-                                CreateTemporaryCollider(colliderSize, fixedDistance, color);
-                                //nrCombo++;
-                                shapeFormCombo = ShapeCombo.Null;
-                                drawing.shape = "";
-                                drawing.shapeDirection = "";
-                                attackDmg = 4;
-                                manaBlue -= 30;
-                                blueBgd.GetComponent<PaintSizeAnimation>().Decrease();
+                //move coordinates of the mouse
+                //mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                mousePos = Input.mousePosition;
+                mousePos.z = Camera.main.WorldToScreenPoint(transform.position).z;
+                lastMousePosition = Camera.main.ScreenToWorldPoint(mousePos);
+                nrAttacks = 0;
+                nrCombo = 0;
+                shapeFormCombo = ShapeCombo.Zero;
+                color = Color.white;
 
-                                /*if(manaBlue <= 90 && manaBlue > 60)
-                                {
-                                    manaBlueFill.fillAmount = 1.0f;
-                                    Debug.Log("MANA 1");
+            }
+            else
+            {
+                //block coordinates of the mouse
+                //Debug.Log("NrCombo " + CheckNrCombos());
 
-                                }
-                                if (manaBlue < 60 && manaBlue >= 35)
+
+
+                switch (CheckNrCombos())
+                {
+                    case 0:
+                        switch (shapeFormCombo)
+                        {
+                            case ShapeCombo.Zero:
+                                /*if(nrAttacks < 3)
+                                    DoBasicAttack();
+                                else
                                 {
-                                    manaBlueFill.fillAmount = 0.66f;
-                                    Debug.Log("MANA 2");
-                                }
-                                if (manaBlue < 35)
-                                {
-                                    manaBlueFill.fillAmount = 0.33f;
-                                    Debug.Log("MANA 3");
+                                    shapeFormCombo = ShapeCombo.Null;
                                 }*/
+                                break;
+                            case ShapeCombo.VerticalUp:
+                                if (manaBlue >= 30)
+                                {
+                                    drawing.shape = "";
+                                    drawing.shapeDirection = "";
+                                    colliderSize = new Vector3(6f, 6f, 6f);
+                                    fixedDistance = 7f;
+                                    color = Color.blue;
+                                    test.clip = comboAudio;
+                                    test.PlayOneShot(comboAudio);
+                                    CreateTemporaryCollider(colliderSize, fixedDistance, color);
+                                    //nrCombo++;
+                                    shapeFormCombo = ShapeCombo.Null;
+                                    drawing.shape = "";
+                                    drawing.shapeDirection = "";
+                                    attackDmg = 4;
+                                    manaBlue -= 30;
+                                    blueBgd.GetComponent<PaintSizeAnimation>().Decrease();
 
-                            }
-                            else
-                            {
+                                    /*if(manaBlue <= 90 && manaBlue > 60)
+                                    {
+                                        manaBlueFill.fillAmount = 1.0f;
+                                        Debug.Log("MANA 1");
+
+                                    }
+                                    if (manaBlue < 60 && manaBlue >= 35)
+                                    {
+                                        manaBlueFill.fillAmount = 0.66f;
+                                        Debug.Log("MANA 2");
+                                    }
+                                    if (manaBlue < 35)
+                                    {
+                                        manaBlueFill.fillAmount = 0.33f;
+                                        Debug.Log("MANA 3");
+                                    }*/
+
+                                }
+                                else
+                                {
+                                    drawing.shape = "";
+                                    drawing.shapeDirection = "";
+                                    shapeFormCombo = ShapeCombo.Null;
+
+                                    //manaBlueFill.fillAmount = 0.0f;
+
+                                }
+                                checkmode = false;
+                                break;
+                            case ShapeCombo.DiagonalRight:
+                                if (manaRed >= 30)
+                                {
+                                    drawing.shape = "";
+                                    drawing.shapeDirection = "";
+                                    colliderSize = new Vector3(6f, 6f, 5.5f);
+                                    fixedDistance = 7f;
+                                    color = Color.red;
+                                    test.clip = comboAudio;
+                                    test.PlayOneShot(comboAudio);
+                                    CreateTemporaryCollider(colliderSize, fixedDistance, color);
+                                    //nrCombo++;
+                                    shapeFormCombo = ShapeCombo.Null;
+                                    drawing.shape = "";
+                                    drawing.shapeDirection = "";
+                                    attackDmg = 4;
+                                    manaRed -= 30;
+                                    redBgd.GetComponent<PaintSizeAnimation>().Decrease();
+                                }
+                                else
+                                {
+                                    drawing.shape = "";
+                                    drawing.shapeDirection = "";
+                                    shapeFormCombo = ShapeCombo.Null;
+                                }
+                                checkmode = false;
+                                break;
+                            case ShapeCombo.HorizontalRight:
+                                if (manaYellow >= 30)
+                                {
+                                    drawing.shape = "";
+                                    drawing.shapeDirection = "";
+                                    colliderSize = new Vector3(10f, 10f, 10f);
+                                    fixedDistance = 0f;
+                                    color = Color.yellow;
+                                    test.clip = comboAudio;
+                                    test.PlayOneShot(comboAudio);
+                                    CreateTemporaryCollider(colliderSize, fixedDistance, color);
+                                    //nrCombo++;
+                                    shapeFormCombo = ShapeCombo.Null;
+                                    drawing.shape = "";
+                                    drawing.shapeDirection = "";
+                                    attackDmg = 4;
+                                    manaYellow -= 30;
+                                    yellowBgd.GetComponent<PaintSizeAnimation>().Decrease();
+                                }
+                                else
+                                {
+                                    drawing.shape = "";
+                                    drawing.shapeDirection = "";
+                                    shapeFormCombo = ShapeCombo.Null;
+                                }
+                                checkmode = false;
+                                break;
+                            case ShapeCombo.Wait:
+                                if (drawing.shape == "not_found")
+                                {
+                                    drawing.shape = "";
+                                    drawing.shapeDirection = "";
+                                    shapeFormCombo = ShapeCombo.Null;
+                                    color = Color.white;
+                                    checkmode = false;
+                                }
+                                break;
+                            default:
                                 drawing.shape = "";
                                 drawing.shapeDirection = "";
                                 shapeFormCombo = ShapeCombo.Null;
-                                
-                                //manaBlueFill.fillAmount = 0.0f;
-                                
-                            }
-                            checkmode = false;
-                            break;
-                        case ShapeCombo.DiagonalRight:
-                            if (manaRed >= 30)
-                            {
-                                drawing.shape = "";
-                                drawing.shapeDirection = "";
-                                colliderSize = new Vector3(6f, 6f, 5.5f);
-                                fixedDistance = 7f;
-                                color = Color.red;
-                                test.clip = comboAudio;
-                                test.PlayOneShot(comboAudio);
-                                CreateTemporaryCollider(colliderSize, fixedDistance, color);
-                                //nrCombo++;
-                                shapeFormCombo = ShapeCombo.Null;
-                                drawing.shape = "";
-                                drawing.shapeDirection = "";
-                                attackDmg = 4;
-                                manaRed -= 30;
-                                redBgd.GetComponent<PaintSizeAnimation>().Decrease();
-                            }
-                            else
-                            {
-                                drawing.shape = "";
-                                drawing.shapeDirection = "";
-                                shapeFormCombo = ShapeCombo.Null;
-                            }
-                            checkmode = false;
-                            break;
-                        case ShapeCombo.HorizontalRight:
-                            if (manaYellow >= 30)
-                            {
-                                drawing.shape = "";
-                                drawing.shapeDirection = "";
-                                colliderSize = new Vector3(10f, 10f, 10f);
-                                fixedDistance = 0f;
-                                color = Color.yellow;
-                                test.clip = comboAudio;
-                                test.PlayOneShot(comboAudio);
-                                CreateTemporaryCollider(colliderSize, fixedDistance, color);
-                                //nrCombo++;
-                                shapeFormCombo = ShapeCombo.Null;
-                                drawing.shape = "";
-                                drawing.shapeDirection = "";
-                                attackDmg = 4;
-                                manaYellow -= 30;
-                                yellowBgd.GetComponent<PaintSizeAnimation>().Decrease();
-                            }
-                            else
-                            {
-                                drawing.shape = "";
-                                drawing.shapeDirection = "";
-                                shapeFormCombo = ShapeCombo.Null;
-                            }
-                            checkmode = false;
-                            break;
-                        case ShapeCombo.Wait:
-                            if(drawing.shape == "not_found")
-                            {
-                                drawing.shape = "";
-                                drawing.shapeDirection = "";
-                                shapeFormCombo = ShapeCombo.Null;
+                                nrAttacks = 0;
+                                nrCombo = 0;
                                 color = Color.white;
                                 checkmode = false;
-                            }
-                            break;
-                        default:
-                            drawing.shape = "";
-                            drawing.shapeDirection = "";
-                            shapeFormCombo = ShapeCombo.Null;
-                            nrAttacks = 0;
-                            nrCombo = 0;
-                            color = Color.white;
-                            checkmode = false;
-                            break;
-                    }
-                    break;
-                /*case 1:
-                    switch (shapeFormCombo)
-                    {
-                        case ShapeCombo.Zero:
-                            //DoBasicAttack();
-                            break;
-                        case ShapeCombo.VerticalDown:
-                            if (manaBlue >= 30)
+                                break;
+                        }
+                        break;
+                        /*case 1:
+                            switch (shapeFormCombo)
                             {
-                                colliderSize = new Vector3(4f, 4f, 4f);
-                                fixedDistance = 5f;
-                                color = Color.blue;
-                                test.clip = comboAudio;
-                                test.PlayOneShot(comboAudio);
-                                CreateTemporaryCollider(colliderSize, fixedDistance, color);
-                                nrCombo++;
-                                shapeFormCombo = ShapeCombo.Wait;
-                                drawing.shape = "";
-                                drawing.shapeDirection = "";
-                                //nrAttacks = 0;
-                                attackDmg = 5;
-                                manaBlue -= 30;
-                            }
-                            else
-                            {
-                                shapeFormCombo = ShapeCombo.Null;
-                            }
-                            break;
-                        case ShapeCombo.DiagonalLeft:
-                            if(manaRed >= 30)
-                            {
-                                colliderSize = new Vector3(4f, 4f, 3.5f);
-                                fixedDistance = 5f;
-                                color = Color.red;
-                                test.clip = comboAudio;
-                                test.PlayOneShot(comboAudio);
-                                CreateTemporaryCollider(colliderSize, fixedDistance, color);
-                                nrCombo++;
-                                shapeFormCombo = ShapeCombo.Wait;
-                                drawing.shape = "";
-                                drawing.shapeDirection = "";
-                                //nrAttacks = 0;
-                                attackDmg = 4;
-                                manaRed -= 30;
-                            }
-                            else
-                            {
-                                shapeFormCombo = ShapeCombo.Null;
-                            }
-                            
-                            break;
-                        case ShapeCombo.HorizontalLeft:
-                            if(manaYellow >= 30)
-                            {
-                                colliderSize = new Vector3(9f, 9f, 9f);
-                                fixedDistance = 0f;
-                                color = Color.yellow;
-                                test.clip = comboAudio;
-                                test.PlayOneShot(comboAudio);
-                                CreateTemporaryCollider(colliderSize, fixedDistance, color);
-                                nrCombo++;
-                                shapeFormCombo = ShapeCombo.Wait;
-                                drawing.shape = "";
-                                drawing.shapeDirection = "";
-                                //nrAttacks = 0;
-                                attackDmg = 4;
-                                manaYellow -= 30;
-                            }
-                            else
-                            {
-                                shapeFormCombo = ShapeCombo.Null;
-                            }
-                            
-                            break;
-                        case ShapeCombo.Wait:
-                            break;
-                        default:
-                            drawing.shape = "";
-                            drawing.shapeDirection = "";
-                            shapeFormCombo = ShapeCombo.Zero;
-                            nrAttacks = 0;
-                            nrCombo = 0;
-                            color = Color.white;
-                            break;
-                    }
-                    break;
-                case 2:
-                    switch (shapeFormCombo)
-                    {
-                        case ShapeCombo.Zero:
-                            //DoBasicAttack();
-                            break;
-                        case ShapeCombo.CircleRight:
-                            if (manaBlue >= 30)
-                            {
-                                colliderSize = new Vector3(8f, 8f, 8f);
-                                fixedDistance = 5f;
-                                color = Color.blue;
-                                test.clip = comboAudio;
-                                test.Play(0);
-                                CreateTemporaryCollider(colliderSize, fixedDistance, color);
-                                nrCombo = 0;
-                                nrAttacks = 0;
-                                shapeFormCombo = ShapeCombo.Zero;
-                                drawing.shape = "";
-                                drawing.shapeDirection = "";
-                                nrAttacks = 0;
-                                attackDmg = 7;
-                                color = Color.white;
-                                manaBlue -= 30;
-                            }
-                            else
-                            {
-                                shapeFormCombo = ShapeCombo.Null;
-                            }
-                            
-                            break;
-                        case ShapeCombo.Wave:
-                            if(manaRed >= 30)
-                            {
-                                colliderSize = new Vector3(5f, 5f, 4.5f);
-                                fixedDistance = 5f;
-                                color = Color.red;
-                                test.clip = comboAudio;
-                                test.PlayOneShot(comboAudio);
-                                CreateTemporaryCollider(colliderSize, fixedDistance, color);
-                                nrCombo = 0;
-                                nrAttacks = 0;
-                                shapeFormCombo = ShapeCombo.Zero;
-                                drawing.shape = "";
-                                drawing.shapeDirection = "";
-                                attackDmg = 4;
-                                color = Color.white;
-                                manaRed -= 30;
-                            }
-                            else
-                            {
-                                shapeFormCombo = ShapeCombo.Null;
-                            }
-                            
-                            break;
-                        case ShapeCombo.CircleLeft:
-                            if(manaYellow >= 30)
-                            {
-                                colliderSize = new Vector3(11f, 11f, 11f);
-                                fixedDistance = 0f;
-                                color = Color.yellow;
-                                test.clip = comboAudio;
-                                test.PlayOneShot(comboAudio);
-                                CreateTemporaryCollider(colliderSize, fixedDistance, color);
-                                nrCombo = 0;
-                                nrAttacks = 0;
-                                shapeFormCombo = ShapeCombo.Zero;
-                                drawing.shape = "";
-                                drawing.shapeDirection = "";
-                                attackDmg = 5;
-                                color = Color.white;
-                                manaYellow -= 30;
-                            }
-                            else
-                            {
-                                shapeFormCombo = ShapeCombo.Null;
-                            }
-                            
-                            break;
-                        case ShapeCombo.Wait:
-                            break;
-                        default:
-                            drawing.shape = "";
-                            drawing.shapeDirection = "";
-                            shapeFormCombo = ShapeCombo.Zero;
-                            nrAttacks = 0;
-                            nrCombo = 0;
-                            color = Color.white;
-                            break;
-                    }
-                    break;*/
+                                case ShapeCombo.Zero:
+                                    //DoBasicAttack();
+                                    break;
+                                case ShapeCombo.VerticalDown:
+                                    if (manaBlue >= 30)
+                                    {
+                                        colliderSize = new Vector3(4f, 4f, 4f);
+                                        fixedDistance = 5f;
+                                        color = Color.blue;
+                                        test.clip = comboAudio;
+                                        test.PlayOneShot(comboAudio);
+                                        CreateTemporaryCollider(colliderSize, fixedDistance, color);
+                                        nrCombo++;
+                                        shapeFormCombo = ShapeCombo.Wait;
+                                        drawing.shape = "";
+                                        drawing.shapeDirection = "";
+                                        //nrAttacks = 0;
+                                        attackDmg = 5;
+                                        manaBlue -= 30;
+                                    }
+                                    else
+                                    {
+                                        shapeFormCombo = ShapeCombo.Null;
+                                    }
+                                    break;
+                                case ShapeCombo.DiagonalLeft:
+                                    if(manaRed >= 30)
+                                    {
+                                        colliderSize = new Vector3(4f, 4f, 3.5f);
+                                        fixedDistance = 5f;
+                                        color = Color.red;
+                                        test.clip = comboAudio;
+                                        test.PlayOneShot(comboAudio);
+                                        CreateTemporaryCollider(colliderSize, fixedDistance, color);
+                                        nrCombo++;
+                                        shapeFormCombo = ShapeCombo.Wait;
+                                        drawing.shape = "";
+                                        drawing.shapeDirection = "";
+                                        //nrAttacks = 0;
+                                        attackDmg = 4;
+                                        manaRed -= 30;
+                                    }
+                                    else
+                                    {
+                                        shapeFormCombo = ShapeCombo.Null;
+                                    }
 
-            }            
-        }
+                                    break;
+                                case ShapeCombo.HorizontalLeft:
+                                    if(manaYellow >= 30)
+                                    {
+                                        colliderSize = new Vector3(9f, 9f, 9f);
+                                        fixedDistance = 0f;
+                                        color = Color.yellow;
+                                        test.clip = comboAudio;
+                                        test.PlayOneShot(comboAudio);
+                                        CreateTemporaryCollider(colliderSize, fixedDistance, color);
+                                        nrCombo++;
+                                        shapeFormCombo = ShapeCombo.Wait;
+                                        drawing.shape = "";
+                                        drawing.shapeDirection = "";
+                                        //nrAttacks = 0;
+                                        attackDmg = 4;
+                                        manaYellow -= 30;
+                                    }
+                                    else
+                                    {
+                                        shapeFormCombo = ShapeCombo.Null;
+                                    }
 
-        if (Input.GetMouseButtonDown(0) && checkmode == false && canClick)
-        {
-            /*if (!isOneClick) // first click
-             {
-                 isOneClick = true;
-                 timeSinceLastClick = Time.time;
-             }
-             else if (Time.time - timeSinceLastClick <= doubleClickTimeLimit) // double click
-             {
-                 //Debug.Log("Double Click Detected");
-                 isTwoClicks = true;
-                 isOneClick = false; // reset for next click
-             }*/
-            StartCoroutine(ClickCooldown());
-            DoBasicAttack();
+                                    break;
+                                case ShapeCombo.Wait:
+                                    break;
+                                default:
+                                    drawing.shape = "";
+                                    drawing.shapeDirection = "";
+                                    shapeFormCombo = ShapeCombo.Zero;
+                                    nrAttacks = 0;
+                                    nrCombo = 0;
+                                    color = Color.white;
+                                    break;
+                            }
+                            break;
+                        case 2:
+                            switch (shapeFormCombo)
+                            {
+                                case ShapeCombo.Zero:
+                                    //DoBasicAttack();
+                                    break;
+                                case ShapeCombo.CircleRight:
+                                    if (manaBlue >= 30)
+                                    {
+                                        colliderSize = new Vector3(8f, 8f, 8f);
+                                        fixedDistance = 5f;
+                                        color = Color.blue;
+                                        test.clip = comboAudio;
+                                        test.Play(0);
+                                        CreateTemporaryCollider(colliderSize, fixedDistance, color);
+                                        nrCombo = 0;
+                                        nrAttacks = 0;
+                                        shapeFormCombo = ShapeCombo.Zero;
+                                        drawing.shape = "";
+                                        drawing.shapeDirection = "";
+                                        nrAttacks = 0;
+                                        attackDmg = 7;
+                                        color = Color.white;
+                                        manaBlue -= 30;
+                                    }
+                                    else
+                                    {
+                                        shapeFormCombo = ShapeCombo.Null;
+                                    }
+
+                                    break;
+                                case ShapeCombo.Wave:
+                                    if(manaRed >= 30)
+                                    {
+                                        colliderSize = new Vector3(5f, 5f, 4.5f);
+                                        fixedDistance = 5f;
+                                        color = Color.red;
+                                        test.clip = comboAudio;
+                                        test.PlayOneShot(comboAudio);
+                                        CreateTemporaryCollider(colliderSize, fixedDistance, color);
+                                        nrCombo = 0;
+                                        nrAttacks = 0;
+                                        shapeFormCombo = ShapeCombo.Zero;
+                                        drawing.shape = "";
+                                        drawing.shapeDirection = "";
+                                        attackDmg = 4;
+                                        color = Color.white;
+                                        manaRed -= 30;
+                                    }
+                                    else
+                                    {
+                                        shapeFormCombo = ShapeCombo.Null;
+                                    }
+
+                                    break;
+                                case ShapeCombo.CircleLeft:
+                                    if(manaYellow >= 30)
+                                    {
+                                        colliderSize = new Vector3(11f, 11f, 11f);
+                                        fixedDistance = 0f;
+                                        color = Color.yellow;
+                                        test.clip = comboAudio;
+                                        test.PlayOneShot(comboAudio);
+                                        CreateTemporaryCollider(colliderSize, fixedDistance, color);
+                                        nrCombo = 0;
+                                        nrAttacks = 0;
+                                        shapeFormCombo = ShapeCombo.Zero;
+                                        drawing.shape = "";
+                                        drawing.shapeDirection = "";
+                                        attackDmg = 5;
+                                        color = Color.white;
+                                        manaYellow -= 30;
+                                    }
+                                    else
+                                    {
+                                        shapeFormCombo = ShapeCombo.Null;
+                                    }
+
+                                    break;
+                                case ShapeCombo.Wait:
+                                    break;
+                                default:
+                                    drawing.shape = "";
+                                    drawing.shapeDirection = "";
+                                    shapeFormCombo = ShapeCombo.Zero;
+                                    nrAttacks = 0;
+                                    nrCombo = 0;
+                                    color = Color.white;
+                                    break;
+                            }
+                            break;*/
+
+                }
+            }
+
+            if (Input.GetMouseButtonDown(0) && checkmode == false && canClick)
+            {
+                /*if (!isOneClick) // first click
+                 {
+                     isOneClick = true;
+                     timeSinceLastClick = Time.time;
+                 }
+                 else if (Time.time - timeSinceLastClick <= doubleClickTimeLimit) // double click
+                 {
+                     //Debug.Log("Double Click Detected");
+                     isTwoClicks = true;
+                     isOneClick = false; // reset for next click
+                 }*/
+                StartCoroutine(ClickCooldown());
+                DoBasicAttack();
+            }
         }
 
         /*if (isOneClick)

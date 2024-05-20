@@ -21,10 +21,11 @@ public class ManagerSpawner : MonoBehaviour
     {
         for(int i = 0; i <= subLevels.Length - 1; i++)
         {
-            if(zone == i)
+            PlayerSpawn subLevel = subLevels[i].GetComponent<PlayerSpawn>();
+            if (zone == i)
             {
-                subLevels[i].GetComponent<PlayerSpawn>().ResetLevels(i, true);
-                subLevels[i].GetComponent<PlayerSpawn>().SpawnPlayer();
+                subLevel.ResetLevels(i, true);
+                subLevel.SpawnPlayer();
             }
             else
             {

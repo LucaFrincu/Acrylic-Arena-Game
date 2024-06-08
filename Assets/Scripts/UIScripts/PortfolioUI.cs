@@ -22,10 +22,12 @@ public class PortfolioUI : MonoBehaviour
 
    public Image item5;
 
+   Animator anim;
+
 
     void Start()
     {
-        
+        anim = portfolio.GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -33,14 +35,16 @@ public class PortfolioUI : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Tab))
         {
-        if(portfolioActive)
-        {
-            DectivatePortfolio();
-        }
-        else
-        {
-            ActivatePortfolio();
-        }
+            if(portfolioActive)
+            {
+              DectivatePortfolio();
+             }
+            else
+            {
+                ActivatePortfolio();
+                anim.Play("PortfolioSize");
+                Debug.Log("AM APASAT O DATA");
+            }
         }
 
 
@@ -50,7 +54,9 @@ public class PortfolioUI : MonoBehaviour
             item1.gameObject.SetActive(true);
             item1.color = managerLevels.levelColor1;
             unlock1.SetActive(false);
+
             ActivatePortfolio();
+            anim.Play("PortfolioSize");
 
         }
         if(managerLevels.level2Check)
@@ -60,6 +66,7 @@ public class PortfolioUI : MonoBehaviour
            item2.color = managerLevels.levelColor2;
             unlock2.SetActive(false);
             ActivatePortfolio();
+            anim.Play("PortfolioSize");
         }
          if(managerLevels.level3Check)
         {
@@ -68,6 +75,7 @@ public class PortfolioUI : MonoBehaviour
             item3.color = managerLevels.levelColor3;
             unlock3.SetActive(false);
             ActivatePortfolio();
+            anim.Play("PortfolioSize");
         }
          if(managerLevels.level4Check)
         {
@@ -75,6 +83,7 @@ public class PortfolioUI : MonoBehaviour
             item4.gameObject.SetActive(true);
             item4.color = managerLevels.levelColor4;
             ActivatePortfolio();
+            anim.Play("PortfolioSize");
            
         }
         if(managerLevels.level5Check)
@@ -83,22 +92,25 @@ public class PortfolioUI : MonoBehaviour
             item5.gameObject.SetActive(true);
             item5.color = managerLevels.levelColor5;
             ActivatePortfolio();
+            anim.Play("PortfolioSize");
            
         }
 
     }
 
-    void ActivatePortfolio(){
-        
+    void ActivatePortfolio()
+    {
+            
             portfolioActive = true;
-            Time.timeScale = 0f;
+            //Time.timeScale = 0f;
             portfolio.SetActive(true);
+           
 
     }
       void DectivatePortfolio(){
        
             portfolioActive = false;
-            Time.timeScale = 1f;
+            //Time.timeScale = 1f;
             portfolio.SetActive(false);
         
 

@@ -16,12 +16,16 @@ public class PlayerMovement : MonoBehaviour
     public float raycastDistance = 30f;
     public LayerMask collisionLayer;
 
+    public AudioSource test;
+    public AudioClip movementAudio;
+
     public float rayLength = 0.1f;
     public Color rayColor = Color.red;
 
 
     private void Start()
     {
+        //test = GetComponent<AudioSource>();
         combat = GetComponent<CombatController>();
         lastSafePosition = transform.position;
         rb = GetComponent<Rigidbody>();
@@ -33,6 +37,16 @@ public class PlayerMovement : MonoBehaviour
         //input
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.z = Input.GetAxisRaw("Vertical");
+
+        if(Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
+        {
+            test.enabled = true;
+
+        }
+        else
+        {
+            test.enabled = false;
+        }
         if (Input.GetKey(KeyCode.LeftShift))
         {
             moveSpeed = 20f;

@@ -559,6 +559,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8823402156218285546}
     - target: {fileID: 7456225757686814997, guid: 2dd2cac6f42b6df4296f5a558e787b78, type: 3}
+      propertyPath: attackSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 4cb4c5c8d5d4cac4bbdf52cdb0c18c33, type: 3}
+    - target: {fileID: 7456225757686814997, guid: 2dd2cac6f42b6df4296f5a558e787b78, type: 3}
       propertyPath: exclamation
       value: 
       objectReference: {fileID: 8823402156218285546}

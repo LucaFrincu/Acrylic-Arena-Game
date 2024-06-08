@@ -5,6 +5,7 @@ using UnityEngine;
 public class MovementAnimations : MonoBehaviour
 {
     // Start is called before the first frame update
+
     Animator anim;
     private int direction = 4;
 
@@ -35,6 +36,7 @@ public class MovementAnimations : MonoBehaviour
         }
         else if (Input.GetKey(KeyCode.S))
         {
+
             anim.Play("WalkForward");
             direction = 4;
         }
@@ -45,17 +47,20 @@ public class MovementAnimations : MonoBehaviour
             {
                 case 1:
                     {
+               
                         anim.Play("RightPlayer");
                         break;
                     }
                 case 2:
-                    { 
+                    {
+                        
                         anim.Play("BackPlayer");
                         
                         break;
                     }
                 case 3:
                     {
+                        
                         anim.Play("LeftPlayer");
                         break;
                     }

@@ -159,7 +159,9 @@ public class PlayerSpawn : MonoBehaviour
                 {
                     Debug.Log(enemies[i].patternEnemy);
                     Debug.Log(numberChildren);
-                    if(enemies[i].patternEnemy == flowers[numberChildren].patternZone)
+                    Debug.Log("CHECKING PATTERNZONE WITH PATTERN ENEMY");
+                    Debug.Log(enemies[i].patternEnemy + " " + flowers[numberChildren].patternZone);
+                    if(enemies[i].patternEnemy == flowers[numberChildren - 1].patternZone)
                     {
                         enemies[i].ResetEnemy(zone, checkpoint);
                         enemies[i].SetRestriction(false);

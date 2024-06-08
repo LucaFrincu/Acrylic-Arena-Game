@@ -261,6 +261,7 @@ MonoBehaviour:
   enemyColor: red
   test: {fileID: 0}
   dmgSound: {fileID: 8300000, guid: a354e1bac48c7fe42b6063d047c4e178, type: 3}
+  attackSound: {fileID: 8300000, guid: 4cb4c5c8d5d4cac4bbdf52cdb0c18c33, type: 3}
   colliderLifetime: 0.5
   attackDelay: 2
   cooldownPeriod: 2

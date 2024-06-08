@@ -30,6 +30,7 @@ public class Enemy_AI : MonoBehaviour
 
     public AudioSource test;
     public AudioClip dmgSound;
+    public AudioClip attackSound;
     public float colliderLifetime = 0.5f; // Time for the collider to disappear
     private AIState state = AIState.Idle;
     public float attackDelay = 2f;
@@ -117,6 +118,8 @@ public class Enemy_AI : MonoBehaviour
                     if (elapsedTime.TotalSeconds >= attackDelay)
                     {
                         //Debug.Log("ATTACK");
+                        test.clip = attackSound;
+                        test.PlayOneShot(attackSound);
                         CreateTemporaryCollider(new Vector3(5f, 4f, 5f), 5f);
                         lastAttackTime = Time.time;
                         state = AIState.Cooldown;
@@ -173,6 +176,7 @@ public class Enemy_AI : MonoBehaviour
 
         if (other.gameObject.name == "TemporaryCollider" && other.gameObject.tag == "square")
         {
+            test.clip = dmgSound;
             test.PlayOneShot(dmgSound);
             string strcolor = "";
             Color otherColor = other.GetComponent<MeshRenderer>().material.color;

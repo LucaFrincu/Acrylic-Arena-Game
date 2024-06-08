@@ -264,6 +264,8 @@ public class MovementAnimations : MonoBehaviour
     private bool front = true;
     private bool left = true;
     private bool isAttacking = false;
+    private bool canClick = true;
+    private float delayTime = 1f;
 
     void Start()
     {
@@ -287,8 +289,16 @@ public class MovementAnimations : MonoBehaviour
         }
 
         // Handle attack input
-        if (Input.GetMouseButtonDown(0) && !isAttacking)
+        if (Input.GetMouseButtonDown(0) && !isAttacking && canClick)
         {
+            StartCoroutine(ClickCooldown());
+            HandleAttack();
+            return;
+        }
+        
+        if (Input.GetMouseButtonUp(1) && !isAttacking)
+        {
+            //StartCoroutine(ClickCooldown());
             HandleAttack();
             return;
         }
@@ -300,7 +310,7 @@ public class MovementAnimations : MonoBehaviour
             anim.speed = 1;
             direction = 1;
             left = false;
-            front = true; // Assuming facing front when walking right
+            //front = true; // Assuming facing front when walking right
         }
         else if (Input.GetKey(KeyCode.A))
         {
@@ -308,7 +318,7 @@ public class MovementAnimations : MonoBehaviour
             anim.speed = 1;
             direction = 3;
             left = true;
-            front = true; // Assuming facing front when walking left
+            //front = true; // Assuming facing front when walking left
         }
         else if (Input.GetKey(KeyCode.W))
         {
@@ -326,6 +336,7 @@ public class MovementAnimations : MonoBehaviour
         }
         else
         {
+            Debug.Log("IDLING");
             HandleIdle();
         }
     }
@@ -333,7 +344,7 @@ public class MovementAnimations : MonoBehaviour
     void HandleAttack()
     {
         isAttacking = true;
-        anim.speed = 1; // Set the speed to 1 to respect the animation speed
+        anim.speed = 3; // Set the speed to 1 to respect the animation speed
 
         switch (direction)
         {
@@ -347,7 +358,7 @@ public class MovementAnimations : MonoBehaviour
                 anim.Play(front ? "Front_left_attack" : "Back_left_attack");
                 break;
             case 4:
-                anim.Play(front ? "Front_attack" : "Back_attack");
+                anim.Play(left ? "Front_left_attack" : "Back_right_attack");
                 break;
         }
     }
@@ -368,8 +379,20 @@ public class MovementAnimations : MonoBehaviour
                 anim.Play("LeftPlayer");
                 break;
             case 4:
-                anim.Play("FrontPlayer");
+                anim.Play("IdlePlayer");
                 break;
         }
+    }
+
+    IEnumerator ClickCooldown()
+    {
+        // Set clicking flag to false to prevent further clicks
+        canClick = false;
+
+        // Wait for the specified delay time
+        yield return new WaitForSeconds(delayTime);
+
+        // Set clicking flag to true to allow clicks again
+        canClick = true;
     }
 }

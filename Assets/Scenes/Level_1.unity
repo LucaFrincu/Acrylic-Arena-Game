@@ -13296,7 +13296,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentScene: 1
   isLevelCompleted: 1
-  levelsCheck: {fileID: 0}
+  levelsCheck: {fileID: 1719786660}
 --- !u!65 &1439071825
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class PortfolioUI : MonoBehaviour
 {
     public bool portfolioActive = false;
+    public int levels = 0;
     public GameObject portfolio;
     public CheckerLevels managerLevels;
     //public FlowerDraw level1Spr1;
@@ -43,7 +44,6 @@ public class PortfolioUI : MonoBehaviour
             {
                 ActivatePortfolio();
                 anim.Play("PortfolioSize");
-                Debug.Log("AM APASAT O DATA");
             }
         }
 
@@ -57,6 +57,7 @@ public class PortfolioUI : MonoBehaviour
 
             ActivatePortfolio();
             anim.Play("PortfolioSize");
+            levels++;
 
         }
         if(managerLevels.level2Check)
@@ -67,6 +68,7 @@ public class PortfolioUI : MonoBehaviour
             unlock2.SetActive(false);
             ActivatePortfolio();
             anim.Play("PortfolioSize");
+            levels++;
         }
          if(managerLevels.level3Check)
         {
@@ -76,6 +78,7 @@ public class PortfolioUI : MonoBehaviour
             unlock3.SetActive(false);
             ActivatePortfolio();
             anim.Play("PortfolioSize");
+            levels++;
         }
          if(managerLevels.level4Check)
         {
@@ -84,6 +87,7 @@ public class PortfolioUI : MonoBehaviour
             item4.color = managerLevels.levelColor4;
             ActivatePortfolio();
             anim.Play("PortfolioSize");
+            levels++;
            
         }
         if(managerLevels.level5Check)
@@ -93,6 +97,7 @@ public class PortfolioUI : MonoBehaviour
             item5.color = managerLevels.levelColor5;
             ActivatePortfolio();
             anim.Play("PortfolioSize");
+            levels++;
            
         }
 

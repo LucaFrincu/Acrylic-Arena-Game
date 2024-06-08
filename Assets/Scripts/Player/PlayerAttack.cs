@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerAttack : MonoBehaviour
 {
     public Color myColor = Color.white;
+    public Color attackColor = Color.white;
     public GameObject patternObject = null;
     private bool checkColor = false;
     private bool checkPattern = false;
@@ -19,13 +20,15 @@ public class PlayerAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (myColor != Color.white && patternObject != null)
+        if ((myColor != Color.white && patternObject != null))
         {
             hasCollided = true;
             Debug.Log("PATTERN DISINTEGRATED");
             //if (other.gameObject.tag == "pattern")
             //{
+            
             patternObject.gameObject.GetComponent<FlowerDraw>().DestroyFlower(combinedColorName, myColor);
+          
             myColor = new Color(0f, 0f, 0f);
             patternObject = null;
             combinedColorName = "";

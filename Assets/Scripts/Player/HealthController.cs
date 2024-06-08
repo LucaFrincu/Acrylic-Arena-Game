@@ -10,6 +10,8 @@ public class HealthController : MonoBehaviour
     public int zone = 0;
     public GameObject manager;
     public Image healthBar;
+    public AudioSource test;
+    public AudioClip hurtAudio;
 
     // Start is called before the first frame update
     void Start()
@@ -35,6 +37,7 @@ public class HealthController : MonoBehaviour
     }
     public void DamagePlayer(int damage)
     {
+        test.PlayOneShot(hurtAudio);
         health -= damage;
         if(health <= 0)
         {

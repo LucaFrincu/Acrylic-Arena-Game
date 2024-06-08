@@ -6,6 +6,7 @@ public class MenuScript : MonoBehaviour
 {
     [SerializeField] private GameObject instructions;
     [SerializeField] private GameObject buttons;
+    [SerializeField] private GameObject credits;
     public GameObject pauseMenuContainer;
     public GameObject notifyPlayer;
 
@@ -27,6 +28,18 @@ public class MenuScript : MonoBehaviour
     {
         instructions.SetActive(true);
         buttons.SetActive(false);
+    }
+
+    public void CreditsButton()
+    {
+        credits.SetActive(true);
+        buttons.SetActive(false);
+    }
+
+    public void BackCreditsButton()
+    {
+        credits.SetActive(false);
+        buttons.SetActive(true);
     }
 
     public void BackButton()

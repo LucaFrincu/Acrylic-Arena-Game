@@ -50,7 +50,24 @@ public class FlowerDraw : MonoBehaviour
             //gameObject.SetActive(true);
 
             parentSpawner.GetComponent<FlowerSpawner>().OnSquareDestroyed();*/
-            other.gameObject.GetComponent<PlayerAttack>().SetPattern(gameObject);
+            Color colorOfAttack = other.GetComponent<PlayerAttack>().attackColor;
+            if (colorOfAttack != Color.red && colorOfAttack != Color.blue && colorOfAttack != Color.yellow)
+                other.gameObject.GetComponent<PlayerAttack>().SetPattern(gameObject);
+            else
+            {
+                if(colorOfAttack == Color.red)
+                {
+                    DestroyFlower("red", Color.red);
+                }
+                if (colorOfAttack == Color.blue)
+                {
+                    DestroyFlower("blue", Color.blue);
+                }
+                if (colorOfAttack == Color.yellow)
+                {
+                    DestroyFlower("yellow", Color.yellow);
+                }
+            }
         }
     }
 

@@ -8,11 +8,13 @@ public class FlowerDraw : MonoBehaviour
     private GameObject parentSpawner;
     public string flowerColorName;
     public Color flowerColor;
+    public Color newColor;
     private short checkCounter = 0;
     public int zone = 0;
     public int health = 1;
     public int maxHealth = 0;
     public int dmgDealt = 1;
+
     private void Update()
     {
         if(health <= 0)
@@ -32,6 +34,8 @@ public class FlowerDraw : MonoBehaviour
                 //gameObject.SetActive(false);                
                 //gameObject.SetActive(true);
                 parentSpawner.GetComponent<FlowerSpawner>().OnSquareDestroyed();
+
+
             }
         }
     }
@@ -71,14 +75,14 @@ public class FlowerDraw : MonoBehaviour
             if (flowerColorName != "white")
             {
                 Debug.Log("IS NOT WHITE!");
-                Color newColor = Color.Lerp(flowerColor, Color.white, healthPercentage);
+                newColor = Color.Lerp(flowerColor, Color.white, healthPercentage);
                 newColor.a = 1;
                 gameObject.GetComponent<SpriteRenderer>().color = newColor;
             }
             else
             {
                 Debug.Log("IS WHITE!");
-                Color newColor = Color.Lerp(mixedColor, Color.white, healthPercentage);
+                newColor = Color.Lerp(mixedColor, Color.white, healthPercentage);
                 newColor.a = 1;
                 gameObject.GetComponent<SpriteRenderer>().color = newColor;
             }

@@ -12,6 +12,7 @@ public class EnemySpawner : MonoBehaviour
     public bool finishPart = false;
     private bool restrictSpawn = false;
     public int currentEnemies = 0; // Current number of enemies
+    public int patternEnemy = -1;
     private GameObject enemy;
 
     private void Start()

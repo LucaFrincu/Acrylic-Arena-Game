@@ -13,7 +13,15 @@ public class Enemy_AI : MonoBehaviour
         Cooldown 
     }
 
+    [SerializeField]
+    public GameObject exclamation;
     public GameObject coloredSquareObject;
+    public GameObject blueBlood;
+    public GameObject redBlood;
+    public GameObject yellowBlood;
+    public GameObject purpleBlood;
+    public GameObject orangeBlood;
+    public GameObject greenBlood;
 
     public GameObject pattern = null;
     private GameObject parentSpawner;
@@ -105,12 +113,14 @@ public class Enemy_AI : MonoBehaviour
                 case AIState.Attacking:
                     // Calculate the elapsed time since the attack delay started
                     TimeSpan elapsedTime = DateTime.Now - attackStartTime;
+                    exclamation.SetActive(true);
                     if (elapsedTime.TotalSeconds >= attackDelay)
                     {
                         //Debug.Log("ATTACK");
                         CreateTemporaryCollider(new Vector3(5f, 4f, 5f), 5f);
                         lastAttackTime = Time.time;
                         state = AIState.Cooldown;
+                        exclamation.SetActive(false);
                     }
                     break;
                 case AIState.Cooldown:
@@ -306,14 +316,54 @@ public class Enemy_AI : MonoBehaviour
         Vector3 direction = (collisionPosition - transform.position).normalized;
         Vector3 spawnPosition = transform.position - direction * squareSpawnOffset;
         spawnPosition = new Vector3(spawnPosition.x, -0.9f, spawnPosition.z);
-        GameObject coloredSquare = GameObject.Instantiate(coloredSquareObject);
+        bool checker = false;
+        GameObject coloredSquare;
+        if (color == Color.blue)
+        {
+            coloredSquare = GameObject.Instantiate(blueBlood);
+            checker = true;
+        }
+        else if(color == Color.red)
+        {
+            coloredSquare = GameObject.Instantiate(redBlood);
+            checker = true;
+        }
+        else if (color == Color.yellow)
+        {
+            coloredSquare = GameObject.Instantiate(yellowBlood);
+            checker = true;
+        }
+        else if (color == new Color(0.5f, 0f, 0.5f))
+        {
+            coloredSquare = GameObject.Instantiate(purpleBlood);
+            checker = true;
+        }
+        else if (color == new Color(1f, 0.5f, 0f))
+        {
+            coloredSquare = GameObject.Instantiate(orangeBlood);
+            checker = true;
+        }
+        else if (color == Color.green)
+        {
+            coloredSquare = GameObject.Instantiate(greenBlood);
+            checker = true;
+        }
+        else
+        {
+            coloredSquare = GameObject.Instantiate(coloredSquareObject);
+        }
+        //coloredSquare = GameObject.Instantiate(coloredSquareObject);
 
         coloredSquare.transform.position = spawnPosition;
         coloredSquare.tag = "squareenemy";
         Renderer renderer = coloredSquare.GetComponent<Renderer>();
+        if(checker == false)
+        {
+            renderer.enabled = false;
+        }
         renderer.material.color = color; // Set color to magenta
         Destroy(coloredSquare, 5f);
-
+        checker = false;
         /*// Create the square
         GameObject square = GameObject.CreatePrimitive(PrimitiveType.Cube);
         square.tag = "squareenemy";

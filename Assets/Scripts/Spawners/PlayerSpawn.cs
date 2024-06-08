@@ -96,21 +96,82 @@ public class PlayerSpawn : MonoBehaviour
         }
         else
         {
-            //WE ARE SPAWNING ONLY ONE ENEMY AND THEN DISABLING IT        
+            //WE ARE SPAWNING ONLY ONE ENEMY AND THEN DISABLING IT    //Is it not resolved already bruh?
         }
     }
     private void ResetEnemies(int zone, bool checkpoint)
     {
+        /*if (flowers.Length != 0)
+        {
+            if (flowers[0].CheckFamily() == false)
+            {
+                for (int i = 0; i <= enemies.Length - 1; i++)
+                {
+                    Debug.Log("Enemies " + enemies[i]);
+                    enemies[i].ResetEnemy(zone, checkpoint);
+                    enemies[i].SetRestriction(false);
+                    if (flowers.Length == 0 && checkpoint == true)
+                    {
+                        enemies[i].gameObject.SetActive(false);
+                        enemies[i].SpawnEnemy();
+                    }
+                }
+            }
+            else
+            {
+                enemies[numberChildren - 1].ResetEnemy(zone, checkpoint);
+                enemies[numberChildren - 1].SetRestriction(false);
+                if (numberChildren < enemies.Length)
+                    for (int i = numberChildren; i <= enemies.Length - 1; i++)
+                    {
+                        enemies[i].ResetEnemy(zone, false);
+                        //enemies[i].currentSquares = 0;
+                    }
+            }
+        }
+        else
+        {
+            for (int i = 0; i <= enemies.Length - 1; i++)
+            {
+                Debug.Log("Enemies " + enemies[i]);
+                enemies[i].ResetEnemy(zone, checkpoint);
+                enemies[i].SetRestriction(false);
+                if (flowers.Length == 0 && checkpoint == true)
+                {
+                    enemies[i].gameObject.SetActive(false);
+                    enemies[i].SpawnEnemy();
+                }
+            }
+        }*/
         for (int i = 0; i <= enemies.Length - 1; i++)
         {
             Debug.Log("Enemies " + enemies[i]);
-            enemies[i].ResetEnemy(zone, checkpoint);
-            enemies[i].SetRestriction(false);
-            if(flowers.Length == 0 && checkpoint == true)
+            if (flowers.Length == 0 && checkpoint == true)
             {
+                enemies[i].ResetEnemy(zone, checkpoint);
+                enemies[i].SetRestriction(false);
                 enemies[i].gameObject.SetActive(false);
                 enemies[i].SpawnEnemy();
             }
+            else if (flowers.Length != 0)
+            {
+                if(flowers[0].CheckFamily() == true)
+                {
+                    Debug.Log(enemies[i].patternEnemy);
+                    Debug.Log(numberChildren);
+                    if(enemies[i].patternEnemy == flowers[numberChildren].patternZone)
+                    {
+                        enemies[i].ResetEnemy(zone, checkpoint);
+                        enemies[i].SetRestriction(false);
+                    }
+                }
+                else
+                {
+                    enemies[i].ResetEnemy(zone, checkpoint);
+                    enemies[i].SetRestriction(false);
+                }
+            }
+            
         }
     }
 
@@ -126,12 +187,13 @@ public class PlayerSpawn : MonoBehaviour
         if (zoneCollider == zone)
         {
             player.GetComponent<HealthController>().SetZone(zoneCollider);
-            for (int i = 0; i <= enemies.Length - 1; i++)
+            
+            if (flowers.Length == 0)
             {
-                enemies[i].gameObject.SetActive(true);
-            }
-            if(flowers.Length == 0)
-            {
+                for (int i = 0; i <= enemies.Length - 1; i++)
+                {
+                    enemies[i].gameObject.SetActive(true);
+                }
                 //Debug.Log("ENEMY IS WITHOUT FLOWERS!");
                 for (int i = 0; i <= enemies.Length - 1; i++)
                 {
@@ -143,6 +205,7 @@ public class PlayerSpawn : MonoBehaviour
             {
                 if (flowers[0].CheckFamily() == true)
                 {
+                    //enemies[numberChildren].ResetEnemy(zone, true);
                     flowers[numberChildren++].ResetPattern(zone, true);
                     //TRY 1
                     if (numberChildren < flowers.Length)
@@ -153,6 +216,23 @@ public class PlayerSpawn : MonoBehaviour
                             flowers[i].ResetPattern(zone, false);
                         }
                     }
+                    /*if(numberChildren < enemies.Length)
+                    {
+                        for (int i = numberChildren; i <= enemies.Length - 1; i++)
+                        {
+                            enemies[i].ResetEnemy(zone, false);
+                        }
+                    }*/
+                    for (int i =0; i<= enemies.Length -1; i++)
+                    {
+                        Debug.Log(enemies[i].patternEnemy);
+                        Debug.Log(numberChildren);
+                        if (enemies[i].patternEnemy == flowers[numberChildren-1].patternZone)
+                        {
+                            enemies[i].ResetEnemy(zone, true);
+                            //enemies[i].SetRestriction(false);
+                        }
+                    }
                     /////////
                 }
                 else
@@ -161,7 +241,11 @@ public class PlayerSpawn : MonoBehaviour
                     {
                         flowers[i].ResetPattern(zone, true);
                     }
-                    
+                    for (int i = 0; i <= enemies.Length - 1; i++)
+                    {
+                        enemies[i].gameObject.SetActive(true);
+                    }
+
                 }
                 
             }
@@ -188,6 +272,8 @@ public class PlayerSpawn : MonoBehaviour
         }
         else
         {
+            enemies[numberChildren - 1].ResetEnemy(zone, false);
+            enemies[numberChildren].ResetEnemy(zone, true);
             flowers[numberChildren++].ResetPattern(zone, true);
         }
     }

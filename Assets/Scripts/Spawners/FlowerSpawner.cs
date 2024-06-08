@@ -14,6 +14,7 @@ public class FlowerSpawner : MonoBehaviour
     //public float spawnRadius = 0f; // Radius within which squares can spawn
     public int currentSquares = 0; // Current number of squares
     public bool family = false;
+    public int patternZone = -1;
     private void Start()
     {
         SpawnSquare();

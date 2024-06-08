@@ -1026,6 +1026,7 @@ MonoBehaviour:
   spawnZone: 4
   currentSquares: 0
   family: 1
+  patternZone: 2
 --- !u!1 &111602157
 GameObject:
   m_ObjectHideFlags: 0
@@ -3089,7 +3090,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 02142b2143259614bb8178e872308a15, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.029
+  m_Volume: 0.128
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -5243,6 +5244,10 @@ PrefabInstance:
       propertyPath: ownReference
       value: 
       objectReference: {fileID: 787414464}
+    - target: {fileID: 3979134920822590172, guid: 5860e2c507a41244a818e2eb42dbaba4, type: 3}
+      propertyPath: patternEnemy
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3979134920822590173, guid: 5860e2c507a41244a818e2eb42dbaba4, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -6727,6 +6732,7 @@ MonoBehaviour:
   spawnZone: 3
   currentSquares: 0
   family: 0
+  patternZone: -1
 --- !u!1 &951195553
 GameObject:
   m_ObjectHideFlags: 0
@@ -6777,6 +6783,7 @@ MonoBehaviour:
   spawnZone: 4
   currentSquares: 0
   family: 1
+  patternZone: 1
 --- !u!1 &952888333
 GameObject:
   m_ObjectHideFlags: 0
@@ -8744,6 +8751,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -3977382012538612927, guid: ec73cdc336ffcab42b701bfd6ba5f0e1, type: 3}
+      propertyPath: redAttack
+      value: 
+      objectReference: {fileID: 4140766864183572186, guid: 68faba5608b929a44b4d2d7ab4063fe1, type: 3}
+    - target: {fileID: -3977382012538612927, guid: ec73cdc336ffcab42b701bfd6ba5f0e1, type: 3}
       propertyPath: yellowBgd
       value: 
       objectReference: {fileID: 1627636507}
@@ -8751,6 +8762,10 @@ PrefabInstance:
       propertyPath: basicAudio
       value: 
       objectReference: {fileID: 8300000, guid: 1ed4772e75010e9489443a1eb93497d6, type: 3}
+    - target: {fileID: -3977382012538612927, guid: ec73cdc336ffcab42b701bfd6ba5f0e1, type: 3}
+      propertyPath: blueAttack
+      value: 
+      objectReference: {fileID: 4414330402066100926, guid: f901a2238cab03842bb0bfbd11b8c1f1, type: 3}
     - target: {fileID: -3977382012538612927, guid: ec73cdc336ffcab42b701bfd6ba5f0e1, type: 3}
       propertyPath: comboAudio
       value: 
@@ -8764,6 +8779,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1912169508}
     - target: {fileID: -3977382012538612927, guid: ec73cdc336ffcab42b701bfd6ba5f0e1, type: 3}
+      propertyPath: whiteAttack
+      value: 
+      objectReference: {fileID: 8983234470735308748, guid: 0d85776fdaa126249b4f3963360c4fd1, type: 3}
+    - target: {fileID: -3977382012538612927, guid: ec73cdc336ffcab42b701bfd6ba5f0e1, type: 3}
       propertyPath: attackPlayer
       value: 
       objectReference: {fileID: 483715234469928569, guid: bd18c62374fa99845aa29857ba9ef86f, type: 3}
@@ -8771,6 +8790,10 @@ PrefabInstance:
       propertyPath: manaBlueFill
       value: 
       objectReference: {fileID: 138863159}
+    - target: {fileID: -3977382012538612927, guid: ec73cdc336ffcab42b701bfd6ba5f0e1, type: 3}
+      propertyPath: yellowAttack
+      value: 
+      objectReference: {fileID: 144778647252779060, guid: 6165b006d82aa4243babe7bec9357708, type: 3}
     - target: {fileID: -3977382012538612927, guid: ec73cdc336ffcab42b701bfd6ba5f0e1, type: 3}
       propertyPath: manaYellowFill
       value: 
@@ -9906,6 +9929,7 @@ MonoBehaviour:
   spawnZone: 2
   currentSquares: 0
   family: 0
+  patternZone: -1
 --- !u!1 &1277561177
 GameObject:
   m_ObjectHideFlags: 0
@@ -10021,11 +10045,15 @@ PrefabInstance:
     - target: {fileID: 3979134920822590172, guid: 5860e2c507a41244a818e2eb42dbaba4, type: 3}
       propertyPath: enemyPrefab
       value: 
-      objectReference: {fileID: 3157106125802407865, guid: e860357064ba66549958be0fc4f9b02f, type: 3}
+      objectReference: {fileID: 1863160783975143424, guid: 7f35bdeea33eec745859b08a7045e7fc, type: 3}
     - target: {fileID: 3979134920822590172, guid: 5860e2c507a41244a818e2eb42dbaba4, type: 3}
       propertyPath: ownReference
       value: 
       objectReference: {fileID: 1281114340}
+    - target: {fileID: 3979134920822590172, guid: 5860e2c507a41244a818e2eb42dbaba4, type: 3}
+      propertyPath: patternEnemy
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3979134920822590173, guid: 5860e2c507a41244a818e2eb42dbaba4, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -15195,6 +15223,7 @@ MonoBehaviour:
   spawnZone: 4
   currentSquares: 0
   family: 1
+  patternZone: 0
 --- !u!1 &1807114208
 GameObject:
   m_ObjectHideFlags: 0
@@ -15382,11 +15411,15 @@ PrefabInstance:
     - target: {fileID: 3979134920822590172, guid: 5860e2c507a41244a818e2eb42dbaba4, type: 3}
       propertyPath: enemyPrefab
       value: 
-      objectReference: {fileID: 1863160783975143424, guid: 7f35bdeea33eec745859b08a7045e7fc, type: 3}
+      objectReference: {fileID: 3157106125802407865, guid: e860357064ba66549958be0fc4f9b02f, type: 3}
     - target: {fileID: 3979134920822590172, guid: 5860e2c507a41244a818e2eb42dbaba4, type: 3}
       propertyPath: ownReference
       value: 
       objectReference: {fileID: 1835404135}
+    - target: {fileID: 3979134920822590172, guid: 5860e2c507a41244a818e2eb42dbaba4, type: 3}
+      propertyPath: patternEnemy
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3979134920822590173, guid: 5860e2c507a41244a818e2eb42dbaba4, type: 3}
       propertyPath: m_RootOrder
       value: 4

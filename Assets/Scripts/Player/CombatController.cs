@@ -24,6 +24,10 @@ public class CombatController : MonoBehaviour
     public ShapeCombo shapeFormCombo = ShapeCombo.Zero;
 
     public GameObject attackPlayer;
+    public GameObject blueAttack;
+    public GameObject redAttack;
+    public GameObject yellowAttack;
+    public GameObject whiteAttack;
 
     public float delayTime = 1.0f; // Set the delay time between clicks
 
@@ -256,7 +260,9 @@ public class CombatController : MonoBehaviour
                                 {
                                     drawing.shape = "";
                                     drawing.shapeDirection = "";
-                                    colliderSize = new Vector3(6f, 6f, 5.5f);
+                                    /*colliderSize = new Vector3(6f, 6f, 5.5f);
+                                    fixedDistance = 7f;*/
+                                    colliderSize = new Vector3(6f, 6f, 6f);
                                     fixedDistance = 7f;
                                     color = Color.red;
                                     test.clip = comboAudio;
@@ -283,8 +289,10 @@ public class CombatController : MonoBehaviour
                                 {
                                     drawing.shape = "";
                                     drawing.shapeDirection = "";
-                                    colliderSize = new Vector3(10f, 10f, 10f);
-                                    fixedDistance = 0f;
+                                    /*colliderSize = new Vector3(10f, 10f, 10f);
+                                    fixedDistance = 0f;*/
+                                    colliderSize = new Vector3(6f, 6f, 6f);
+                                    fixedDistance = 7f;
                                     color = Color.yellow;
                                     test.clip = comboAudio;
                                     test.PlayOneShot(comboAudio);
@@ -652,21 +660,43 @@ public class CombatController : MonoBehaviour
 
         // Create the temporary collider GameObject
 
+        GameObject drawingPaint;
         GameObject tempColliderObject = new GameObject("TemporaryCollider");
+        if (color == Color.blue)
+        {
+            drawingPaint = Instantiate(blueAttack);
+        }
+        else if(color == Color.red)
+        {
+            drawingPaint = Instantiate(redAttack);
+        }
+        else if(color == Color.yellow)
+        {
+            drawingPaint = Instantiate(yellowAttack);
+        }
+        else
+        {
+            drawingPaint = Instantiate(whiteAttack);
+        }
         tempColliderObject.AddComponent<PlayerAttack>();
+        tempColliderObject.GetComponent<PlayerAttack>().attackColor = color;
         // Add a Rigidbody component to the GameObject
         Rigidbody rb = tempColliderObject.AddComponent<Rigidbody>();
-
+        Rigidbody paintRb = drawingPaint.AddComponent<Rigidbody>();
         // Disable gravity for the Rigidbody
         rb.useGravity = false;
+        paintRb.useGravity = false;
         tempColliderObject.transform.position = colliderPosition;
         tempColliderObject.tag = "square";
+        drawingPaint.transform.position = colliderPosition;
+
         // Set the rotation of the collider to face the direction of the mouse
         // Calculate rotation based on the direction vector
         tempColliderObject.transform.rotation = Quaternion.LookRotation(directionToMouse);
-
+        drawingPaint.transform.rotation = Quaternion.LookRotation(directionToMouse); 
         // Adjust the collider object's rotation to match the sprite's orientation if needed
         tempColliderObject.transform.eulerAngles = new Vector3(0, tempColliderObject.transform.eulerAngles.y, tempColliderObject.transform.eulerAngles.z);
+        drawingPaint.transform.eulerAngles = new Vector3(90, drawingPaint.transform.eulerAngles.y, drawingPaint.transform.eulerAngles.z);
 
         BoxCollider boxCollider = tempColliderObject.AddComponent<BoxCollider>();
         boxCollider.size = colliderSize;
@@ -684,6 +714,7 @@ public class CombatController : MonoBehaviour
 
         // Destroy the collider GameObject after a specified lifetime
         Destroy(tempColliderObject, colliderLifetime);
+        Destroy(drawingPaint, colliderLifetime);
     }
 
     Vector3 CalculateColliderPosition(float distance)

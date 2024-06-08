@@ -336,7 +336,7 @@ public class MovementAnimations : MonoBehaviour
         }
         else
         {
-            Debug.Log("IDLING");
+            //Debug.Log("IDLING");
             HandleIdle();
         }
     }

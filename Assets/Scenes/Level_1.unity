@@ -3239,7 +3239,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 419719561}
   m_LocalRotation: {x: 0.6605205, y: -0, z: -0, w: 0.7508081}
-  m_LocalPosition: {x: 0, y: 0, z: -424.95}
+  m_LocalPosition: {x: 0, y: 0, z: -406.5}
   m_LocalScale: {x: 1.1768, y: 1.1768001, z: 1.1768001}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3249,7 +3249,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 82.679, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 14, y: 886.82}
+  m_AnchoredPosition: {x: -13.9, y: 889.2}
   m_SizeDelta: {x: 15.14, y: 7.91}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &419719563
@@ -5788,7 +5788,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 750423086}
   m_LocalRotation: {x: -0, y: -0.41115865, z: -0, w: 0.9115638}
-  m_LocalPosition: {x: 19.97, y: -5.08, z: -4.14}
+  m_LocalPosition: {x: 22.57, y: -5.08, z: -6.44}
   m_LocalScale: {x: 17.58794, y: 6.5985394, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8482,7 +8482,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1017686930}
   m_LocalRotation: {x: 0.6605205, y: -0, z: -0, w: 0.7508081}
-  m_LocalPosition: {x: 0, y: 0, z: -374.9}
+  m_LocalPosition: {x: 0, y: 0, z: -362.88}
   m_LocalScale: {x: 1.1591, y: 1.1591, z: 1.1591}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -8492,7 +8492,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 82.679, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 14, y: 885.9}
+  m_AnchoredPosition: {x: 14.56, y: 887.44}
   m_SizeDelta: {x: 15.14, y: 7.91}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1017686932
@@ -9128,7 +9128,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1059115641
 Transform:
   m_ObjectHideFlags: 0
@@ -9137,7 +9137,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1059115640}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -11769,7 +11769,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1300398724
 Transform:
   m_ObjectHideFlags: 0
@@ -11778,7 +11778,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1300398723}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -15886,7 +15886,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1648031484
 Transform:
   m_ObjectHideFlags: 0
@@ -15895,7 +15895,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1648031483}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -16397,7 +16397,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1686491454}
   m_LocalRotation: {x: 0.6605205, y: -0, z: -0, w: 0.7508081}
-  m_LocalPosition: {x: 0, y: 0, z: -398.4}
+  m_LocalPosition: {x: 0, y: 0, z: -393.25}
   m_LocalScale: {x: 1.1414, y: 1.1414, z: 1.1414}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -16407,7 +16407,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 82.679, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 14, y: 885.7}
+  m_AnchoredPosition: {x: 5.64, y: 886.49}
   m_SizeDelta: {x: 15.14, y: 7.91}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1686491456
@@ -17684,7 +17684,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "You can only use the combo fight if you have collected paint. \n"
+  m_text: You can draw this pattern if you have paint!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
   m_sharedMaterial: {fileID: 2164040, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
@@ -18892,7 +18892,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2051894474}
   m_LocalRotation: {x: 0.6605205, y: -0, z: -0, w: 0.7508081}
-  m_LocalPosition: {x: 0, y: 0, z: -436.8}
+  m_LocalPosition: {x: 0, y: 0, z: -425.7}
   m_LocalScale: {x: 1.1768, y: 1.1768001, z: 1.1768001}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -18902,7 +18902,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 82.679, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -0.33, y: 885.31036}
+  m_AnchoredPosition: {x: 20.4, y: 886.7}
   m_SizeDelta: {x: 15.14, y: 7.91}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2051894476

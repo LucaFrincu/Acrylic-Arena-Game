@@ -22,18 +22,8 @@ public class HealthController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (health <= 66 && health >= 33)
-        {
-            healthBar.fillAmount = 0.66f;
-        }
-        else if (health < 33)
-        {
-            healthBar.fillAmount = 0.33f;
-        }
-        else
-        {
-            healthBar.fillAmount = 1f;
-        }
+        
+        healthBar.fillAmount = health * 0.01f;
     }
     public void DamagePlayer(int damage)
     {

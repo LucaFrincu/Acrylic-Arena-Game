@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+#pragma strict
 
 public class HealthController : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class HealthController : MonoBehaviour
     private int maxHealth = 100;
     public int zone = 0;
     public GameObject manager;
+    public GameObject youDied;
     public Image healthBar;
     public AudioSource test;
     public AudioClip hurtAudio;
@@ -31,11 +33,19 @@ public class HealthController : MonoBehaviour
         health -= damage;
         if(health <= 0)
         {
+            youDied.SetActive(true);
+            Invoke("DisableDied", 4f);
+            
+           
+
             manager.GetComponent<ManagerSpawner>().SpawnPlayer(zone);
             health = 100;
         }
 
         
+    }
+    public void DisableDied(){
+        youDied.SetActive(false);
     }
 
     public void SetZone(int zoneCollided)
